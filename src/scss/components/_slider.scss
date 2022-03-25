@@ -1,0 +1,13 @@
+// .hide-except-first-slide {
+
+//     & .swiper-wrapper {
+
+//         & > * {
+
+//             &:not(:first-child) {
+//                 opacity: 0;
+//                 visibility: hidden;
+//             }
+//         }
+//     }
+// }
