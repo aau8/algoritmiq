@@ -3,6 +3,7 @@ import '../scss/style.scss'
 import './render.js' 
 import { find, findAll, removeAll, bodyLock } from "./util/functions.js"
 import './sliders.js'
+// import './modal.js'
 
 // Картинки, которые добавляются фоном
 import '../img/main/main.png'
@@ -33,7 +34,7 @@ btnStart.addEventListener('click', e => {
 })
 
 // Функции для модальных окон
-// modal()
+modal()
 function modal() {
     
     // Открытие модальных окон при клике по кнопке
@@ -84,7 +85,7 @@ function modal() {
             const target = e.target
             const modal = document.querySelector('.modal._show')
 
-            if (modal && target.classList.contains('modal__body')) closeModal(modal)
+            if (modal && target.classList.contains('modal__wrap')) closeModal(modal)
         })
     }
 
@@ -94,7 +95,7 @@ function modal() {
         const modalElems = document.querySelectorAll('.modal')
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
-            const closeThisModal = modal.querySelector('.modal__close')
+            const closeThisModal = modal.querySelector('.modal-close')
     
             closeThisModal.addEventListener('click', () => {
                 closeModal(modal)

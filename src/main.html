@@ -9,13 +9,139 @@
 	<meta name="description" content="Description">
 
 	<style>
-		.img svg {
-			stroke: #000;
-		}
+		.hystmodal__opened {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+.hystmodal__shadow{
+    position: fixed;
+    border:none;
+    display: block;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 98;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    background-color: black;
+}
+.hystmodal__shadow--show{
+    pointer-events: auto;
+    opacity: 0.6;
+}
+.hystmodal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 1;
+    pointer-events: none;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    z-index: 99;
+    visibility: hidden;
+}
+.hystmodal--active{
+    opacity: 1;
+}
+.hystmodal--moved,
+.hystmodal--active{
+    pointer-events: auto;
+    visibility: visible;
+}
+.hystmodal__wrap {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.hystmodal__window {
+    margin: 50px 0;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #fff;
+    width: 600px;
+    max-width: 100%;
+    overflow: visible;
+    transition: transform 0.2s ease 0s, opacity 0.2s ease 0s;
+    transform: scale(0.9);
+    opacity: 0;
+}
+.hystmodal--active .hystmodal__window{
+    transform: scale(1);
+    opacity: 1;
+}
+.hystmodal__close{
+    position: absolute;
+    z-index: 10;
+    top:0;
+    right: -40px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    border: none;
+    font-size: 0;
+    cursor: pointer;
+    outline: none;
+}
+.hystmodal__close:focus{
+    outline: 2px dotted #afb3b9;
+    outline-offset: 2px;
+}
+@media all and (max-width:767px){
+    .hystmodal__close{
+        top:10px;
+        right: 10px;
+        width: 24px;
+        height: 24px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M22 2L2 22'/%3E%3Cpath fill='none' stroke='%23111' stroke-linecap='square' stroke-miterlimit='50' stroke-width='2' d='M2 2l20 20'/%3E%3C/svg%3E");
+    }
+    .hystmodal__window{
+        margin: 0;
+    }
+}
 	</style>
 </head>
 
 <body>
+	<!-- <button data-open-modal="#myModal">Open modal</button> -->
+	<!-- <div class="box"></div>
+	<div class="hystmodal" id="myModal" aria-hidden="true">
+		<div class="hystmodal__wrap">
+			<div class="hystmodal__window" role="dialog" aria-modal="true">
+				<button data-hystclose class="hystmodal__close">Закрыть</button>
+				<span>Hello, world!</span>
+				<form action="#">
+					<input type="text" placeholder="Name">
+					<button type="submit">Send</button>
+				</form>
+
+			</div>
+		</div>
+	</div> -->
+
 	<div class="wrapper">
 		<header class="header">
 			<div class="header__wrap">
@@ -179,7 +305,7 @@
 						</div>
 						<div class="s-services__body">
 							<div class="s-services__list">
-								<a href="javascript:void(0)" class="service-card" data-service="lighting">
+								<a href="javascript:void(0)" class="service-card" data-service="lighting" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#lighting'></use></svg></div>
 										<div class="service-card__content">
@@ -188,7 +314,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="curtains">
+								<a href="javascript:void(0)" class="service-card" data-service="curtains" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#curtains'></use></svg></div>
 										<div class="service-card__content">
@@ -197,7 +323,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="ventilation">
+								<a href="javascript:void(0)" class="service-card" data-service="ventilation" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#ventilation'></use></svg></div>
 										<div class="service-card__content">
@@ -206,7 +332,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="conditioner">
+								<a href="javascript:void(0)" class="service-card" data-service="conditioner" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#conditioner'></use></svg></div>
 										<div class="service-card__content">
@@ -215,7 +341,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="sockets">
+								<a href="javascript:void(0)" class="service-card" data-service="sockets" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#sockets'></use></svg></div>
 										<div class="service-card__content">
@@ -224,7 +350,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="heat-supply">
+								<a href="javascript:void(0)" class="service-card" data-service="heat-supply" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#heat-supply'></use></svg></div>
 										<div class="service-card__content">
@@ -233,7 +359,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="spa">
+								<a href="javascript:void(0)" class="service-card" data-service="spa" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#spa'></use></svg></div>
 										<div class="service-card__content">
@@ -242,7 +368,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="electric-car">
+								<a href="javascript:void(0)" class="service-card" data-service="electric-car" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#electric-car'></use></svg></div>
 										<div class="service-card__content">
@@ -251,7 +377,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="control-system">
+								<a href="javascript:void(0)" class="service-card" data-service="control-system" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#control-system'></use></svg></div>
 										<div class="service-card__content">
@@ -260,7 +386,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="alarm-system">
+								<a href="javascript:void(0)" class="service-card" data-service="alarm-system" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#alarm-system'></use></svg></div>
 										<div class="service-card__content">
@@ -269,7 +395,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="video-surveillance">
+								<a href="javascript:void(0)" class="service-card" data-service="video-surveillance" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#video-surveillance'></use></svg></div>
 										<div class="service-card__content">
@@ -278,7 +404,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="intercom">
+								<a href="javascript:void(0)" class="service-card" data-service="intercom" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#intercom'></use></svg></div>
 										<div class="service-card__content">
@@ -287,7 +413,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="multiroom">
+								<a href="javascript:void(0)" class="service-card" data-service="multiroom" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#multiroom'></use></svg></div>
 										<div class="service-card__content">
@@ -296,7 +422,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="weather-station">
+								<a href="javascript:void(0)" class="service-card" data-service="weather-station" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#weather-station'></use></svg></div>
 										<div class="service-card__content">
@@ -305,7 +431,7 @@
 										</div>
 									</div>
 								</a>
-								<a href="javascript:void(0)" class="service-card" data-service="spare-seat">
+								<a href="javascript:void(0)" class="service-card" data-service="spare-seat" data-modal-open="service">
 									<div class="service-card__wrap">
 										<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#spare-seat'></use></svg></div>
 										<div class="service-card__content">
@@ -492,6 +618,30 @@
 				<div class="po__buttons">
 					<button class="btn btn_outline po__hide">Скрыть</button>
 					<button class="btn btn_fill po__start">Пройти опрос</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal modal-service" id="service">
+			<div class="modal__wrap">
+				<div class="modal__window">
+					<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#lighting'></use></svg></div>
+					<div class="modal-service__content">
+						<h2 class="modal-service__title">Освещение</h2>
+						<p class="modal-service__text">Автоматизация освещения квартиры или загородного дома позволит осуществить замену множества стандартных выключателей на пару «умных» приборов управления. Находясь в любой комнате, вы сможете изменять регулировку всего освещения в доме: включать/выключать свет или управлять уровнем его яркости через дистанционный пульт управления.</p>
+						<hr class="modal-separator">
+						<h3 class="modal-service__subtitle">5 лучших функций:</h3>
+						<ul class="modal-service__list">
+							<li class="modal-service__item">Экономия расхода электроэнергии.</li>
+							<li class="modal-service__item">Сценарный свет с возможностью изменений.</li>
+							<li class="modal-service__item">Дистанционное управление (в любой точке мира).</li>
+							<li class="modal-service__item">Голосовое управление.</li>
+							<li class="modal-service__item">Биодинамическое освещение (изменение температуры света в зависимости от цикла солнца).</li>
+						</ul>
+					</div>
+					<button class="modal-close">
+						<span></span>
+						<span></span>
+					</button>
 				</div>
 			</div>
 		</div>

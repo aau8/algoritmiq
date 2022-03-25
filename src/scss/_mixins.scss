@@ -70,7 +70,7 @@
 @mixin center($axis: xy) {
     position: absolute;
 
-    @if $axis == xy && $axis == yx {
+    @if $axis == xy and $axis == yx {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
