@@ -1,0 +1,38 @@
+.func-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $firm-light;
+    border-radius: $radius-round;
+    box-shadow: $shadow-blue;
+    
+    &_s {
+        width: 56px;
+        height: 56px;
+        
+        & svg {
+            width: 28px;
+            height: 28px;
+        }
+    }
+    
+    &_m {
+        width: 72px;
+        height: 72px;
+        
+        & svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &_l {
+        width: 96px;
+        height: 96px;
+        
+        & svg {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

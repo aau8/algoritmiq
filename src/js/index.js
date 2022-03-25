@@ -1,7 +1,11 @@
 import 'bulma/sass/grid/_all.sass' // Сеточная система бибилотеки Bulma
 import '../scss/style.scss'
-import { find, findAll, removeAll, bodyLock } from "./utilities/functions.js"
-// import './sliders.js'
+import './render.js' 
+import { find, findAll, removeAll, bodyLock } from "./util/functions.js"
+import './sliders.js'
+
+// Картинки, которые добавляются фоном
+import '../img/main/main.png'
 
 // Мобильное меню
 (function menu() {
@@ -15,8 +19,21 @@ import { find, findAll, removeAll, bodyLock } from "./utilities/functions.js"
 	})
 })
 
+// Предложение пройти опрос
+const popupOffer = document.getElementById('popup-offer')
+const btnHide = popupOffer.querySelector('.po__hide')
+const btnStart = popupOffer.querySelector('.po__start')
+
+btnHide.addEventListener('click', e => {
+    popupOffer.classList.remove('_show')
+})
+
+btnStart.addEventListener('click', e => {
+    console.log('Start quiz')
+})
+
 // Функции для модальных окон
-modal()
+// modal()
 function modal() {
     
     // Открытие модальных окон при клике по кнопке

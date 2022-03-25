@@ -1,46 +1,48 @@
 // ================ Colors Start ================
-// Text
-$text-primary: #6e5263;
+// Текст
+$text-gray-light: #A3AAC0;
+$text-gray-dark: #63768D;
 $text-light: #fff;
-$text-gold: #f6ba4d;
-$title-primary: #732753;
-$title-second: #814268;
-$section-title-color: #410e2d;
-$card-title-color: #a24b7f;
-$link-hover: findLightColor($title-primary, 40%); 
-$link-active: findLightColor($title-primary, 50%); 
+$text-light-second: rgba(255, 255, 255, 0.5);
+$text-dark: #333;
 
-// Blocks Rating
-$rating-green: #7c9f1d;
-$rating-blue: #0a8688;
-$rating-red: #ff3b78;
-$rating-orange: #c99100;
-
-$bg-tab-button: #FEEFD3;
-$bg-tab-button-select: #F6BA4D;
-$bg-tab-button-hover: findLightColor($bg-tab-button-select, 60%);
-$bg-tab-button-active: findLightColor($bg-tab-button-select, 50%);
+// Фирменные цвета
+$firm-light: #fff;
+$firm-dark: #292831;
+$firm-accent: #328AE6;
 
 
-// Background
-$bg-item-gold: #eedec2;
-$bg-item-silver: #d5d0d0;
-$bg-item-bronze: #ffd2e6;
-$bg-item-default: #f8f6f2;
-$bg-solid-button: #F6BA4D;
-$bg-light: #B48DA6;
-$bg-dark: #732753;
-$bg-lang-icon: #CEA2B8;
-$bg-lang-dropdown: #852253;
-$bg-lang-item-hover: #9B456F;
+// Задний фон разделов
+$frame-light: #F5F9FD;
+$frame-dark: #292831;
+
+// Обводка
+$outline-light: rgba(255, 255, 255, 0.2);
+$outline-dark: rgba(163, 170, 192, 0.5);
+
+// Цвета кнопок в файле 'scss/elements/button.scss'
 // ================ Colors End ================
 
-$shadow-card: 0 0 40px rgba(168, 189, 218, .3);
+
+// ================ Shadow Start ================
+$shadow-orange: 0px 43px 80px rgba(3, 8, 17, 0.04), 0px 17.9644px 33.4221px rgba(3, 8, 17, 0.0287542), 0px 9.60461px 17.869px rgba(3, 8, 17, 0.0238443), 0px 5.38427px 10.0172px rgba(3, 8, 17, 0.02), 0px 2.85954px 5.32008px rgba(3, 8, 17, 0.0161557), 0px 1.18992px 2.21381px rgba(3, 8, 17, 0.0112458);
+$shadow-blue: 0px 15px 30px rgba(44, 103, 144, 0.09);
+$shadow-gray: 0px 8px 16px rgba(34, 19, 77, 0.07);
+// ================ Shadow End ================
+
+
+// ================ Radius Start ================
+$radius-card-b: 32px;
+$radius-card-s: 16px;
+$radius-input: 8px;
+$radius-round: 200px;
+// ================ Radius End ================
+
 
 // ================ Font Size Start ================
-$fs-text: 16px;
-$fs-title: 24px;
-$fs-subititle: 18px;
+// $fs-title-main: 68px;
+// $fs-title-section: 50px;
+// $fs-subititle: 18px;
 // ================ Font Size End ================
 
 
@@ -54,13 +56,11 @@ $mobile-s: 320px;
 // ================ Responsive End ================
 
 
-// ================ Custom Vars Start ================
-$ff-main: 'Albertus', serif;
+// Размеры контейнера в этом файле 'scss/grid.scss'
+
+
+// ================ Other Start ================
+$ff-main: 'Roboto', sans-serif;
 $tr: .3s;
-$container: 1300px;
-$container-gap: 24px;
-$container-gap-mobile: 16px;
-$radius: 16px;
-$radius-round: 50%;
 $min-hover: 769px; // Минимальное разрешения экрана для hover-эффекта
-// ================ Custom Vars End ================
+// ================ Other End ================

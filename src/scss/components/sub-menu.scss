@@ -1,0 +1,62 @@
+// Подменю
+.sub-menu {
+    position: absolute;
+    z-index: -1;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    background: $frame-light;
+    padding: 48px 0;
+    transition: $tr;
+}
+
+.sub-menu__wrap {
+    
+}
+
+.sub-menu__title {
+    font-size: 21px;
+    color: $firm-dark;
+}
+
+.sub-menu__list {
+    display: flex;
+    border-top: 1px solid $outline-dark;
+    padding-top: 48px;
+    margin-top: 32px;
+
+    & > .sb-card {
+
+        &:not(:last-child) {
+            margin-right: 96px;
+        }
+    }
+}
+
+// Карточка
+.sb-card {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+
+        & .sb-card__title {
+            color: $firm-accent;
+        }
+    }
+}
+
+.sb-card__title {
+    font-size: 21px;
+    color: $firm-dark;
+    transition: $tr;
+}
+
+.sb-card__text {
+    font-size: 14px;
+    color: $text-gray-light;
+    line-height: 1.4;
+    margin-top: 16px;
+}

@@ -1,0 +1,154 @@
+.header {
+    position: relative;
+    z-index: 3;
+    height: 73px;
+}
+
+.header__wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+// Логотип
+.logo {
+    max-width: 174px;
+    width: 100%;
+}
+
+.logo_header {
+    margin-left: 25px;
+}
+
+// Меню
+.menu {
+    margin-left: 48px;
+}
+
+.menu__wrap {
+
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+}
+
+.menu__item {
+
+    &:not(:last-child) {
+        margin-right: 48px;
+    }
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: $firm-dark;
+}
+
+.menu__item-has-child {
+
+    &:hover {
+
+        & > .menu__link {
+            color: $firm-accent;
+
+            &::after {
+                display: block;
+            }
+
+            & svg {
+                stroke: $firm-accent;
+                transform: scale(1, -1);
+            }
+
+            & + .sub-menu {
+                transform: translate(0, 100%);
+            }
+        }
+    }
+
+    & > .menu__link {
+        position: relative;
+
+        &::after {
+            display: none;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 140%;
+            height: 30px;
+            transform: translate(-50%, 100%);
+            background: transparent;
+        }
+
+        &:hover {
+
+            // &::after {
+            //     display: block;
+            // }
+        }
+        
+        & svg {
+            width: 9px;
+            height: 5px;
+            stroke: $firm-dark;
+            margin-left: 7px;
+            transition: $tr;
+        }
+    }
+}
+
+// Правый блок
+.header__tools {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header__phone {
+    font-size: 15px;
+    text-align: right;
+}
+
+// Смена языка
+.lang {
+    margin-left: 32px;
+}
+
+.lang__btn {
+    display: flex;
+    align-items: center;
+}
+
+.lang__selected {
+    font-size: 15px;
+    color: $text-gray-light;
+}
+
+.lang__chevron {
+    width: 8px;
+    height: 6px;
+    margin-left: 8px;
+
+    & svg {
+        stroke: $text-gray-light;
+    }
+}
+
+.lang__dropdown {
+
+}
+
+// Кнопка "Отправить зявку"
+.header__btn-applic {
+    height: 100%;
+    border-radius: 0;
+    margin-left: 32px;
+}

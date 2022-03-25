@@ -1,0 +1,185 @@
+.main {
+    position: relative;
+    background: $frame-dark;
+}
+
+.main_static {
+    position: relative;
+    background: center/cover no-repeat;
+
+    & .main__wrap {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.main__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: calc(100vh - 73px);
+}
+
+// Слайдер
+.main__slider {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+// Номер активного слайда
+.ms-num {
+    @include overlay;
+    z-index: 1;
+    pointer-events: none;
+
+    & .container {
+        height: 100%;
+    }
+}
+
+.ms-num__wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ms-num__elem {
+    position: absolute;
+    bottom: 24px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $outline-light;
+    border-radius: $radius-round;
+    // pointer-events: all;    
+}
+
+.ms-num__digit {
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.ms-num__outline {
+    @include overlay();
+    transform: scale(1.04);
+}
+
+#progress-slider {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    
+    &._active {
+        animation: animationActive 2s linear forwards;
+    }
+
+    &._reset {
+        animation-direction: reverse;
+        animation-duration: .5s !important;
+        // animation: animationReset .5s linear forwards !important;
+    }
+}
+
+  
+@keyframes animationActive {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+  
+@keyframes animationReset {
+    to {
+        stroke-dashoffset: 150;
+    }
+}
+
+// Блок с текстом
+// mc - main content
+.mc-block {
+
+}
+
+.mc-block__wrap {
+    display: flex;
+    flex-direction: column;
+    color: $text-light;
+}
+
+.mc-block__title {
+    font-size: 68px;
+    font-weight: 300;
+}
+
+.mc-block__text {
+    font-size: 21px;
+    font-weight: 300;
+    margin-top: 24px;
+}
+
+.mc-block__tools {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 48px;
+}
+
+.mc-block__more {
+
+}
+
+.main__tools {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 48px;
+}
+
+.main__slider-buttons {
+    width: 210px;
+}
+
+// Стрелки слайдера
+.main__slider-arrows {
+    display: flex;
+    align-items: center;
+    margin-left: 32px;
+}
+
+.main__slider-arrow {
+    width: 63px;
+    height: 24px;
+
+    & svg {
+        stroke: $text-light;
+    }
+
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
+}
+
+.main__slider-arrow_prev {
+
+}
+
+.main__slider-arrow_next {
+
+}
+
+// Фон
+.main__bg {
+    @include overlay;
+
+}
+
+.main__bg-slide {
+
+    & img {
+        object-fit: cover;
+    }
+}

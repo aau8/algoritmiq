@@ -1,5 +1,17 @@
+// ================ Container Start ================
+$container: 1028px;
+$container-l: 1135px;
+$container-main: 1160px;
+$container-gap: 24px;
+$container-gap-mobile: 16px;
+// ================ Container End ================
+
+@function mwContainer($cw) {
+    @return $cw + ($container-gap * 2);
+}
+
 .container {
-    max-width: $container + ($container-gap * 2);
+    max-width: mwContainer($container);
     width: 100%;
     padding-left: $container-gap;
     padding-right: $container-gap;
@@ -8,6 +20,14 @@
     @media (max-width: $mobile-l) {
         padding-left: $container-gap-mobile;
         padding-right: $container-gap-mobile;
+    }
+
+    &_l {
+        max-width: mwContainer($container-l);
+    }
+
+    &_main {
+        max-width: mwContainer($container-main);
     }
 }
 

@@ -1,0 +1,10 @@
+.s-services__body {
+    margin-top: 64px;
+}
+
+.s-services__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+

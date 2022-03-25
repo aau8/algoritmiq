@@ -15,12 +15,12 @@ html {
 
 body {
     font-family: $ff-main;
-    color: $text-primary;
+    color: $text-gray-dark;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
-    line-height: 1.2;
-
+    line-height: 1;
+    
     &._lock {
         overflow: hidden;
     }
@@ -33,7 +33,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
-    height: 10000px;
 
     & > .content {
         flex: 1 0 auto;
@@ -46,21 +45,27 @@ body {
 @import './_animation';
 
 // Компоненты
-@import './components/_buttons';
 // @import './components/_forms';
 // @import './components/_modal';
+
+// Елементы
+@import './elements/button';
+@import './elements/func-icon';
  
 // Текстовые компоненты
 @import './components/text/_text';
 @import './components/text/_titles';
+@import './components/menu';
+@import './components/popup-offer';
+@import './components/section';
+@import './components/sub-menu';
+
+@import './components/cards/service-card';
 
 // Секции
 @import './sections/_header';
 @import './sections/_main';
+@import './sections/s-services';
+@import './sections/ask-question';
+@import './sections/s-steps';
 @import './sections/_footer';
-
-
-
-.block {
-    background: green;
-}

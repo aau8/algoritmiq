@@ -1,0 +1,49 @@
+.service-card {
+    border-radius: $radius-card-s;
+    background: $frame-light;
+    transition: $tr;
+    cursor: pointer;
+
+    @media (min-width: $min-hover) {
+        
+        &:hover {
+            background: $firm-accent;
+
+            & .service-card__title,
+            & .service-card__text {
+                color: $text-light;
+            }
+        }
+    }
+
+    &:active {
+        background: $btn-hover;
+
+        & .service-card__title,
+        & .service-card__text {
+            color: $text-light;
+        }
+    }
+}
+
+.service-card__wrap {
+    padding: 16px;
+}
+
+.service-card__content {
+    margin-top: 37px;
+}
+
+.service-card__title {
+    font-size: 18px;
+    font-weight: 400;
+    color: $frame-dark;
+    transition: $tr;
+}
+
+.service-card__text {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 8px;
+    transition: $tr;
+}

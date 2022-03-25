@@ -9,4 +9,13 @@
     }
 }
 
-// @include font('Albertus', medium, 500, '../fonts/albertus-medium.woff2');
+@include font('Roboto', normal, 300, '../fonts/Roboto/Roboto-Light.woff2');
+@include font('Roboto', normal, 400, '../fonts/Roboto/Roboto-Regular.woff2');
+@include font('Roboto', normal, 500, '../fonts/Roboto/Roboto-Medium.woff2');
+@include font('Roboto', normal, 700, '../fonts/Roboto/Roboto-Bold.woff2');
+
+@include font('Inter', normal, 400, '../fonts/Inter/Inter-Regular.woff2');
+@include font('Inter', normal, 500, '../fonts/Inter/Inter-Medium.woff2');
+@include font('Inter', normal, 600, '../fonts/Inter/Inter-SemiBold.woff2');
+
+// 'Roboto' - semibold, extralight - этих шрифтов нет

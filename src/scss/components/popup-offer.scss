@@ -1,0 +1,65 @@
+// Предложение пройти опрос
+.popup-offer {
+    position: fixed;
+    z-index: 2;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 100%);
+    max-width: 822px;
+    width: 100%;
+    background: $frame-dark;
+    border-radius: $radius-round;
+    transition: $tr;
+    pointer-events: none;
+    
+    &._show {
+        bottom: 32px;
+        transform: translate(-50%, 0);
+        pointer-events: all;
+
+        @media (max-width: 560px) {
+            bottom: 16px;
+        }
+    }
+}
+
+.po__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 16px 24px;
+    
+    @media (max-width: 560px) {
+        flex-direction: column;
+        padding: 16px;
+    }
+}
+
+.po__text {
+    color: $text-light;
+}
+
+.po__buttons {
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+    
+    @media (max-width: 560px) {
+        margin: 16px 0 0 0;
+    }
+
+    & > * {
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+    }
+}
+
+.po__hide {
+
+}
+
+.po__start {
+
+}

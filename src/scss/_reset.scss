@@ -92,6 +92,11 @@ img, svg {
     vertical-align: top;
 }
 
+svg {
+    fill: transparent;
+    stroke: transparent;
+}
+
 h1,
 h2,
 h3,
