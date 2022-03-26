@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 // console.log(ssIconElems)
 // for (let i = 0; i < ssIconElems.length; i++) {
 //     const ssIcon = ssIconElems[i];
-    
+
 // }
 
 
