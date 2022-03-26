@@ -9,7 +9,7 @@
     width: 100%;
     background: $frame-dark;
     border-radius: $radius-round;
-    transition: $tr;
+    transition: transform ease-in-out .5s, bottom ease-in-out .5s;
     pointer-events: none;
     
     &._show {

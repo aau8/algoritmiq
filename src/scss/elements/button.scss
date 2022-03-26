@@ -74,3 +74,20 @@ $link-active: findLightColor($link-hover, 65%);
         color: $link-active;
     }
 }
+
+// Кнопка "Наверх"
+.back-to-top {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $btn-default;
+    border-radius: $radius-round;
+    padding: 0;
+
+    & svg {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,13 +1,15 @@
-
-const ssLineElems = document.querySelectorAll('.s-steps__line')
+const ssLineDefault = document.querySelector('.s-steps__line_default')
+const ssLineActive = document.querySelector('.s-steps__line_active')
 const lineContainer = document.querySelector('.s-steps__column-center')
 const lineContainerHeight = lineContainer.clientHeight
 
-for (let i = 0; i < ssLineElems.length; i++) {
-    const line = ssLineElems[i];
+heightToLine(ssLineDefault, lineContainerHeight)
+// heightToLine(ssLineActive, lineContainerHeight)
+
+export function heightToLine(line, height) {
     const lineSVG = line.querySelector('svg')
     const lineSVGLine = lineSVG.querySelector('line')
-
-    lineSVG.setAttribute('viewBox', `0 0 2 ${lineContainerHeight}`)
-    lineSVGLine.setAttribute('y2', lineContainerHeight)
+    
+    lineSVG.setAttribute('viewBox', `0 0 2 ${height}`)
+    lineSVGLine.setAttribute('y2', height)
 }

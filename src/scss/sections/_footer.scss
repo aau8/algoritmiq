@@ -18,6 +18,10 @@
     }
 }
 
+.footer-column_back-to-top {
+    margin: 0 0 0 auto;
+}
+
 .footer-column__title {
     font-size: 16px;
     color: $text-light;
@@ -29,7 +33,7 @@
     & li {
 
         &:not(:last-child) {
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         & a {

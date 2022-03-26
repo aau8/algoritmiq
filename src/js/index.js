@@ -1,6 +1,7 @@
-import 'bulma/sass/grid/_all.sass' // Сеточная система бибилотеки Bulma
+// import 'bulma/sass/grid/_all.sass' // Сеточная система бибилотеки Bulma
 import '../scss/style.scss'
 import './render.js' 
+import './animation.js'
 import { find, findAll, removeAll, bodyLock } from "./util/functions.js"
 import './sliders.js'
 // import './modal.js'
@@ -32,6 +33,20 @@ btnHide.addEventListener('click', e => {
 btnStart.addEventListener('click', e => {
     console.log('Start quiz')
 })
+
+setTimeout(e => {
+    popupOffer.classList.add('_show')
+}, 2000)
+
+// Стрелка "Наверх"
+document.querySelector('.back-to-top').addEventListener('click', e => {
+    window.scrollBy(0, -window.scrollY)
+})
+
+// Переход к началу страницы
+arrowUp.addEventListener('click', () => {
+  window.scrollBy(0,-window.pageYOffset);
+});
 
 // Функции для модальных окон
 modal()
