@@ -11,7 +11,7 @@ gsap.utils.toArray('.ss-card').forEach(elem => {
 
   ScrollTrigger.create({
       trigger: elem,
-      start: 'center center',
+      start: window.innerWidth <= 768 ? 'center 60%' : 'center center',
       onEnter: () => {
         elem.classList.add('_active')
 
