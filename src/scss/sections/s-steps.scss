@@ -1,15 +1,43 @@
 .s-steps {
     margin-bottom: 287px;
+
+    @media (max-width: $tablet) {
+        margin-bottom: 220px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-bottom: 150px;
+    }
 }
 
 .s-steps-header__subtitle {
     color: $firm-accent;
     margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 70px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 50px;
+    }
 }
 
 .s-steps__body {
     display: flex;
     margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 70px;
+
+        & > .s-steps__column:not(.s-steps__column-center) {
+            display: none;
+        }
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 100px;
+    }
 }
 
 .s-steps__column {
@@ -20,6 +48,10 @@
     position: relative;
     max-width: 96px;
     width: 100%;
+
+    @media (max-width: $mobile-m) {
+        max-width: 70px;
+    }
 }
 
 .s-steps__list {
@@ -31,6 +63,10 @@
         
         &:not(:last-child) {
             margin-bottom: 300px;
+
+            @media (max-width: $tablet) {
+                margin-bottom: 200px;
+            }
         }
     }
 }
@@ -98,6 +134,18 @@ $ssCardTransition: .5s;
         & .ss-card__content {
             right: -60px;
             transform: translate(100%, 0);
+
+            @media (max-width: $laptop) {
+                right: -40px;
+            }
+
+            @media (max-width: 500px) {
+                right: -30px;
+            }
+
+            @media (max-width: $mobile-l) {
+                right: -20px;
+            }
         }
 
         &.ss-card_center {
@@ -123,6 +171,24 @@ $ssCardTransition: .5s;
         & .ss-card__content {
             left: -60px;
             transform: translate(-100%, 0);
+
+            @media (max-width: $laptop) {
+                left: -40px;
+            }
+
+            @media (max-width: $tablet) {
+                left: auto;
+                right: -40px;
+                transform: translate(100%, 0);
+            }
+
+            @media (max-width: 500px) {
+                right: -30px;
+            }
+
+            @media (max-width: $mobile-l) {
+                right: -20px;
+            }
         }
 
         &.ss-card_center {
@@ -130,12 +196,20 @@ $ssCardTransition: .5s;
             & .ss-card__content {
                 top: 50%;
                 transform: translate(-100%, -50%);
+
+                @media (max-width: $tablet) {
+                    transform: translate(100%, -50%);
+                }
             }
         }
 
         & .ss-card__title,
         & .ss-card__text {
             transform: translate(-$ssCardTranslateX,0);
+
+            @media (max-width: $tablet) {
+                transform: translate($ssCardTranslateX,0);
+            }
         }
     }
 
@@ -159,6 +233,11 @@ $ssCardTransition: .5s;
 
         & .ss-card__content {
             top: 0;
+
+            @media (max-width: $mobile-l) {
+                top: 50%;
+                transform: translate(100%, -50%);
+            }
         }
     }
 }
@@ -193,6 +272,28 @@ $ssCardTransition: .5s;
     max-width: 400px;
     // width: 400px;
     width: max-content;
+
+    @media (max-width: 1100px) {
+        max-width: 340px;
+    }
+
+    @media (max-width: 900px) {
+        max-width: 300px;
+    }
+
+    @media (max-width: 830px) {
+        max-width: 280px;
+    }
+
+    @media (max-width: $tablet) {
+        max-width: none;
+        width: calc(100vw - 168px);
+    }
+
+    @media (max-width: $mobile-l) {
+        max-width: none;
+        width: calc(100vw - 138px);
+    }
 }
 
 .ss-card__title {
@@ -203,6 +304,18 @@ $ssCardTransition: .5s;
     color: $firm-dark;
     opacity: 0; 
     transition: $ssCardTransition;
+
+    @media (max-width: $laptop) {
+        font-size: 32px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 28px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
 }
 
 .ss-card__text {
@@ -211,4 +324,16 @@ $ssCardTransition: .5s;
     margin-top: 24px;
     opacity: 0;
     transition: $ssCardTransition;
+
+    @media (max-width: $laptop) {
+        margin-top: 20px;
+    }
+
+    @media (max-width: 500px) {
+        margin-top: 12px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
 }

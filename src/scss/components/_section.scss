@@ -39,7 +39,7 @@
     }
 
     @media (max-width: $mobile-l) {
-        font-size: 30px;
+        font-size: 24px;
     }
 
     @media (max-width: $mobile-m) {
@@ -59,6 +59,11 @@
     font-size: 18px;
     font-weight: 300;
     margin-top: 24px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+        margin-top: 16px;
+    }
 }
 
 .section-button {

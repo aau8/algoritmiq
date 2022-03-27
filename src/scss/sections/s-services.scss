@@ -1,11 +1,41 @@
 .s-services__body {
     margin-top: 64px;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
 }
 
 .s-services__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 207px;
+    grid-auto-rows: minmax(207px, min-content);
     gap: 24px;
+
+    @media (max-width: $laptop) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+    
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-auto-rows: min-content;
+        gap: 12px;
+    }
+
+    @media (max-width: $mobile-m) {
+        // gap: 8px;
+    }
 }
 

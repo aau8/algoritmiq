@@ -35,7 +35,7 @@ btnStart.addEventListener('click', e => {
 })
 
 setTimeout(e => {
-    popupOffer.classList.add('_show')
+    // popupOffer.classList.add('_show')
 }, 2000)
 
 // Стрелка "Наверх"

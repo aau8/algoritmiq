@@ -28,6 +28,26 @@
             width: 32px;
             height: 32px;
         }
+
+        @media (max-width: $mobile-l) {
+            width: 60px;
+            height: 60px;
+
+            & svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: $mobile-m) {
+            width: 50px;
+            height: 50px;
+
+            & svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
     }
 
     &_l {
@@ -37,6 +57,26 @@
         & svg {
             width: 32px;
             height: 32px;
+        }
+
+        @media (max-width: $laptop) {
+            width: 80px;
+            height: 80px;
+
+            & svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: $mobile-l) {
+            width: 70px;
+            height: 70px;
+
+            & svg {
+                width: 26px;
+                height: 26px;
+            }
         }
     }
 
