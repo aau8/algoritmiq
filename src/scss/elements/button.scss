@@ -40,6 +40,10 @@ $link-active: findLightColor($link-hover, 65%);
         background-color: $btn-focus;
         border-color: transparent;
     }
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
 }
 
 .btn_fill {
