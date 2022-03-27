@@ -113,12 +113,20 @@
 .mc-block__title {
     font-size: 68px;
     font-weight: 300;
+
+    @media (max-width: $tablet) {
+        font-size: 50px;
+    }
 }
 
 .mc-block__text {
     font-size: 21px;
     font-weight: 300;
     margin-top: 24px;
+
+    @media (max-width: $tablet) {
+        font-size: 19px;
+    }
 }
 
 .mc-block__tools {

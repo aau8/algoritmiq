@@ -1,72 +1,47 @@
 import { gsap } from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger.js'
-// import {DrawSVGPlugin} from 'gsap/src/DrawSVGPlugin' 
-
-import { heightToLine } from './render.js'
 
 gsap.registerPlugin(ScrollTrigger)
-// gsap.registerPlugin(DrawSVGPlugin)
 
-// const controller = new ScrollMagic.Controller()
+// Присвоение класса _active карточкам в разделе "Этапы" на главной странице
+// и появление заголовка и текста карточек
+gsap.utils.toArray('.ss-card').forEach(elem => {
+  const title = elem.querySelector('.ss-card__title')
+  const text = elem.querySelector('.ss-card__text')
 
-// const ssIconElems = document.querySelectorAll('.ss-card__icon svg')
-// console.log(ssIconElems)
-// for (let i = 0; i < ssIconElems.length; i++) {
-//     const ssIcon = ssIconElems[i];
+  ScrollTrigger.create({
+      trigger: elem,
+      start: 'center center',
+      onEnter: () => {
+        elem.classList.add('_active')
 
-// }
+        title.style.transform = 'translate(0, 0)'
+        title.style.opacity = 1
+        setTimeout(e => {
+          text.style.transform = 'translate(0, 0)'
+          text.style.opacity = 1
+        }, 100)
+      },
+      onLeaveBack: () => {
+        elem.classList.remove('_active')
 
-
-// gsap.to(ssIcon, {
-//     scrollTrigger: {
-//         // trigger: '.ss-card__icon',
-//         start: 'center center',
-//         pin: true,
-//         // scrub: true,
-//         markers: true,
-//     },
-//     fill: '#328AE6',
-// })
-
-gsap.utils.toArray('.ss-card__icon .func-icon').forEach(elem => {
-    ScrollTrigger.create({
-        trigger: elem,
-        start: 'center center',
-        // markers: true,
-        // onToggle: self => console.log("toggled, isActive:"),
-        // fill: '#328AE6',
-        toggleClass: 'func-icon_blue',
-    })
+        text.style = ''
+        setTimeout(e => {
+          title.style = ''
+        }, 100) 
+      }
+  })
 })
 
-
+// Анимация голубой линии
 const lineContainer = document.querySelector('.s-steps__column-center')
 const lineContainerHeight = lineContainer.clientHeight
 
-// gsap.to('.s-steps__line_active', {
-//     scrollTrigger: {
-//         trigger: '.s-steps__line_active',
-//         start: 'top center',
-//         end: 'bottom center',
-//         scrub: true,
-//         markers: true
-//     },
-// })
-// .from(".s-steps__line_active svg line", {drawSVG: 0}, 0)
-
-const main = gsap.timeline({defaults: {duration: 1},
+gsap.timeline({defaults: {duration: 1, ease: 'none'},
     scrollTrigger: {
-      trigger: ".s-steps__line_active svg",
+      trigger: ".s-steps__list",
       scrub: true,
       start: "top center",
-      end: "bottom center"
+      end: "bottom center",
     }})
-  .from(".s-steps__line_active svg line", {drawSVG: 0}, 0)
-
-
-// ScrollTrigger.create({
-//     trigger: '.s-steps__line_active',
-//     start: 'top center',
-//     scrub: true,
-//     markers: true
-// })
+  .fromTo(".s-steps__line_active", {height: 0}, {height: lineContainerHeight})

@@ -43,11 +43,6 @@ document.querySelector('.back-to-top').addEventListener('click', e => {
     window.scrollBy(0, -window.scrollY)
 })
 
-// Переход к началу страницы
-arrowUp.addEventListener('click', () => {
-  window.scrollBy(0,-window.pageYOffset);
-});
-
 // Функции для модальных окон
 modal()
 function modal() {
@@ -193,3 +188,7 @@ function modal() {
 // clBtn.addEventListener('click', e => {
 //     clDropdown.classList.toggle('_show')
 // })
+
+
+
+
