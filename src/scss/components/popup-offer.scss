@@ -51,6 +51,7 @@
 
 .po__text {
     color: $text-light;
+    line-height: 1.2;
 
     @media (max-width: $tablet) {
         font-size: 14px;

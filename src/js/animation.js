@@ -41,7 +41,7 @@ gsap.timeline({defaults: {duration: 1, ease: 'none'},
     scrollTrigger: {
       trigger: ".s-steps__list",
       scrub: true,
-      start: "top center",
-      end: "bottom center",
+      start: window.innerWidth <= 768 ? 'top 60%' : 'top center',
+      end: window.innerWidth <= 768 ? 'bottom 60%' : 'bottom center', 
     }})
   .fromTo(".s-steps__line_active", {height: 0}, {height: lineContainerHeight})

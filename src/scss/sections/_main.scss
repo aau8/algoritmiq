@@ -149,6 +149,10 @@
     display: flex;
     align-items: center;
     margin-top: 48px;
+
+    @media (max-width: $mobile-l) {
+        position: initial;
+    }
 }
 
 .main__slider-buttons {
@@ -160,11 +164,29 @@
     display: flex;
     align-items: center;
     margin-left: 32px;
+
+    @media (max-width: $mobile-l) {
+        position: absolute;
+        bottom: 35px;
+        left: 16px;
+        margin: 0;
+    }
 }
 
 .main__slider-arrow {
+    position: relative;
     width: 63px;
     height: 24px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0,-50%);
+        width: 100%;
+        height: calc(100% + 12px);
+    }
 
     & svg {
         stroke: $text-light;
