@@ -1,6 +1,10 @@
 .footer {
     background: $frame-dark;
     padding-top: 72px;
+
+    @media (max-width: $tablet) {
+        padding-top: 50px;
+    }
 }
 
 .footer__wrap {
@@ -8,18 +12,43 @@
 }
 
 .footer__body {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    padding-right: 48px;
+
+    @media (max-width: $tablet) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px 24px;
+        padding: 0 0 80px 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-template-columns: 1fr;
+        gap: 32px 0;
+        padding-bottom: 60px;
+    }
 }
 
 .footer-column {
+    margin-bottom: 48px;
 
     &:not(:last-child) {
         margin-right: 72px;
+
+        @media (max-width: $tablet) {
+            margin: 0;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        margin: 0;
     }
 }
 
 .footer-column_back-to-top {
-    margin: 0 0 0 auto;
+    // margin: 0 0 0 auto;
 }
 
 .footer-column__title {
@@ -34,10 +63,15 @@
 
         &:not(:last-child) {
             margin-bottom: 24px;
+
+            @media (max-width: $mobile-l) {
+                margin-bottom: 16px;
+            }
         }
 
         & a {
             color: $text-light-second;
+            line-height: 1.2;
 
             @media (min-width: $min-hover) {
                 
@@ -84,21 +118,53 @@
     justify-content: space-between;
     border-top: 1px solid rgba(255,255,255,.1);
     padding: 32px 0;
-    margin-top: 96px;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 16px;
+    }
 }
 
 .footer__docs {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
+    @media (max-width: $tablet) {
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
     & li {
+        margin-bottom: 8px;
+
+        @media (max-width: $mobile-l) {
+            margin-bottom: 12px;
+        }
 
         &:not(:last-child) {
             margin-right: 24px;
+
+            @media (max-width: $mobile-l) {
+                margin-right: 0;
+            }
         }
 
         & a {
             color: $text-light-second;
+
+            @media (max-width: $mobile-l) {
+                font-size: 14px;
+            }
 
             @media (min-width: $min-hover) {
                 
@@ -112,4 +178,15 @@
 
 .footer__copyright {
     color: $text-light-second;
+    text-align: right;
+    white-space: nowrap;
+    margin: 0 0 8px 16px;
+
+    @media (max-width: $tablet) {
+        margin: 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
 }

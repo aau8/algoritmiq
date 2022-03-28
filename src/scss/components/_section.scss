@@ -68,4 +68,8 @@
 
 .section-button {
     margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
 }

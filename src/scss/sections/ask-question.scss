@@ -2,5 +2,9 @@
     background: $frame-light;
     padding: 96px 0;
     margin-bottom: 0;
+
+    @media (max-width: $tablet) {
+        padding: 60px 0;
+    }
 }
 
