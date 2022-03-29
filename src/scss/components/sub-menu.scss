@@ -6,17 +6,33 @@
     left: 0;
     width: 100%;
     background: $frame-light;
-    padding: 48px 0;
     transition: $tr;
+    
+    @media (max-width: $laptop) {
+        position: initial;
+        bottom: auto;
+        left: auto;
+        max-height: 0;
+        overflow: hidden;
+    }
 }
 
 .sub-menu__wrap {
+    padding: 48px 0;
     
+
+    @media (max-width: $laptop) {
+        padding: 24px 0;
+    }
 }
 
 .sub-menu__title {
     font-size: 21px;
     color: $firm-dark;
+
+    @media (max-width: $laptop) {
+        display: none;
+    }
 }
 
 .sub-menu__list {
@@ -29,7 +45,18 @@
 
         &:not(:last-child) {
             margin-right: 96px;
+
+            @media (max-width: $laptop) {
+                margin: 0 0 24px 0;
+            }
         }
+    }
+
+    @media (max-width: $laptop) {
+        flex-direction: column;
+        border-top: none;
+        padding: 0;
+        margin: 0;
     }
 }
 
@@ -46,12 +73,20 @@
             color: $firm-accent;
         }
     }
+
+    @media (max-width: $laptop) {
+        max-width: none;
+    }
 }
 
 .sb-card__title {
     font-size: 21px;
     color: $firm-dark;
     transition: $tr;
+
+    @media (max-width: $laptop) {
+        font-size: 16px;
+    }
 }
 
 .sb-card__text {
@@ -59,4 +94,8 @@
     color: $text-gray-light;
     line-height: 1.4;
     margin-top: 16px;
+
+    @media (max-width: $laptop) {
+        margin-top: 9px;
+    }
 }

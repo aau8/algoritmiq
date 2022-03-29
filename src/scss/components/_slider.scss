@@ -1,13 +1,6 @@
-// .hide-except-first-slide {
+.swiper-slide {
 
-//     & .swiper-wrapper {
-
-//         & > * {
-
-//             &:not(:first-child) {
-//                 opacity: 0;
-//                 visibility: hidden;
-//             }
-//         }
-//     }
-// }
+    &:not(:first-child) {
+        opacity: 0;
+    }
+}

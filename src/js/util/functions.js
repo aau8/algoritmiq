@@ -38,9 +38,32 @@ export function bodyLock(con) {
 	}
 }
 
+// Получаем все соседние элементы
+export function getSiblings(elem) {
+  var siblings = [];
+  var sibling = elem;
+  while (sibling.previousSibling) {
+      sibling = sibling.previousSibling;
+      sibling.nodeType == 1 && siblings.push(sibling);
+  }
+
+  sibling = elem;
+  while (sibling.nextSibling) {
+      sibling = sibling.nextSibling;
+      sibling.nodeType == 1 && siblings.push(sibling);
+  }
+
+  return siblings;
+}
+
+// export function getSiblings(element) {
+//   return element.parentElement.children
+// }
+
 export default {
   find,
   findAll,
   removeAll,
-  bodyLock
+  bodyLock,
+  getSiblings
 }

@@ -148,14 +148,26 @@
 				<a href="#" class="logo logo_header"><img src="./img/logo.png" alt=""></a>
 				<div class="menu">
 					<div class="menu__wrap">
+						<div class="menu__header">
+						<button class="btn btn_fill header__btn-applic menu__btn-applic">Оставить заявку</button>
+						<!-- <h2 class="menu__title">Меню</h2> -->
+							<button class="menu-close" data-menu-close>
+								<span></span>
+								<span></span>
+							</button>
+						</div>
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="link menu__link ">О нас</a></li>
-							<li class="menu__item menu__item-has-child">
-								<a href="#" class="link menu__link ">
-									<span>Функции</span>
-									<svg><use href='./img/sprite.svg#chevron'></use></svg>
-								</a>
-								<div class="sub-menu">
+							<li class="menu__item">
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">О нас</a>
+								</div>
+							</li>
+							<li class="menu__item menu__item-has-child" data-acc>
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">Функции</a>
+									<button class="menu__link-chevron" data-acc-header><svg><use href='./img/sprite.svg#chevron'></use></svg></button>
+								</div>
+								<div class="sub-menu" data-acc-body>
 									<div class="container container_main">
 										<div class="sub-menu__wrap">
 											<h2 class="sub-menu__title">Функции Algoritmiq</h2>
@@ -177,12 +189,12 @@
 									</div>
 								</div>
 							</li>
-							<li class="menu__item menu__item-has-child">
-								<a href="#" class="link menu__link ">
-									<span>Технологии</span>
-									<svg><use href='./img/sprite.svg#chevron'></use></svg>
-								</a>
-								<div class="sub-menu">
+							<li class="menu__item menu__item-has-child" data-acc>
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">Технологии</a>
+									<button class="menu__link-chevron" data-acc-header><svg><use href='./img/sprite.svg#chevron'></use></svg></button>
+								</div>
+								<div class="sub-menu" data-acc-body>
 									<div class="container container_main">
 										<div class="sub-menu__wrap">
 											<h2 class="sub-menu__title">Технологии Algoritmiq</h2>
@@ -204,14 +216,26 @@
 									</div>
 								</div>
 							</li>
-							<li class="menu__item"><a href="#" class="link menu__link ">Профессионалам</a></li>
-							<li class="menu__item"><a href="#" class="link menu__link ">Расчет стоимости</a></li>
+							<li class="menu__item">
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">Профессионалам</a>
+								</div>
+							</li>
+							<li class="menu__item">
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">Расчет стоимости</a>
+								</div>
+							</li>
 						</ul>
+						<div class="menu__footer">
+							<a href="+79167314110" class="link menu__phone">+7 (916) 731-41-10</a>
+							<a href="#en" class="link menu__lang">En</a>
+						</div>
 					</div>
 				</div>
 				<div class="header__tools">
 					<a href="tel:79111" class="link header__phone">+7 (916) 731-41-10</a>
-					<div class="lang">
+					<div class="lang header__lang">
 						<a href="#en" class="lang__btn">
 							<span class="lang__selected">En</span>
 							<!-- <span class="lang__chevron"><svg><use href='./img/sprite.svg#chevron'></use></svg></span> -->
@@ -221,6 +245,12 @@
 						</div>
 					</div>
 					<button class="btn btn_fill header__btn-applic">Оставить заявку</button>
+					<button class="burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				
 				</div>
 			</div>
 		</header>

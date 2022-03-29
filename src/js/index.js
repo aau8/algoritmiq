@@ -2,7 +2,7 @@
 import '../scss/style.scss'
 import './render.js' 
 import './animation.js'
-import { find, findAll, removeAll, bodyLock } from "./util/functions.js"
+import { find, findAll, removeAll, bodyLock, getSiblings } from "./util/functions.js"
 import './sliders.js'
 // import './modal.js'
 
@@ -13,13 +13,30 @@ import '../img/main/main.png'
 (function menu() {
 	const burger = find('.burger')
 	const menu = find('.menu');
+    const closeElems = findAll('[data-menu-close]')
+
+    for (let i = 0; i < closeElems.length; i++) {
+        const close = closeElems[i];
+        
+        close.addEventListener('click', e => {
+            menu.classList.remove('_show')
+            bodyLock(false)
+        })
+    }
 
 	burger.addEventListener('click', (e) => {
-		burger.classList.toggle('burger_close')
 		menu.classList.toggle('_show')
 		bodyLock()
 	})
-})
+
+    window.addEventListener('click', e => {
+
+        if (e.target.classList.contains('menu')) {
+            menu.classList.remove('_show')
+            bodyLock(false)
+        }
+    })
+})()
 
 // Предложение пройти опрос
 const popupOffer = document.getElementById('popup-offer')
@@ -147,48 +164,46 @@ function modal() {
     }
 }
 
-// // Табы в карточках в разделе "Топ игроков"
-// tabs()
-// function tabs() {
-//     const tabElems = findAll('.p-tab')
-
-//     for (let i = 0; i < tabElems.length; i++) {
-//         const tab = tabElems[i];
-//         const btnElems = tab.querySelectorAll('.p-tab__btn')
-//         const tabBodyElems = tab.querySelectorAll('.p-tab__body')
+// Аккордеон
+accFAQ()
+function accFAQ() {
+  const hiddenSiblingAcc = true // Скрывать соседние аккордеоны. false если не нужно.
+  const accHeaderElems = document.querySelectorAll('[data-acc-header]')
+  
+  for (let i = 0; i < accHeaderElems.length; i++) {
+    const accHeader = accHeaderElems[i]
     
-//         for (let i = 0; i < btnElems.length; i++) {
-//             const btn = btnElems[i];
-            
-//             btn.addEventListener('click', e => {
-//                 const btnData = btn.dataset.tabCat
-//                 const tabBody = tab.querySelector(`.p-tab__body[data-tab-body=${btnData}]`)
-    
-//                 console.log(btnData)
-//                 removeAll(btnElems, '_active')
-//                 removeAll(tabBodyElems, '_show')
-    
-//                 btn.classList.add('_active')
-//                 tabBody.classList.add('_show')
-//             })
-//         }
-//     }
-// }
+    accHeader.addEventListener('click', e => {
+      const container = (!accHeader.closest('[data-acc]')) ? accHeader.parentElement.parentElement : accHeader.closest('[data-acc]')
+      const parent = (!accHeader.closest('[data-acc]')) ? accHeader.parentElement.parentElement : accHeader.closest('[data-acc]')
+      const accBody = parent.querySelector('[data-acc-body]')
+      parent.classList.toggle('_acc-show') 
+      
+      if (accBody.style.maxHeight) { 
+        accBody.style.maxHeight = null
+        parent.classList.remove('_acc-show') 
+      }
+      else {
+          
+        if (hiddenSiblingAcc) {
+            const adjacentElems = getSiblings(parent)
 
-// // Показывает стрелку "наверх" при скролле, равному высоте экрана
-// find('.btt__button').addEventListener('click', e => {
-//     window.scrollBy(0, -window.scrollY)
-// })
+            for (let i = 0; i < adjacentElems.length; i++) {
+                const elem = adjacentElems[i]
+                
+                if (elem.getAttribute('data-acc') != null) {
+                    const elemBody = elem.querySelector('[data-acc-body]')
+                    
+                    elem.classList.remove('_acc-show')
+                    elemBody.style.maxHeight = null
+                }
+            }
+        }
+        
+        accBody.style.maxHeight = accBody.scrollHeight + 'px'
+        container.style.maxHeight = parseInt(container.scrollHeight) + accBody.scrollHeight + 'px'
+      }
 
-// // Показать плашку смены языка
-// const cl = find('.cl')
-// const clBtn = cl.querySelector('.cl__button')
-// const clDropdown = cl.querySelector('.cl__dropdown')
-
-// clBtn.addEventListener('click', e => {
-//     clDropdown.classList.toggle('_show')
-// })
-
-
-
-
+    })
+  }
+}
