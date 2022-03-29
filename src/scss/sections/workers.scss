@@ -18,6 +18,8 @@
     overflow-x: auto;
     padding-bottom: 20px;
 
+    @include scrollbar(100%, 4px, $text-gray-light)
+
     // @media (max-width: 900px) {
     //     grid-template-columns: 1fr 1fr;
     // }
