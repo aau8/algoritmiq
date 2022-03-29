@@ -8,6 +8,8 @@ import './sliders.js'
 
 // Картинки, которые добавляются фоном
 import '../img/main/main.png'
+import '../img/about/video-thumb.png'
+import '../video/vista.mp4'
 
 // Мобильное меню
 (function menu() {
@@ -206,4 +208,49 @@ function accFAQ() {
 
     })
   }
+}
+
+// Проигрыватель видео
+videoPlayer()
+function videoPlayer() {
+    const videoBlockElems = document.querySelectorAll('[data-video]')
+
+    for (let i = 0; i < videoBlockElems.length; i++) {
+        const videoBlock = videoBlockElems[i];
+        const thumbSrc = videoBlock.dataset.videoThumb
+
+        if (thumbSrc != '') {
+            const img = document.createElement('img')
+            img.classList.add('video__thumb')
+            img.src = thumbSrc
+
+            videoBlock.append(img)
+        }
+        
+        videoBlock.addEventListener('click', e => {
+            const src = videoBlock.dataset.videoSrc
+
+            if (!videoBlock.querySelector('video', 'iframe')) {
+                if (src.match(/http(s)?:/)) {
+                    const iframe = document.createElement('iframe')
+                    iframe.src = src
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')
+                    iframe.setAttribute('allowfullscreen', '')
+
+                    videoBlock.append(iframe)
+                    // videoBlock.insertAdjacentHTML('beforeend', `<iframe src="${src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+                }
+                else {
+                    const video = document.createElement('video')
+                    video.src = src
+                    video.setAttribute('autoplay', '')
+                    video.setAttribute('controls', '')
+    
+                    videoBlock.append(video)
+                }
+    
+                videoBlock.classList.add('video-playing')
+            }
+        }) 
+    }
 }

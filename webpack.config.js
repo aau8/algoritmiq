@@ -35,7 +35,10 @@ export default {
       template: `./src/${page}`, // Где находится файл
       filename: `./${page}`, // Название файла
       inject: page === 'index.html' ? false : 'body', // Все скрипты помещаются внизу body, кроме страницы index.html
-      minify: false,
+      minify: {
+        collapseWhitespace: false, // Убирать пространство между тегами не нужно
+        removeComments: false, // Удалять комментарии не нужно
+      },
     })),
     // Очищаем папку dist
     new CleanWebpackPlugin(),
@@ -72,6 +75,16 @@ export default {
         // Шрифты
         {
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: content => {
+              return content.filename.replace('src/', '')
+            },
+          }
+        },
+        // Видео
+        {
+          test: /\.(mp4|mp3)$/i,
           type: 'asset/resource',
           generator: {
             filename: content => {
