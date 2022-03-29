@@ -21,6 +21,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+
+    @media (max-width: $mobile-l) {
+        max-height: 470px;
+        height: calc(100vh - 60px);
+    }
 }
 
 // Слайдер
@@ -103,7 +108,8 @@
 // Блок с текстом
 // mc - main content
 .mc-block {
-
+    position: relative;
+    z-index: 2;
 }
 
 .mc-block__wrap {
@@ -211,11 +217,14 @@
 .main__bg {
     @include overlay;
 
+    & img {
+        object-fit: cover;
+    }
 }
 
 .main__bg-slide {
 
     & img {
-        object-fit: cover;
+        // object-fit: cover;
     }
 }

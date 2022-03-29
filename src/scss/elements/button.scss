@@ -67,15 +67,27 @@ $link-active: findLightColor($link-hover, 65%);
 // Hover-эффект у ссылки
 .link {
 
+    & svg {
+        transition: $tr;
+    }
+
     &:hover {
         
         @media (min-width: $min-hover) {
             color: $link-hover;
+
+            & svg {
+                fill: $link-hover;
+            }
         }
     }
 
     &:active {
         color: $link-active;
+        
+        & svg {
+            fill: $link-active;
+        }
     }
 }
 

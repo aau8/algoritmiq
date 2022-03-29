@@ -1,0 +1,48 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+
+    & li {
+        font-weight: 300;
+        color: $text-light;
+        white-space: nowrap;
+
+        &:not(:last-child) {
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 2px;
+                height: 2px;
+                background: $text-light;
+                border-radius: $radius-round;
+                margin: 0 8px;
+                vertical-align: middle;
+            }
+        }
+
+        & a {
+            color: $text-light-second;
+
+            &:hover {
+                
+                @media (min-width: $min-hover) {
+                    color: $link-hover;
+                }
+            }
+
+            &:active {
+                color: $link-active;
+            }
+        }
+    }
+}
+
+.breadcrumbs_pos-center {
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+}

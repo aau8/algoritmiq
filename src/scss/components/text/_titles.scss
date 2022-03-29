@@ -1,0 +1,29 @@
+.title_section {
+    font-size: 50px;
+    font-weight: 300;
+    color: $firm-dark;
+    
+    @media (max-width: $tablet) {
+        font-size: 36px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 32px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
+
+    @media (max-width: $mobile-m) {
+        font-size: 26px;
+    }
+
+    @media (max-width: $mobile-s) {
+        font-size: 24px;
+    }
+
+    & span {
+        color: $firm-accent;
+    }
+}

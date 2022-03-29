@@ -60,6 +60,7 @@ body {
 @import './components/section';
 @import './components/sub-menu';
 @import './components/slider';
+@import './components/breadcrumbs';
 
 @import './components/cards/service-card';
 
@@ -70,3 +71,8 @@ body {
 @import './sections/ask-question';
 @import './sections/s-steps';
 @import './sections/_footer';
+
+// Страница "О нас"
+@import './sections/about-content';
+@import './sections/our-mission';
+@import './sections/workers';
