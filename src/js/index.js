@@ -238,7 +238,6 @@ function videoPlayer() {
                     iframe.setAttribute('allowfullscreen', '')
 
                     videoBlock.append(iframe)
-                    // videoBlock.insertAdjacentHTML('beforeend', `<iframe src="${src}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
                 }
                 else {
                     const video = document.createElement('video')
