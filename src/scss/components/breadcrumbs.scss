@@ -7,6 +7,10 @@
         color: $text-light;
         white-space: nowrap;
 
+        @media (max-width: $mobile-l) {
+            font-size: 14px;
+        }
+
         &:not(:last-child) {
 
             &::after {
@@ -18,6 +22,10 @@
                 border-radius: $radius-round;
                 margin: 0 8px;
                 vertical-align: middle;
+
+                @media (max-width: $mobile-l) {
+                    margin: 0 6px;
+                }
             }
         }
 

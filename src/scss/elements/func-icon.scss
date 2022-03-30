@@ -11,6 +11,7 @@
     }
     
     &_s {
+        min-width: 56px;
         width: 56px;
         height: 56px;
         
@@ -21,6 +22,7 @@
     }
     
     &_m {
+        min-width: 72px;
         width: 72px;
         height: 72px;
         
@@ -30,6 +32,7 @@
         }
 
         @media (max-width: $mobile-l) {
+            min-width: 60px;
             width: 60px;
             height: 60px;
 
@@ -40,6 +43,7 @@
         }
 
         @media (max-width: $mobile-m) {
+            min-width: 50px;
             width: 50px;
             height: 50px;
 
@@ -51,6 +55,7 @@
     }
 
     &_l {
+        min-width: 96px;
         width: 96px;
         height: 96px;
         
@@ -60,6 +65,7 @@
         }
 
         @media (max-width: $laptop) {
+            min-width: 80px;
             width: 80px;
             height: 80px;
 
@@ -70,6 +76,7 @@
         }
 
         @media (max-width: $mobile-l) {
+            min-width: 70px;
             width: 70px;
             height: 70px;
 
@@ -92,6 +99,5 @@
         & svg {
             fill: $firm-accent;
         }
-
     }
 }
