@@ -41,10 +41,28 @@
     position: relative;
     border-radius: $radius-card-s;
     overflow: hidden;
-    cursor: none;
 
-    @media (max-width: $tablet) {
-        cursor: auto;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        pointer-events: none;
+        transition: $tr;
+    }
+
+    &:hover {
+        
+        @media (min-width: $min-hover) {
+            
+            &::before {
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(2px);
+            }
+        }
     }
 
     &:active {
@@ -69,6 +87,8 @@
 }
 
 .mf-card__content {
+    position: relative;
+    z-index: 1;
     height: 100%;
     display: flex;
     flex-direction: column;

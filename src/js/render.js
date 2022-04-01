@@ -18,26 +18,26 @@ export function heightToLine(line, height) {
 }
 
 // Кастомный курсор в разделе Другие функции на страницах функций
-if (document.querySelector('.mf-card__custom-cursor') && window.innerWidth > 768) {
-    const cursorCardElems = document.querySelectorAll('.mf-card')
+// if (document.querySelector('.mf-card__custom-cursor') && window.innerWidth > 768) {
+//     const cursorCardElems = document.querySelectorAll('.mf-card')
     
-    for (let i = 0; i < cursorCardElems.length; i++) {
-        const cursorCard = cursorCardElems[i];
-        const cursor = cursorCard.querySelector('.mf-card__custom-cursor')
+//     for (let i = 0; i < cursorCardElems.length; i++) {
+//         const cursorCard = cursorCardElems[i];
+//         const cursor = cursorCard.querySelector('.mf-card__custom-cursor')
         
-        document.addEventListener('mousemove', e => {
-            const x = e.clientX
-            const y = e.clientY
-            const cardX = cursorCard.getBoundingClientRect().x
-            const cardY = cursorCard.getBoundingClientRect().y
+//         document.addEventListener('mousemove', e => {
+//             const x = e.clientX
+//             const y = e.clientY
+//             const cardX = cursorCard.getBoundingClientRect().x
+//             const cardY = cursorCard.getBoundingClientRect().y
 
-            cursor.style.opacity = 1
-            cursor.style.left = x - cardX + 'px'
-            cursor.style.top = y - cardY + 'px'
-        })
+//             cursor.style.opacity = 1
+//             cursor.style.left = x - cardX + 'px'
+//             cursor.style.top = y - cardY + 'px'
+//         })
 
-        document.addEventListener('mouseout', e => {
-            cursor.style.opacity = 0
-        })
-    }
-}
+//         document.addEventListener('mouseout', e => {
+//             cursor.style.opacity = 0
+//         })
+//     }
+// }
