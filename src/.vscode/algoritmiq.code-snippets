@@ -1,0 +1,18 @@
+{
+	"Шапка в секциях": {
+		"scope": "html",
+		"prefix": "_c-section-header",
+		"body": [
+			"<div class=\"section-header\">\n\t<h2 class=\"title_section\">Title</h2>\n\t<p class=\"section-text\">Text</p>\n\t<button class=\"btn btn_fill btn_large section-button\">Button</button>\n</div>"
+		],
+		"description": ".section-header_left - выравнивание по левой стороне\n\r.section-header_left - выравнивание по правой стороне"
+	},
+	"Круглые иконки": {
+		"scope": "html",
+		"prefix": "_c-func-icon",
+		"body": [
+			"<div class=\"func-icon func-icon_$1\">$2</div>"
+		],
+		"description": ".func-icon_s - маленькая иконка (56х56)\n\r.func-icon_m - средняя иконка (72х72)\n\r.func-icon_l - большая иконка (96х96)"
+	}
+}

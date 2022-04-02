@@ -1,0 +1,249 @@
+.tech-descr__body {
+    margin-top: 64px;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
+
+    @media (max-width: $mobile-s) {
+        margin-top: 24px;
+    }
+}
+
+.td__content {
+    display: flex;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+    }
+}
+
+.td-column {
+    max-width: 512px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.8;
+
+    &:not(:last-child) {
+        margin-right: 84px;
+
+        @media (max-width: 900px) {
+            margin-right: 40px;
+        }
+
+        @media (max-width: $tablet) {
+            margin: 0 0 32px 0;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        max-width: none;
+    }
+    
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+    }
+}
+
+// Иллюстрация концепции
+$border-conception: #F5F9FD;
+$border-conception-line: #EDEFF3;
+$shadow-conception: 0px 15px 30px rgba(44, 103, 144, 0.09);
+
+.td-conc {
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    margin: 132px 0;
+
+    @media (max-width: $tablet) {
+        margin: 100px 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin: 80px 0;
+    }
+
+    @media (max-width: $mobile-m) {
+        margin: 70px 0;
+    }
+
+    @media (max-width: $mobile-s) {
+        margin: 60px 0;
+    }
+}
+
+.td-conc__wrap {
+    position: relative;
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.td-conc__circle,
+.td-conc__img {
+    box-shadow: $shadow-conception;
+    border: 1px solid $border-conception;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.td-conc__circle {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%);
+        transform: scale(1.9);
+    }
+}
+
+.td-conc__img {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+
+    & img {
+        width: 48%;
+        height: 48%;
+    }
+}
+
+.td-conc__icon-list {
+    
+}
+
+.td-conc__icon {
+    position: absolute;
+
+    &:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(2) {
+        top: 15%;
+        right: 15%;
+        transform: translate(50%, -50%);
+    }
+
+    &:nth-child(3) {
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+    }
+
+    &:nth-child(4) {
+        bottom: 15%;
+        right: 15%;
+        transform: translate(50%, 50%);
+    }
+
+    &:nth-child(5) {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+
+    &:nth-child(6) {
+        bottom: 15%;
+        left: 15%;
+        transform: translate(-50%, 50%);
+    }
+
+    &:nth-child(7) {
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(8) {
+        top: 15%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.td-conc__bg-circle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border: 1px solid $border-conception-line;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &::before {
+        transform: scale(1.4);
+    }
+
+    &::after {
+        transform: scale(1.9);
+    }
+}
+
+.td-conc__descr {
+    font-size: 38px;
+    font-weight: 300;
+    color: $firm-dark;
+    line-height: 1.4;
+
+    @media (max-width: $tablet) {
+        font-size: 30px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 26px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
+
+    @media (max-width: $mobile-m) {
+        font-size: 22px;
+    }
+
+    @media (max-width: $mobile-s) {
+        font-size: 20px;
+    }
+
+    & a {
+        color: $firm-accent;
+    }
+}

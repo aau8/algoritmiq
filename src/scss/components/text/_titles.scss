@@ -27,3 +27,27 @@
         color: $firm-accent;
     }
 }
+
+.title_section-big {
+    font-size: 68px;
+    
+    @media (max-width: $tablet) {
+        font-size: 50px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 40px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 32px;
+    }
+
+    @media (max-width: $mobile-m) {
+        font-size: 28px;
+    }
+
+    @media (max-width: $mobile-s) {
+        font-size: 26px;
+    }
+}

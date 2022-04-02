@@ -1,0 +1,109 @@
+.s-product {
+    background: $frame-light;
+    padding: 96px 0;
+}
+
+.s-product__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+
+    @media (max-width: $laptop) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+        gap: 16px;
+        margin-top: 48px;
+    }
+    
+    @media (max-width: $mobile-l) {
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+    }
+
+    &_less-column {
+        grid-template-columns: repeat(3, 1fr);
+        
+        @media (max-width: $tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+            // gap: 16px;
+            // margin-top: 48px;
+        }
+    
+        @media (max-width: $mobile-l) {
+            // margin-top: 32px;
+        }
+    }
+}
+
+// Карточка
+.sp-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: $radius-card-s;
+    box-shadow: $shadow-blue;
+    padding: 24px;
+    transition: $tr;
+
+    &:hover {
+        
+        @media (min-width: $min-hover) {
+            
+            & .sp-card__title {
+                color: $firm-accent;
+            }
+        }
+    } 
+
+    &:active {
+        box-shadow: none;
+            
+        & .sp-card__title {
+            color: $firm-accent;
+        }
+    }
+
+    @media (max-width: 500px) {
+        padding: 16px;
+    }
+}
+
+.sp-card__img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    padding: 0 18px;
+    margin: 0 auto;
+
+    & img {
+        margin-bottom: 14%;
+    }
+}
+
+.sp-card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex: 1 1 0;
+}
+
+.sp-card__title {
+    font-size: 21px;
+    font-weight: 400;
+    color: $firm-dark;
+    transition: $tr;
+}
+
+.sp-card__text {
+    font-size: 16px;
+    color: $text-gray-dark;
+    line-height: 1.2;
+    margin-top: 8px;
+}

@@ -31,6 +31,40 @@
 //     // justify-content: center;
 // }
 
+.section-header_product {
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    & .section-text {
+        margin-top: 16px;
+    }
+
+    & .section-header__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    & .section-header__link {
+        text-align: right;
+        margin-left: 12px;
+
+        @media (max-width: $tablet) {
+            margin: 24px 0 0 0;
+        }
+
+        @media (max-width: $mobile-l) {
+            margin: 16px 0 0 0;
+        }
+    }
+}
+
 .section-text {
     max-width: 740px;
     width: 100%;

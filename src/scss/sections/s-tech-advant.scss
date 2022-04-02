@@ -1,0 +1,13 @@
+.sta__body {
+    max-width: 1110px;
+    width: 100%;
+    margin: 96px auto 0;
+
+    @media (max-width: $tablet) {
+        margin-top: 60px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 40px;
+    }
+}

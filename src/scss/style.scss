@@ -63,6 +63,7 @@ body {
 @import './components/breadcrumbs';
 
 @import './components/cards/service-card';
+@import './components/cards/st-card';
 
 // Секции
 @import './sections/_header';
@@ -80,3 +81,7 @@ body {
 @import './sections/a-clients';
 @import './sections/comfort-advantages';
 @import './sections/more-func';
+@import './sections/tech-descr';
+@import './sections/s-product';
+@import './sections/s-tech-gallery';
+@import './sections/s-tech-advant';

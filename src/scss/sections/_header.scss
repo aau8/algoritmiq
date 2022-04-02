@@ -151,7 +151,7 @@
         align-items: center;
         justify-content: space-between;
         background: #fff;
-        border-bottom: 1px solid $outline-dark;
+        border-bottom: 1px solid $border-dark;
         // padding: 24px;
     }
 
@@ -358,7 +358,7 @@
             transform: translate(0, -50%);
             height: 50%;
             width: 1px;
-            background: $outline-dark;
+            background: $border-dark;
         }
     }
 
@@ -381,7 +381,7 @@
         align-items: center;
         justify-content: space-between;
         padding: 16px 24px;
-        border-top: 1px solid $outline-dark;
+        border-top: 1px solid $border-dark;
         margin: auto 0 0 0;
     }
 }
