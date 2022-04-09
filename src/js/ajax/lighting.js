@@ -26,7 +26,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     const sliContent = sli.querySelector('.sli__header')
     const sliSlider = sli.querySelector('.sli__slider .swiper-wrapper')
     const preloader = document.getElementById('sli-preloader')
-    let abortController
+    let abortController = ''
     
     // Начальная загрузка данных
     const currentHashName = window.location.hash
@@ -54,8 +54,9 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     }
     else {
         const activeTab = document.querySelectorAll('.scm__btn')[0]
-    
+
         activeTab.classList.add('_active')
+        requireToDB(activeTab.dataset.manufId)
     }
     
     // Клик по табам
@@ -63,6 +64,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         const tab = tabElems[i];
         
         tab.addEventListener('click', e => {
+            console.log(abortController)
             abortController.abort()
             const manufId = tab.dataset.manufId
     
