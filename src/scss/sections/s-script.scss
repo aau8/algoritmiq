@@ -1,0 +1,220 @@
+.s-script {
+    padding: 96px 0;
+
+    @media (max-width: $tablet) {
+        padding: 70px 0;
+    }
+
+    &_light {
+
+    }
+
+    &_reverse {
+
+        & .ssc__body {
+            grid-template-columns: minmax(200px, 1fr) 1fr;
+        }
+    }
+}
+
+.ssc__body {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 1fr);
+    gap: 150px;
+    // display: flex;
+    // align-items: center;
+    margin-top: 96px;
+    // margin-left: 150px;
+
+    @media (max-width: $laptop) {
+        gap: 80px;
+    }
+
+    @media (max-width: $tablet) {
+        gap: 50px;
+        margin-top: 64px;
+    }
+
+    @media (max-width: 650px) {
+        gap: 32px;
+    }
+
+    @media (max-width: 500px) {
+        gap: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: initial;
+        margin-top: 48px;
+    }
+}
+
+.ssc__screen {
+    position: relative;
+    min-width: 250px;
+    max-width: 340px;
+    width: 100%;
+
+    @media (max-width: 650px) {
+        // min-width: 200px;
+        min-width: 150px;
+    }
+
+    @media (max-width: $mobile-l) {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 200%;
+    }
+}
+
+.ssc__screen-slider {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: scale(0.93);
+}
+
+.ssc__mask-phone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    & svg {
+        fill: $interface-dark;
+    }
+}
+
+.ssc-content {
+    max-width: 460px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // margin-left: 150px;
+
+    // @media (max-width: $laptop) {
+    //     margin-left: 100px;
+    // }
+
+    // @media (max-width: $tablet) {
+    //     margin-left: 80px;
+    // }
+
+    @media (max-width: 500px) {
+        width: 80%;
+    }
+
+    @media (max-width: $mobile-l) {
+        width: 100%;
+        margin-top: 24px;
+    }
+}
+
+.ssc-content__slider-pagin {
+    position: relative;
+    font-size: 180px;
+    font-weight: 300;
+    color: $text-light;
+    line-height: 1.1;
+    margin-bottom: 24px;
+
+    @media (max-width: $laptop) {
+        font-size: 140px;
+        margin-bottom: 16px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 120px;
+    }
+
+    @media (max-width: 650px) {
+        font-size: 100px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 80px;
+    }
+
+    &::after {
+        content: '00';
+        opacity: 0;
+    }
+
+    & .swiper-pagination-bullet {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: $tr;
+
+        &-active {
+            opacity: 1;
+        }
+    }
+}
+
+
+.ssc-content__text {
+    font-size: 21px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: $text-light;
+
+    @media (max-width: $laptop) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 650px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
+}
+
+// Стрелки слайдера
+.ssc-content__arrows {
+    display: flex;
+    align-items: center;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+
+    @media (max-width: 650px) {
+        margin-top: 24px;
+    }
+}
+
+.ssc-content__arrow {
+    width: 63px;
+    height: 24px;
+
+    & svg {
+        stroke: $firm-light;
+    }
+
+    &:not(:last-child) {
+        margin-right: 16px;
+    }
+
+    &.swiper-button-disabled {
+        opacity: .3;
+        pointer-events: none;
+    }
+}

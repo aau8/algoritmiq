@@ -51,10 +51,6 @@
 }
 
 // Иллюстрация концепции
-$border-conception: #F5F9FD;
-$border-conception-line: #EDEFF3;
-$shadow-conception: 0px 15px 30px rgba(44, 103, 144, 0.09);
-
 .td-conc {
     display: flex;
     justify-content: center;
@@ -132,11 +128,21 @@ $shadow-conception: 0px 15px 30px rgba(44, 103, 144, 0.09);
 }
 
 .td-conc__icon-list {
-    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    animation: spinAround 50s linear infinite;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
 }
 
 .td-conc__icon {
     position: absolute;
+
+    & svg {
+        animation: spinAround 50s linear reverse infinite;
+    }
 
     &:nth-child(1) {
         top: 0;

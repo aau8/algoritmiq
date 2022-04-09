@@ -48,13 +48,14 @@
     flex-direction: column;
     background: #fff;
     border-radius: $radius-card-s;
-    box-shadow: $shadow-blue;
     padding: 24px;
     transition: $tr;
 
     &:hover {
         
         @media (min-width: $min-hover) {
+            transform: translate(0, -4px);
+            box-shadow: $shadow-blue;
             
             & .sp-card__title {
                 color: $firm-accent;
@@ -64,10 +65,15 @@
 
     &:active {
         box-shadow: none;
+        transform: translate(0, 4px);
             
         & .sp-card__title {
             color: $firm-accent;
         }
+    }
+
+    @media (max-width: $tablet) {
+        box-shadow: $shadow-blue;
     }
 
     @media (max-width: 500px) {

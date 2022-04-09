@@ -43,6 +43,8 @@ $link-active: findLightColor($link-hover, 65%);
 
     @media (max-width: $tablet) {
         font-size: 14px;
+        padding-left: 18px;
+        padding-right: 18px;
     }
 }
 
@@ -63,6 +65,35 @@ $link-active: findLightColor($link-hover, 65%);
     padding-right: 32px;
 }
 
+.btn_choice {
+    height: 48px;
+    background: #fff;
+    color: $firm-dark;
+    box-shadow: 0px 15px 30px rgba(44, 103, 144, 0.09);
+
+    &:not(.btn_choice._active) {
+
+        &:hover {
+            
+            @media (min-width: $min-hover) {
+                background: #fff;
+                transform: translate(0, -4px) scale(1.03);
+                box-shadow: 0px 19px 35px rgba(44, 103, 144, 0.09);
+            }
+        }
+    
+        &:active {
+            background-color: #fff;
+            transform: scale(.97);
+            box-shadow: 0px 15px 20px rgba(44, 103, 144, 0.09);
+        }
+    
+        &:focus-visible {
+            background-color: #fff;
+            border-color: transparent;
+        }
+    }
+}
 
 // Hover-эффект у ссылки
 .link {

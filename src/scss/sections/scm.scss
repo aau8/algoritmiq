@@ -1,0 +1,33 @@
+.scm {
+    width: 100%;
+    margin-top: 68px;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
+}
+
+.scm__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.scm__btn {
+    margin: 12px 8px;
+
+    @media (max-width: $tablet) {
+        margin: 6px;
+    }
+
+    &._active {
+        background: $firm-accent;
+        color: #fff;
+    }
+}

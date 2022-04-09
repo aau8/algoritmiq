@@ -1,0 +1,28 @@
+.s-text {
+    margin: 128px 0;
+
+    @media (max-width: $laptop) {
+        margin: 100px 0;
+    }
+
+    @media (max-width: $tablet) {
+        margin: 80px 0;
+    }
+}
+
+.s-text__content {
+    max-width: 740px;
+    font-size: 21px;
+    font-weight: 300;
+    color: $text-gray-dark;
+    line-height: 1.8;
+    margin: 0 auto;
+
+    @media (max-width: $tablet) {
+        font-size: 18px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+    }
+}

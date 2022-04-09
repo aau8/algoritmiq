@@ -11,6 +11,9 @@ $firm-light: #fff;
 $firm-dark: #292831;
 $firm-accent: #328AE6;
 
+// Линии интерфейса
+$interface-dark: #454352;
+$interface-light: #D0D9E1;
 
 // Задний фон разделов
 $frame-light: #F5F9FD;
@@ -19,6 +22,8 @@ $frame-dark: #292831;
 // Обводка
 $border-light: rgba(255, 255, 255, 0.2);
 $border-dark: rgba(163, 170, 192, 0.5);
+$border-conception: #F5F9FD;
+$border-conception-line: #EDEFF3;
 // Цвета кнопок в файле 'scss/elements/button.scss'
 // ================ Colors End ================
 
@@ -27,6 +32,7 @@ $border-dark: rgba(163, 170, 192, 0.5);
 $shadow-orange: 0px 43px 80px rgba(3, 8, 17, 0.04), 0px 17.9644px 33.4221px rgba(3, 8, 17, 0.0287542), 0px 9.60461px 17.869px rgba(3, 8, 17, 0.0238443), 0px 5.38427px 10.0172px rgba(3, 8, 17, 0.02), 0px 2.85954px 5.32008px rgba(3, 8, 17, 0.0161557), 0px 1.18992px 2.21381px rgba(3, 8, 17, 0.0112458);
 $shadow-blue: 0px 15px 30px rgba(44, 103, 144, 0.09);
 $shadow-gray: 0px 8px 16px rgba(34, 19, 77, 0.07);
+$shadow-conception: 0px 15px 30px rgba(44, 103, 144, 0.09);
 // ================ Shadow End ================
 
 

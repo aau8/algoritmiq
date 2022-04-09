@@ -3,7 +3,7 @@
 		"scope": "html",
 		"prefix": "_c-section-header",
 		"body": [
-			"<div class=\"section-header\">\n\t<h2 class=\"title_section\">Title</h2>\n\t<p class=\"section-text\">Text</p>\n\t<button class=\"btn btn_fill btn_large section-button\">Button</button>\n</div>"
+			"<div class=\"section-header\">\n\t<span class=\"section-label\">Label</span>\n\t<h2 class=\"title_section\">Title</h2>\n\t<p class=\"section-text\">Text</p>\n\t<button class=\"btn btn_fill btn_large section-button\">Button</button>\n</div>"
 		],
 		"description": ".section-header_left - выравнивание по левой стороне\n\r.section-header_left - выравнивание по правой стороне"
 	},

@@ -64,6 +64,7 @@ body {
 
 @import './components/cards/service-card';
 @import './components/cards/st-card';
+@import './components/cards/sml-card';
 
 // Секции
 @import './sections/_header';
@@ -81,7 +82,20 @@ body {
 @import './sections/a-clients';
 @import './sections/comfort-advantages';
 @import './sections/more-func';
+
 @import './sections/tech-descr';
 @import './sections/s-product';
 @import './sections/s-tech-gallery';
 @import './sections/s-tech-advant';
+
+
+@import './sections/img-full';
+@import './sections/s-text';
+@import './sections/s-interface';
+@import './sections/s-available';
+@import './sections/s-script';
+
+// Страница освещения
+@import './sections/sml';
+@import './sections/sli';
+@import './sections/scm';

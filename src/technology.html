@@ -32,6 +32,11 @@
 									<a href="#" class="link menu__link-title">О нас</a>
 								</div>
 							</li>
+							<li class="menu__item">
+								<div class="menu__link">
+									<a href="#" class="link menu__link-title">Продукция</a>
+								</div>
+							</li>
 							<li class="menu__item menu__item-has-child" data-acc>
 								<div class="menu__link">
 									<a href="#" class="link menu__link-title">Функции</a>
@@ -140,8 +145,8 @@
                         <li><a href="#">Главная</a></li>
                         <li class="_active">Технологии</li>
                     </ul>
-					<div class="main__bg">
-                        <div class="main__bg-slide swiper-slide">
+					<div class="main-full-bg">
+                        <div class="main-full-bg-slide swiper-slide">
 							<img src="./img/main/savant.png" alt="">
 						</div>
 					</div>
@@ -310,21 +315,21 @@
                         </div>
                         <div class="s-product__body s-product__body_less-column">
                             <!-- st - section tech -->
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="1">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M26 18H6C5.44772 18 5 18.4477 5 19V25C5 25.5523 5.44772 26 6 26H26C26.5523 26 27 25.5523 27 25V19C27 18.4477 26.5523 18 26 18Z" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M26 6H6C5.44772 6 5 6.44772 5 7V13C5 13.5523 5.44772 14 6 14H26C26.5523 14 27 13.5523 27 13V7C27 6.44772 26.5523 6 26 6Z" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         <path d="M23.5 10.75C23.9142 10.75 24.25 10.4142 24.25 10C24.25 9.58579 23.9142 9.25 23.5 9.25C23.0858 9.25 22.75 9.58579 22.75 10C22.75 10.4142 23.0858 10.75 23.5 10.75Z" fill="#328AE6"/>
                                         <path d="M23.5 22.75C23.9142 22.75 24.25 22.4142 24.25 22C24.25 21.5858 23.9142 21.25 23.5 21.25C23.0858 21.25 22.75 21.5858 22.75 22C22.75 22.4142 23.0858 22.75 23.5 22.75Z" fill="#328AE6"/>
-                                    </svg>                                        
+                                    </svg>
                                 </div>
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">Хост-контроллеры</h3>
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="2">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M7.5 8.75C8.19036 8.75 8.75 8.19036 8.75 7.5C8.75 6.80964 8.19036 6.25 7.5 6.25C6.80964 6.25 6.25 6.80964 6.25 7.5C6.25 8.19036 6.80964 8.75 7.5 8.75Z" fill="#328AE6"/>
@@ -343,7 +348,7 @@
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="3">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M22.5 25C24.433 25 26 23.433 26 21.5C26 19.567 24.433 18 22.5 18C20.567 18 19 19.567 19 21.5C19 23.433 20.567 25 22.5 25Z" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -354,12 +359,12 @@
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">МУЛЬТИРУМ</h3>
                                 </div>
-                                <a href="#" class="st-card__show-video">
+                                <span class="st-card__show-video">
                                     <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
                                     <span class="st-card__show-video-text">Смотреть видео</span>
-                                </a>
+                                </span>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="4">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M27 6H5C4.44772 6 4 6.44772 4 7V25C4 25.5523 4.44772 26 5 26H27C27.5523 26 28 25.5523 28 25V7C28 6.44772 27.5523 6 27 6Z" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -378,17 +383,17 @@
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="5">
                                 <div class="st-card__icon"><svg><use href='./img/sprite.svg#lighting'></use></svg></div>
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">Освещение</h3>
                                 </div>
-                                <a href="#" class="st-card__show-video">
+                                <span class="st-card__show-video">
                                     <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
                                     <span class="st-card__show-video-text">Смотреть видео</span>
-                                </a>
+                                </span>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="6">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11 29H21" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -400,12 +405,12 @@
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">Биодинамическое освещение</h3>
                                 </div>
-                                <a href="#" class="st-card__show-video">
+                                <span class="st-card__show-video">
                                     <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
                                     <span class="st-card__show-video-text">Смотреть видео</span>
-                                </a>
+                                </span>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="7">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 8V6C5 5.44772 5.44772 5 6 5H26C26.5523 5 27 5.44772 27 6V8M5 8H27M5 8V11M27 8V11M27 11H5M27 11V14M5 11V14M5 14V26C5 26.5523 5.44772 27 6 27H26C26.5523 27 27 26.5523 27 26V14M5 14H27" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -416,7 +421,7 @@
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="8">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15 26C16.3807 26 17.5 24.8807 17.5 23.5C17.5 22.1193 16.3807 21 15 21C13.6193 21 12.5 22.1193 12.5 23.5C12.5 24.8807 13.6193 26 15 26Z" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -431,7 +436,7 @@
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="9">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M27.3613 9.63623C28.1971 10.472 28.86 11.4641 29.3123 12.556C29.7646 13.648 29.9974 14.8183 29.9974 16.0002C29.9974 17.1821 29.7646 18.3524 29.3123 19.4443C28.86 20.5363 28.1971 21.5284 27.3613 22.3642" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -445,7 +450,7 @@
                                     <p class="st-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</p>
                                 </div>
                             </div>
-                            <div class="st-card">
+                            <div class="st-card" data-modal-open="savant-product" data-product-id="10">
                                 <div class="st-card__icon">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.5 17.9091V6.5C5.5 6.23478 5.60536 5.98043 5.79289 5.79289C5.98043 5.60536 6.23478 5.5 6.5 5.5H25.5C25.7652 5.5 26.0196 5.60536 26.2071 5.79289C26.3946 5.98043 26.5 6.23478 26.5 6.5V25.5C26.5 25.7652 26.3946 26.0196 26.2071 26.2071C26.0196 26.3946 25.7652 26.5 25.5 26.5H16.9545" stroke="#328AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -495,7 +500,7 @@
                     </div>
                 </div>
             </section>
-			<section class="section ask-question">
+			<section class="section section_light ask-question">
 				<div class="container">
 					<div class="ask-question__wrap">
 						<div class="section-header">
@@ -566,6 +571,21 @@
 				<div class="po__buttons">
 					<button class="btn btn_outline po__hide">Скрыть</button>
 					<button class="btn btn_fill po__start">Пройти опрос</button>
+				</div>
+			</div>
+		</div>
+		<div class="modal modal-service _load" id="savant-product">
+			<div class="modal__wrap">
+				<div class="modal__window">
+                    <div class="modal-service__icon">
+                        <div class="func-icon func-icon_m"></div>
+                    </div>
+                    <div class="modal-service__content"></div>
+                    </div>
+					<button class="modal-close">
+						<span></span>
+						<span></span>
+					</button>
 				</div>
 			</div>
 		</div>

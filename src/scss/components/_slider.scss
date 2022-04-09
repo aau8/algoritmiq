@@ -1,6 +1,9 @@
-.swiper-slide {
+.first-show-only-first-slide {
 
-    &:not(:first-child) {
-        opacity: 0;
+    & .swiper-slide {
+
+        &:not(:first-child) {
+            opacity: 0;
+        }
     }
 }

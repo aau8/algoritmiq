@@ -1,6 +1,92 @@
 .main {
     position: relative;
     background: $frame-dark;
+
+    &_light {
+        background: $firm-light;
+
+        & .mc-block__wrap {
+            color: $firm-dark;
+        }
+
+        & .breadcrumbs {
+
+            & li {
+                color: $firm-accent;
+
+                &:not(:last-child) {
+        
+                    &::after {
+                        background: $firm-dark;
+                    }
+                }
+                
+                & a {
+                    color: $text-gray-dark;
+
+                    &:hover {
+                        
+                        @media (min-width: $min-hover) {
+                            color: $link-hover;
+                        }
+                    }
+                
+                    &:active {
+                        color: $link-active;    
+                    }
+                }
+            }
+        }
+    }
+
+    &_blue {
+        background: $frame-light;
+
+        & .main__wrap {
+            // min-height: 470px;
+            max-height: none;
+            height: auto;
+            padding: 128px 0 64px 0;
+
+            // @media (max-width: $tablet) {
+            //     min-height: 300px;
+            //     max-height: 380px;
+            // }
+
+            // @media (max-width: $mobile-l) {
+            //     max-height: 330px;
+            // }
+        }
+
+        & .breadcrumbs {
+
+            & li {
+                color: $firm-accent;
+
+                &:not(:last-child) {
+        
+                    &::after {
+                        background: $firm-dark;
+                    }
+                }
+                
+                & a {
+                    color: $text-gray-dark;
+
+                    &:hover {
+                        
+                        @media (min-width: $min-hover) {
+                            color: $link-hover;
+                        }
+                    }
+                
+                    &:active {
+                        color: $link-active;    
+                    }
+                }
+            }
+        }
+    }
 }
 
 .main_static {
@@ -214,8 +300,8 @@
 
 }
 
-// Фон
-.main__bg {
+// Фон на весь экран
+.main-full-bg {
     @include overlay;
 
     & img {
@@ -223,11 +309,36 @@
     }
 }
 
-.main__bg-slide {
+.main-full-bg-slide {
 
     & video {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
+}
+
+// Фон на половину экрана
+.main-half-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 78%;
+}
+
+.main-half-bg__img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-half-bg__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 385px;
+    height: 385px;
+    border-radius: 50%;
+    // border: 1px solid $
 }

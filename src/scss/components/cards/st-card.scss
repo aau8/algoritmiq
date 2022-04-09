@@ -2,28 +2,39 @@
     display: flex;
     flex-direction: column;
     background: #fff;
-    box-shadow: $shadow-blue;
     border-radius: $radius-card-s;
     padding: 24px;
     transition: $tr;
+    cursor: pointer;
 
-    // &:hover {
+    &:hover {
         
-    //     @media (min-width: $min-hover) {
+        @media (min-width: $min-hover) {
+            transform: translate(0, -4px);
+            box-shadow: $shadow-blue;
             
-    //         & .st-card__title {
-    //             color: $firm-accent;
-    //         }
-    //     }
-    // }
+            & .st-card__title {
+                color: $firm-accent;
+            }
+        }
+    }
 
-    // &:active {
-    //     box-shadow: none;
+    &:active {
+        transform: translate(0, 0);
+        box-shadow: none;
+
+        @media (max-width: $tablet) {
+            transform: translate(0, 4px);
+        }
         
-    //     & .st-card__title {
-    //         color: $firm-accent;
-    //     }
-    // }
+        & .st-card__title {
+            color: $firm-accent;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        box-shadow: $shadow-blue;
+    }
 }
 
 .st-card__icon {

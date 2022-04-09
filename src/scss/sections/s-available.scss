@@ -1,0 +1,35 @@
+.sa__body {
+    margin-top: 64px;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
+}
+
+.sa__slider-pagination {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+
+    & .swiper-pagination-bullet {
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $border-dark;
+        transition: $tr;
+
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+
+        &-active {
+            background: $firm-accent;
+        }
+    }
+}

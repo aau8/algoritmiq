@@ -1,15 +1,20 @@
 // import 'bulma/sass/grid/_all.sass' // Сеточная система бибилотеки Bulma
 import '../scss/style.scss'
+import './ajax/lighting.js'
 import './render.js' 
 import './animation.js'
 import { find, findAll, removeAll, bodyLock, getSiblings } from "./util/functions.js"
 import './sliders.js'
-// import './modal.js'
+import './modal.js'
 
 // Картинки, которые добавляются фоном
 import '../img/main/main.png'
 import '../img/about/video-thumb.png'
 import '../video/vista.mp4'
+
+// Базы данных
+import '../db/products.json'
+import '../db/lighting.json'
 
 // Мобильное меню
 (function menu() {
@@ -79,33 +84,33 @@ function modal() {
                 const modal = document.querySelector(`#${dataBtn}`)
 
                 openModal(modal)
-                window.location.hash = dataBtn
+                // window.location.hash = dataBtn
             });
         }
     }
 
     // Открытие модального окна, если в url указан его id
-    openModalHash()
-    function openModalHash() {
-        if (window.location.hash) {
-            const hash = window.location.hash.substring(1)
-            const modal = document.querySelector(`.modal#${hash}`)
+    // openModalHash()
+    // function openModalHash() {
+    //     if (window.location.hash) {
+    //         const hash = window.location.hash.substring(1)
+    //         const modal = document.querySelector(`.modal#${hash}`)
     
-            if (modal) openModal(modal)
-        }
-    }
+    //         if (modal) openModal(modal)
+    //     }
+    // }
 
     // Показываем/убираем модальное окно при изменения хеша в адресной строке
-    checkHash()
-    function checkHash() {
-        window.addEventListener('hashchange', e => {
-            const hash = window.location.hash
-            const modal = document.querySelector(`.modal${hash}`)
+    // checkHash()
+    // function checkHash() {
+    //     window.addEventListener('hashchange', e => {
+    //         const hash = window.location.hash
+    //         const modal = document.querySelector(`.modal${hash}`)
 
-            if (find('.modal._show')) find('.modal._show').classList.remove('_show')
-            if (modal && hash != '') openModal(modal)
-        })
-    }
+    //         if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+    //         if (modal && hash != '') openModal(modal)
+    //     })
+    // }
 
     // Закрытие модального окна при клике по заднему фону
     closeModalWhenClickingOnBg()
@@ -146,11 +151,11 @@ function modal() {
     }
 
     // Сброс id модального окна в url
-    function resetHash() {
-        const windowTop = window.pageYOffset
-        window.location.hash = ''
-        window.scrollTo(0, windowTop)
-    }
+    // function resetHash() {
+    //     const windowTop = window.pageYOffset
+    //     window.location.hash = ''
+    //     window.scrollTo(0, windowTop)
+    // }
 
     // Открытие модального окна
     function openModal(modal) {
@@ -162,7 +167,7 @@ function modal() {
     function closeModal(modal) {
         modal.classList.remove('_show')
         bodyLock(false)
-        resetHash()
+        // resetHash()
     }
 }
 

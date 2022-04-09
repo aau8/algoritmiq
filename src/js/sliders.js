@@ -1,9 +1,8 @@
-import Swiper, { Navigation, EffectFade, Thumbs, Autoplay } from 'swiper'
+import Swiper, { Navigation, EffectFade, Thumbs, Autoplay, Pagination, FreeMode } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 
 if (document.querySelector('.main__slider')) {
-  console.log('ok')
   const mainSliderButtons = new Swiper('.main__slider-buttons', {
       modules: [EffectFade],
   
@@ -16,7 +15,7 @@ if (document.querySelector('.main__slider')) {
       },
   })
   
-  const mainBg = new Swiper('.main__bg', {
+  const mainBg = new Swiper('.main-full-bg', {
       modules: [EffectFade, Thumbs],
   
       slidesPerView: 1,
@@ -89,3 +88,105 @@ if (document.querySelector('.main__slider')) {
   //   }, 500)
   // })
 }
+
+if (document.querySelector('.sa__slider')) {
+  const availableSlider = new Swiper('.sa__slider', {
+    modules: [Pagination],
+    
+    breakpoints: {
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 46,
+      },
+      768: {
+        slidesPerView: 5,
+        spaceBetween: 25,
+      },
+      600: {
+        slidesPerView: 4,
+        spaceBetween: 25,
+      },
+      425: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      0: {
+        slidesPerView: 2,
+        spaceBetween: 17,
+      }
+    },
+
+    pagination: {
+      el: '.sa__slider-pagination'
+    },
+    
+    on: {
+      init: e => {
+
+        if (e.pagination.bullets.length > 1) {
+          e.pagination.el.style.display = 'flex'
+        }
+      }
+    }
+  })
+}
+
+if (document.querySelector('.ssc__screen-slider')) {
+  const screenSlider = new Swiper('.ssc__screen-slider', {
+    modules: [EffectFade],
+    
+    allowTouchMove: false,
+    slidesPerView: 1,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+
+  })
+
+  const screenContentSlider = new Swiper('.ssc-content__slider', {
+    modules: [EffectFade, Navigation, Thumbs, Pagination],
+    
+    slidesPerView: 1,
+    effect: 'fade',
+    // loop: true,
+    fadeEffect: {
+      crossFade: true
+    },
+
+    navigation: {
+      prevEl: '.ssc-content__arrow-prev',
+      nextEl: '.ssc-content__arrow-next',
+    },
+
+    pagination: {
+      el: '.ssc-content__slider-pagin',
+      // type: 'bullet',
+      clickable: true,
+      renderBullet: (i, className) => {
+        return `<span class="${className}"><span>0${i+1}</span></span>`
+      }
+    },
+
+    thumbs: {
+      swiper: screenSlider,
+    },
+  })
+}
+
+const mainLightingSlider = new Swiper('.sml__slider', {
+  modules: [FreeMode],
+  
+  freeMode: true,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+      0: { 
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+    }
+  }
+})
