@@ -92,6 +92,16 @@ export default {
             },
           }
         },
+        // JSON файлы
+        {
+          test: /\.(json)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: content => {
+              return content.filename.replace('src/', '')
+            },
+          }
+        },
       ]
   },
 }
