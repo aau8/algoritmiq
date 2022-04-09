@@ -64,7 +64,6 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         const tab = tabElems[i];
         
         tab.addEventListener('click', e => {
-            console.log(abortController)
             abortController.abort()
             const manufId = tab.dataset.manufId
     
@@ -78,7 +77,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         const signal = abortController.signal
     
         try {
-            await fetch('../db/lighting.json', { signal })
+            await fetch('./db/lighting.json', { signal })
                 .then(res => res.json())
                 .then(data => data.filter(e => e.id == manufId)[0])
                 .then(manuf => {
