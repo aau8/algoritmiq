@@ -6,6 +6,13 @@
     @media (max-width: $mobile-l) {
         height: 60px;
     }
+
+    &_lighting {
+
+        & .sub-menu {
+            background: #fff;
+        }
+    }
 }
 
 .header__wrap {
