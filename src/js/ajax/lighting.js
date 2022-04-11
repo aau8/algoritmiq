@@ -29,23 +29,29 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     let abortController = ''
     
     // Начальная загрузка данных
-    const currentHashName = window.location.hash
+    let currentHashName = window.location.hash
     
     window.addEventListener('hashchange', e => {
-        const manufId = Number(window.location.hash.replace('#manuf-', ''))
-        const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
-    
-        showPreloader()
-        clearContentAndSlider()
-    
-        removeAll(tabElems, '_active')
-        activeTab.classList.add('_active')
-    
-        requireToDB(manufId)
+    let currentHashName = window.location.hash
+    let manufId = Number(currentHashName.replace('#manuf-', ''))
+
+        console.log(manufId)
+        if (window.location.hash.includes('#manuf-') && manufId != 0) {
+            const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
+        
+            showPreloader()
+            clearContentAndSlider()
+        
+            removeAll(tabElems, '_active')
+            activeTab.classList.add('_active')
+        
+            requireToDB(manufId)
+        }
     })
     
-    if (currentHashName != '' && currentHashName.includes('#manuf-')) {
-        const manufId = Number(currentHashName.replace('#manuf-', ''))
+    let manufId = Number(currentHashName.replace('#manuf-', ''))
+
+    if (currentHashName != '' && currentHashName.includes('#manuf-') && manufId != 0) {
         const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
     
         activeTab.classList.add('_active')

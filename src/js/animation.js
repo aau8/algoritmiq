@@ -1,5 +1,7 @@
 import { gsap } from 'gsap'
+import { TweenLite } from 'gsap/gsap-core.js'
 import ScrollTrigger from 'gsap/ScrollTrigger.js'
+// import DrawSVGPlugin from 'gsap/DrawSVGPlugin.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -61,3 +63,11 @@ scrollTrigger: {
   start: 'top center',
 }})
 .fromTo(".stg-thumb__img-second", {opacity: 0, x: -100}, {opacity: 1, x: 0})
+
+// Анимация 404
+// gsap.registerPlugin(DrawSVGPlugin)
+// TweenLite.to('#404', 1, {drawSVG: '0', delay: .5})
+// var animation = document.getElementById("morphing");
+//  document.querySelector('#svg1').addEventListener('click', e => {
+//   animation.beginElement();
+//  })
