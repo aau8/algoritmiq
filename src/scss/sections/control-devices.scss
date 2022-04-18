@@ -1,0 +1,44 @@
+.cd-main {
+
+    & .mc-block__title {
+        max-width: 600px;
+        width: 60%;
+
+        @media (max-width: $tablet) {
+            color: #fff;
+        }
+    }
+
+    & .main-half-bg {
+        width: 50%;
+
+        @media (max-width: $tablet) {
+            width: 100%;
+        }
+
+        & img {
+            object-fit: cover;
+        }
+    }
+
+    @media (max-width: $tablet) {
+        
+        & .breadcrumbs  {
+
+            & li {
+                color: rgba(255, 255, 255, 0.5);
+                
+                & a {
+                    color: #fff;
+                }
+
+                &:not(:last-child) {
+                    
+                    &::after {
+                        background: $text-light;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.voice-control__body {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 64px;
+    }
+
+    @media (max-width: 550px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 48px;
+    }
+}
+
+.vc__img {
+    position: relative;
+    max-width: 512px;
+    width: 100%;
+
+    @media (max-width: 550px) {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 96%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 15%;
+        height: 100%;
+        background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    & img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        
+    }
+}
+
+.vc__content {
+    max-width: 460px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: auto 0;
+    margin-left: 64px;
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+        margin-left: 32px;
+    }
+
+    @media (max-width: 550px) {
+        margin: 16px 0 0 0;
+    }
+}

@@ -34,6 +34,20 @@
     }
 }
 
+// Генерирует цвет по указанной яркости
+@function brig-color($color, $brightness: 0) {
+    @if $brightness == 'hover' {
+        @return adjust-color($color, $lightness: -3%);
+    }
+    @if $brightness == 'active' {
+        @return adjust-color($color, $lightness: -5%);
+    }
+    // @if type-of($brightness) == number {
+    // }
+
+    @return adjust-color($color, $lightness: $brightness);
+}
+
 // Стили placeholder
 @mixin placeholder {
     $placeholders: ':moz' ':webkit-input' '-moz' '-ms-input';

@@ -1,7 +1,7 @@
 
 
 .s-interface {
-    padding: 64px 0;
+    // padding: 64px 0;
 
     &_dark {
 
@@ -168,6 +168,19 @@
 }
 
 .s-interface__review-rooms {
+    padding: 96px 0;
+
+    @media (max-width: $tablet) {
+        padding: 64px 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 48px 0;
+    }
+
+    @media (max-width: $mobile-m) {
+        padding: 32px 0;
+    }
 
     & .si-answer {
 

@@ -24,6 +24,10 @@ $border-light: rgba(255, 255, 255, 0.2);
 $border-dark: rgba(163, 170, 192, 0.5);
 $border-conception: #F5F9FD;
 $border-conception-line: #EDEFF3;
+$border-textfield: #D0D4DF;
+
+$error: #EB5757;
+
 // Цвета кнопок в файле 'scss/elements/button.scss'
 // ================ Colors End ================
 
@@ -37,9 +41,9 @@ $shadow-conception: 0px 15px 30px rgba(44, 103, 144, 0.09);
 
 
 // ================ Radius Start ================
-$radius-card-b: 32px;
-$radius-card-s: 16px;
-$radius-input: 8px;
+$radius-l: 32px;
+$radius-m: 16px;
+$radius-s: 8px;
 $radius-round: 200px;
 // ================ Radius End ================
 

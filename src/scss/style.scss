@@ -51,6 +51,10 @@ body {
 // Елементы
 @import './elements/button';
 @import './elements/func-icon';
+@import './elements/textfield';
+@import './elements/select';
+@import './elements/checkbox';
+@import './elements/radio';
  
 // Текстовые компоненты
 @import './components/text/_text';
@@ -61,10 +65,16 @@ body {
 @import './components/sub-menu';
 @import './components/slider';
 @import './components/breadcrumbs';
+@import './components/quiz';
 
+// Карточки
 @import './components/cards/service-card';
 @import './components/cards/st-card';
 @import './components/cards/sml-card';
+
+// Модальные окна
+@import './components/modals/service-modal';
+@import './components/modals/quest-modal';
 
 // Секции
 @import './sections/_header';
@@ -87,6 +97,8 @@ body {
 @import './sections/s-product';
 @import './sections/s-tech-gallery';
 @import './sections/s-tech-advant';
+@import './sections/interface-nav';
+@import './sections/voice-control';
 
 
 @import './sections/img-full';
@@ -99,3 +111,11 @@ body {
 @import './sections/sml';
 @import './sections/sli';
 @import './sections/scm';
+
+// 404 (страница не найдена)
+@import './sections/pnf';
+
+// Виды управляющих устройств
+@import './sections/control-devices';
+@import './sections/touch-switch';
+@import './sections/remote-control';

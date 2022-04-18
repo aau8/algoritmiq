@@ -132,45 +132,48 @@ if (document.querySelector('.sa__slider')) {
 }
 
 if (document.querySelector('.ssc__screen-slider')) {
-  const screenSlider = new Swiper('.ssc__screen-slider', {
-    modules: [EffectFade],
+
+  document.querySelectorAll('.s-script').forEach(section => {
+
+    const screenSlider = new Swiper(section.querySelector('.ssc__screen-slider'), {
+      modules: [EffectFade],
+      
+      allowTouchMove: false,
+      slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+    })
     
-    allowTouchMove: false,
-    slidesPerView: 1,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
+    const screenContentSlider = new Swiper(section.querySelector('.ssc-content__slider'), {
+      modules: [EffectFade, Navigation, Thumbs, Pagination],
+      
+      slidesPerView: 1,
+      effect: 'fade',
+      // loop: true,
+      fadeEffect: {
+        crossFade: true
+      },
 
-  })
+      navigation: {
+        prevEl: '.ssc-content__arrow-prev',
+        nextEl: '.ssc-content__arrow-next',
+      },
 
-  const screenContentSlider = new Swiper('.ssc-content__slider', {
-    modules: [EffectFade, Navigation, Thumbs, Pagination],
-    
-    slidesPerView: 1,
-    effect: 'fade',
-    // loop: true,
-    fadeEffect: {
-      crossFade: true
-    },
+      pagination: {
+        el: '.ssc-content__slider-pagin',
+        // type: 'bullet',
+        clickable: true,
+        renderBullet: (i, className) => {
+          return `<span class="${className}"><span>0${i+1}</span></span>`
+        }
+      },
 
-    navigation: {
-      prevEl: '.ssc-content__arrow-prev',
-      nextEl: '.ssc-content__arrow-next',
-    },
-
-    pagination: {
-      el: '.ssc-content__slider-pagin',
-      // type: 'bullet',
-      clickable: true,
-      renderBullet: (i, className) => {
-        return `<span class="${className}"><span>0${i+1}</span></span>`
-      }
-    },
-
-    thumbs: {
-      swiper: screenSlider,
-    },
+      thumbs: {
+        swiper: screenSlider,
+      },
+    })
   })
 }
 
@@ -189,4 +192,130 @@ const mainLightingSlider = new Swiper('.sml__slider', {
         spaceBetween: 16,
     }
   }
+})
+
+// const touchSwitchTitlesSlider = new Swiper('.ts-title-slider', {
+//   modules: [ EffectFade ],
+
+//   slidesPerView: 1,
+//   allowTouchMove: false,
+
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true
+//   },
+// })
+
+// const touchSwitchSlider = new Swiper('.ts-slider', {
+//   modules: [ Navigation, Pagination, EffectFade, Thumbs ],
+
+//   slidesPerView: 1,
+
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true
+//   },
+
+//   navigation: {
+//     nextEl: '.ts-slider__arrow-next',
+//     prevEl: '.ts-slider__arrow-prev'
+//   },
+
+//   pagination: {
+//     el: '.ts-slider__pagination',
+//     clickable: true,
+//     renderBullet: (i, className) => {
+//       const slider = document.querySelector('.ts-slider')
+//       const slide = slider.querySelectorAll('.ts-slide')[i]
+
+//       console.log(i, className, slide)
+//       return `<span class="${className}"  style="background-color: ${slide.dataset.tsColor}"></span>`
+//     }
+//   },
+  
+//   thumbs: {
+//       swiper: touchSwitchTitlesSlider,
+//   }
+// })
+
+
+
+const touchSwitchSlider = new Swiper('.ts-slider', {
+  modules: [ Navigation, Pagination, EffectFade, Thumbs ],
+
+  slidesPerView: 1,
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+})
+
+const touchSwitchTitlesSlider = new Swiper('.ts-title-slider', {
+  modules: [ Navigation, Pagination, EffectFade, Thumbs ],
+
+  slidesPerView: 1,
+  allowTouchMove: false,
+  autoHeight: true,
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+
+  navigation: {
+    nextEl: '.ts-slider__arrow-next',
+    prevEl: '.ts-slider__arrow-prev'
+  },
+
+  pagination: {
+    el: '.ts-slider__pagination',
+    clickable: true,
+    renderBullet: (i, className) => {
+      const slider = document.querySelector('.ts-title-slider')
+      const slide = slider.querySelectorAll('.ts-title-slide')[i]
+
+      return `<span class="${className}" data-ts-title="${slide.innerText}" style="background-color: ${slide.dataset.tsColor}"></span>`
+    }
+  },
+  
+  thumbs: {
+      swiper: touchSwitchSlider,
+  }
+})
+
+const rctCards = new Swiper('.rct__cards', {
+  modules: [ Pagination ],
+  
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
+    600: {
+      slidesPerView: 3,
+      spaceBetween: 16,
+    },
+    500: {
+      slidesPerView: 2.2,
+      spaceBetween: 16,
+    },
+    400: {
+      slidesPerView: 1.6,
+      spaceBetween: 16,
+    },
+    360: {
+      slidesPerView: 1.2,
+      spaceBetween: 16,
+    },
+    0: {
+      slidesPerView: 1.1,
+      spaceBetween: 16,
+    }
+  },
+
+  pagination: {
+    el: '.rct__cards-pagination'
+  },
+
 })

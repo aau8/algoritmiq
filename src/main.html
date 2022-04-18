@@ -642,38 +642,89 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popup-offer" id="popup-offer">
-			<!-- po - popup offer -->
-			<div class="po__wrap">
-				<p class="po__text">Пройдите небольшой опрос и получите расчет стоимости</p>
-				<div class="po__buttons">
-					<button class="btn btn_outline po__hide">Скрыть</button>
-					<button class="btn btn_fill po__start">Пройти опрос</button>
-				</div>
+	</div>
+	<div class="popup-offer" id="popup-offer">
+		<!-- po - popup offer -->
+		<div class="po__wrap">
+			<p class="po__text">Пройдите небольшой опрос и получите расчет стоимости</p>
+			<div class="po__buttons">
+				<button class="btn btn_outline po__hide">Скрыть</button>
+				<button class="btn btn_fill po__start">Пройти опрос</button>
 			</div>
 		</div>
-		<div class="modal modal-service" id="service">
-			<div class="modal__wrap">
-				<div class="modal__window">
-					<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#lighting'></use></svg></div>
-					<div class="modal-service__content">
-						<h2 class="modal-service__title">Освещение</h2>
-						<p class="modal-service__text">Автоматизация освещения квартиры или загородного дома позволит осуществить замену множества стандартных выключателей на пару «умных» приборов управления. Находясь в любой комнате, вы сможете изменять регулировку всего освещения в доме: включать/выключать свет или управлять уровнем его яркости через дистанционный пульт управления.</p>
-						<hr class="modal-separator">
-						<h3 class="modal-service__subtitle">5 лучших функций:</h3>
-						<ul class="modal-service__list">
-							<li class="modal-service__item">Экономия расхода электроэнергии.</li>
-							<li class="modal-service__item">Сценарный свет с возможностью изменений.</li>
-							<li class="modal-service__item">Дистанционное управление (в любой точке мира).</li>
-							<li class="modal-service__item">Голосовое управление.</li>
-							<li class="modal-service__item">Биодинамическое освещение (изменение температуры света в зависимости от цикла солнца).</li>
-						</ul>
-					</div>
-					<button class="modal-close">
-						<span></span>
-						<span></span>
-					</button>
+	</div>
+	<div class="modal service-modal" id="service">
+		<div class="modal__wrap">
+			<div class="modal__window">
+				<div class="func-icon func-icon_m"><svg><use href='./img/sprite.svg#lighting'></use></svg></div>
+				<div class="service-modal__content">
+					<h2 class="service-modal__title">Освещение</h2>
+					<p class="service-modal__text">Автоматизация освещения квартиры или загородного дома позволит осуществить замену множества стандартных выключателей на пару «умных» приборов управления. Находясь в любой комнате, вы сможете изменять регулировку всего освещения в доме: включать/выключать свет или управлять уровнем его яркости через дистанционный пульт управления.</p>
+					<hr class="modal-separator">
+					<h3 class="service-modal__subtitle">5 лучших функций:</h3>
+					<ul class="service-modal__list">
+						<li class="service-modal__item">Экономия расхода электроэнергии.</li>
+						<li class="service-modal__item">Сценарный свет с возможностью изменений.</li>
+						<li class="service-modal__item">Дистанционное управление (в любой точке мира).</li>
+						<li class="service-modal__item">Голосовое управление.</li>
+						<li class="service-modal__item">Биодинамическое освещение (изменение температуры света в зависимости от цикла солнца).</li>
+					</ul>
 				</div>
+				<button class="modal-close">
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal quest-modal" id="quest">
+		<div class="modal__wrap">
+			<div class="modal__window quest-modal__window">
+				<div class="quest-modal__header">
+					<h3 class="quest-modal__title">Задать вопрос</h3>
+					<p class="quest-modal__text">Наши специалисты постараются вам помочь</p>
+				</div>
+				<button data-modal-open="service">opend service</button>
+				<form action="#" class="quest-modal__form">
+					<div class="textfield">
+						<input type="text" name="name" id="" data-tf-required>
+						<label for="">Укажите ваше имя</label>
+					</div>
+					<div class="textfield">
+						<input type="text" name="email" id="" data-tf-email data-tf-required>
+						<label for="">Электронная почта</label>
+					</div>
+					<div class="select quest-modal__theme-quest">
+						<div class="select-input">
+							<span class="select-input__title">Выберите тему вопроса</span>
+							<div class="select-input__chevron">
+								<svg><use href='./img/sprite.svg#chevron'></use></svg>
+							</div>
+						</div>
+						<div class="select-dropdown">
+							<ul class="select-dropdown__list">
+								<li class="select-dropdown__item">Технические проблемы</li>
+								<li class="select-dropdown__item">Вопросы по оборудованию</li>
+								<li class="select-dropdown__item">Помощь с объектом</li>
+								<li class="select-dropdown__item">Обратная связь</li>
+							</ul>
+						</div>
+					</div>
+					<div class="textfield">
+						<textarea type="text" name="descr" id=""></textarea>
+						<label for="">Опишите подробно вашу проблему</label>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" name="checkbox" data-tf-required>
+						<label for="">Принимаю <a href="#">правила и политику конфиденциальности</a></label>
+					</div>
+					<button type="submit" class="btn btn_fill quest-modal__form-submit">Отправить вопрос</button>
+				</form>
+
+				<button class="modal-close">
+					<span></span>
+					<span></span>
+				</button>
 			</div>
 		</div>
 	</div>

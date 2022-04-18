@@ -1,8 +1,114 @@
+import { find, findAll, removeAll, bodyLock, getSiblings } from "./util/functions.js"
+
+// Функции для модальных окон
+modal()
+function modal() {
+    
+    // Открытие модальных окон при клике по кнопке
+    openModalWhenClickingOnBtn()
+    function openModalWhenClickingOnBtn() {
+        const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
+    
+        for (let i = 0; i < btnsOpenModal.length; i++) {
+            const btn = btnsOpenModal[i];
+    
+            btn.addEventListener('click', (e) => {
+                const dataBtn = btn.dataset.modalOpen;
+                const modal = document.querySelector(`#${dataBtn}`)
+
+                openModal(modal)
+                window.location.hash = dataBtn
+            });
+        }
+    }
+
+    // Открытие модального окна, если в url указан его id
+    // openModalHash()
+    // function openModalHash() {
+    //     if (window.location.hash) {
+    //         const hash = window.location.hash.substring(1)
+    //         const modal = document.querySelector(`.modal#${hash}`)
+    
+    //         if (modal) openModal(modal)
+    //     }
+    // }
+
+    // Показываем/убираем модальное окно при изменения хеша в адресной строке
+    checkHash()
+    function checkHash() {
+        window.addEventListener('hashchange', e => {
+            const hash = window.location.hash
+            const modal = document.querySelector(`.modal${hash}`)
+
+            if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+            if (modal && hash != '') openModal(modal)
+        })
+    }
+
+    // Закрытие модального окна при клике по заднему фону
+    closeModalWhenClickingOnBg()
+    function closeModalWhenClickingOnBg() {
+        document.addEventListener('click', (e) => {
+            const target = e.target
+            const modal = document.querySelector('.modal._show')
+
+            if (modal && target.classList.contains('modal__wrap')) closeModal(modal)
+        })
+    }
+
+    // Закрытие модальных окон при клике по крестику
+    closeModalWhenClickingOnCross()
+    function closeModalWhenClickingOnCross() {
+        const modalElems = document.querySelectorAll('.modal')
+        for (let i = 0; i < modalElems.length; i++) {
+            const modal = modalElems[i];
+            const closeThisModal = modal.querySelector('.modal-close')
+    
+            closeThisModal.addEventListener('click', () => {
+                closeModal(modal)
+            })
+        }
+    }
+
+    // Закрытие модальных окон при нажатии по клавише ESC
+    closeModalWhenClickingOnESC()
+    function closeModalWhenClickingOnESC() {
+        const modalElems = document.querySelectorAll('.modal')
+        for (let i = 0; i < modalElems.length; i++) {
+            const modal = modalElems[i];
+    
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') closeModal(modal)
+            })
+        }
+    }
+
+    // Сброс id модального окна в url
+    function resetHash() {
+        const windowTop = window.pageYOffset
+        window.location.hash = ''
+        window.scrollTo(0, windowTop)
+    }
+
+    // Открытие модального окна
+    function openModal(modal) {
+        modal.classList.add('_show')
+        bodyLock(true)
+    }
+
+    // Закрытие модального окна
+    function closeModal(modal) {
+        modal.classList.remove('_show')
+        bodyLock(false)
+        resetHash()
+    }
+}
+
 if (document.querySelector('.st-card')) {
     const cardElems = document.querySelectorAll('.st-card')
     const modal = document.getElementById('savant-product')
-    const modalContent = modal.querySelector('.modal-service__content')
-    const modalIcon = modal.querySelector('.modal-service__icon')
+    const modalContent = modal.querySelector('.service-modal__content')
+    const modalIcon = modal.querySelector('.service-modal__icon')
     
     for (let i = 0; i < cardElems.length; i++) {
         const card = cardElems[i];
@@ -56,9 +162,9 @@ if (document.querySelector('.st-card')) {
     // Генерирует контент
     function renderContent(product) {
         return `
-        <div class="modal-service__content">
-            <h2 class="modal-service__title">${product.title}</h2>
-            <div class="modal-service__text">${product.content}</div>
+        <div class="service-modal__content">
+            <h2 class="service-modal__title">${product.title}</h2>
+            <div class="service-modal__text">${product.content}</div>
         </div>
         `
     }
@@ -69,14 +175,14 @@ if (document.querySelector('.st-card')) {
     
         if (src.match(/http(s)?:/)) {
             return `
-            <h2 class="modal-service__title">${product.title}</h2>
-            <div class="modal-service__text"><div class="modal-service__video"><iframe src="${src}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div></div>
+            <h2 class="service-modal__title">${product.title}</h2>
+            <div class="service-modal__text"><div class="service-modal__video"><iframe src="${src}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe></div></div>
             `
         }
         else {
             return `
-            <h2 class="modal-service__title">${product.title}</h2>
-            <div class="modal-service__text"><div class="modal-service__video"><video src="${src}" autoplay></video></div></div>
+            <h2 class="service-modal__title">${product.title}</h2>
+            <div class="service-modal__text"><div class="service-modal__video"><video src="${src}" autoplay></video></div></div>
             `
         }
     }

@@ -1,0 +1,33 @@
+.interface-nav {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding: 64px 0;
+
+    @media (max-width: $tablet) {
+        padding: 48px 0;
+    }
+}
+
+.interface-nav__wrap {
+
+}
+
+.interface-nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & li {
+
+        &:not(:last-child) {
+            margin-right: 48px;
+        }
+
+        & a {
+            font-size: 21px;
+            font-weight: 300;
+            // color: $text-gray-dark;
+        }
+    }
+}

@@ -1,0 +1,229 @@
+.touch-switch__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Слайдер с заголовками
+.ts-title-slider {
+    width: 100%;
+    margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 64px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 48px;
+    }
+}
+
+.ts-title-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 300;
+    color: $text-light;
+    line-height: 1.1;
+    text-align: center;
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
+
+    @media (max-width: $mobile-m) {
+        font-size: 20px;
+    }
+}
+
+// Пагинация для основного слайдера
+.ts-slider__pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        margin-top: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin: 0 -10px;
+        margin-top: 16px;
+    }
+
+    & .swiper-pagination-bullet {
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin: 5px 10px;
+        cursor: pointer;
+
+        // &:not(:last-child) {
+        //     margin-right: 20px;
+        // }
+
+        &:hover {
+            
+            @media (min-width: $min-hover) {
+                
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &::before {
+            // content: attr("data-ts-title"),
+            content: attr(data-ts-title);
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, calc(-100% - 6px));
+            display: block;
+            font-size: 13px;
+            color: $firm-dark;
+            // line-height: 1.4;
+            text-align: center;
+            background: #fff;
+            border-radius: 4px;
+            padding: 6px 8px;
+            opacity: 0;
+            pointer-events: none;
+            transition: $tr;
+        }
+    }
+}
+
+// Слайдер
+.ts-slider__container {
+    max-width: 654px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+
+    // @media (max-width: $mobile-l) {
+    //     margin-top: 24px;
+    // }
+}
+
+.ts-slider {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    & .swiper-wrapper {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ts-slider__arrows {
+
+}
+
+.ts-slider__arrow {
+    width: 63px;
+    height: 24px;
+
+    @media (max-width: $mobile-l) {
+        width: 50px;
+    }
+
+    & svg {
+        stroke: #fff;
+    }
+
+    &.swiper-button-disabled {
+        pointer-events: none;
+        opacity: .3;
+    }
+
+    &-prev {
+        margin-right: 12px;
+
+        @media (max-width: $mobile-l) {
+            margin-right: 6px;
+        }
+    }
+
+    &-next {
+        margin-left: 12px;
+
+        @media (max-width: $mobile-l) {
+            margin-left: 6px;
+        }
+    }
+}
+
+// Контентная часть
+.ts__content {
+    max-width: 740px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 64px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 48px;
+    }
+}
+
+.ts__title {
+    font-size: 38px;
+    font-weight: 300;
+    color: $text-light;
+    line-height: 1.1;
+
+    @media (max-width: $tablet) {
+        font-size: 30px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
+}
+
+.ts__text {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, .5);
+    line-height: 1.8;
+    margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+        margin-top: 16px;
+    }
+}

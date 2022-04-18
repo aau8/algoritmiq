@@ -1,0 +1,779 @@
+.quiz {
+    margin: -78px 0 128px 0;
+}
+
+.quiz-slider {
+    width: 100%;
+}
+
+$quiz-padding: 32px;
+$quiz-padding-tablet: 24px;
+$quiz-padding-mob: 16px;
+
+.quiz-slide {
+    display: flex;
+    justify-content: center;
+    // width: 100%;
+}
+
+.quiz-modal {
+    max-width: 927px;
+    width: 100%;
+    min-height: 528px;
+    display: flex;
+    flex-direction: column;
+    border-radius: $radius-m;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: $shadow-gray;
+
+    @media (max-width: $tablet) {
+        border-radius: 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        min-height: 450px;
+    }
+}
+
+// Шапка модалки
+.quiz-modal__header {
+    width: 100%;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $firm-accent;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.2;
+    padding: 0 $quiz-padding;
+
+    @media (max-width: $tablet) {
+        height: 70px;
+        font-size: 15px;
+        padding: 0 $quiz-padding-tablet;
+    }
+
+    @media (max-width: $mobile-l) {
+        height: 60px;
+        font-size: 14px;
+        padding: 0 $quiz-padding-mob;
+    }
+}
+
+// Тело модалки
+.quiz-modal__body {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    padding: $quiz-padding $quiz-padding 0;
+
+    @media (max-width: $tablet) {
+        padding: $quiz-padding-tablet $quiz-padding-tablet 0;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 24px $quiz-padding-mob 0;
+    }
+}
+
+.quiz-modal__title {
+    font-size: 28px;
+    font-weight: 300;
+    color: $firm-dark;
+    line-height: 1.1;
+    letter-spacing: -.02;
+
+    & span {
+        color: $firm-accent;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 22px;
+    }
+}
+
+.quiz-modal__score {
+    white-space: nowrap;
+    margin-left: 16px;
+}
+
+.quiz-modal__content {
+    flex: 1 1 0;
+    margin-top: 32px;
+}
+
+// Подвал модалки
+.quiz-modal__footer {
+    display: flex;
+    // flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $quiz-padding $quiz-padding;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        padding: 0 $quiz-padding-tablet $quiz-padding-tablet;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 0 $quiz-padding-mob $quiz-padding-mob;
+    }
+}
+
+.quiz-modal__btn {
+    display: flex;
+    align-items: center;
+    border-radius: $radius-s;
+    padding: 12px 20px;
+    // margin: 6px;
+
+    @media (max-width: $mobile-l) {
+        padding: 12px 14px;
+    }
+
+    &_prev {
+        color: $text-gray-light;
+        background: #F6F7F9;
+
+        &:hover {
+            
+            @media (min-width: $min-hover) {
+                // background: adjust-color($color: #F6F7F9, $lightness: -3%);
+                // background: brig-color(#F6F7F9, -3%);
+                background: brig-color(#F6F7F9, hover);
+            }
+        }
+
+        &:active {
+            background: brig-color(#F6F7F9, active);
+        }
+
+        & .quiz-modal__btn-icon {
+            // background-image: url("data:image/svg+xml,%3Csvg width=\"17\" height=\"8\" viewBox=\"0 0 17 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M0.646446 4.35355C0.451185 4.15829 0.451185 3.84171 0.646446 3.64645L3.82843 0.464466C4.02369 0.269204 4.34027 0.269204 4.53553 0.464466C4.7308 0.659728 4.7308 0.976311 4.53553 1.17157L1.70711 4L4.53553 6.82843C4.7308 7.02369 4.7308 7.34027 4.53553 7.53553C4.34027 7.7308 4.02369 7.7308 3.82843 7.53553L0.646446 4.35355ZM17 4.5H1V3.5H17V4.5Z\" fill=\"%23A3AAC0\"/%3E%3C/svg%3E");
+        }
+
+        & .quiz-modal__btn-icon {
+            margin-right: 10px;
+        }
+    }
+
+    &_next {
+        color: #fff;
+        background: $firm-accent;
+        margin: 0 0 0 auto;
+
+        & .quiz-modal__btn-icon {
+            // background-image: url("data:image/svg+xml,%3Csvg width=\"17\" height=\"8\" viewBox=\"0 0 17 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M16.3536 4.35355C16.5488 4.15829 16.5488 3.84171 16.3536 3.64645L13.1716 0.464466C12.9763 0.269204 12.6597 0.269204 12.4645 0.464466C12.2692 0.659728 12.2692 0.976311 12.4645 1.17157L15.2929 4L12.4645 6.82843C12.2692 7.02369 12.2692 7.34027 12.4645 7.53553C12.6597 7.7308 12.9763 7.7308 13.1716 7.53553L16.3536 4.35355ZM0 4.5H16V3.5H0V4.5Z\" fill=\"white\"/%3E%3C/svg%3E");
+        }
+
+        & .quiz-modal__btn-icon {
+            margin-left: 10px;
+        }
+    }
+
+    &_submit {
+
+        @media (max-width: $mobile-l) {
+            
+            & .quiz-modal__btn-icon {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.quiz-modal__btn-text {
+    font-size: 16px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
+}
+
+.quiz-modal__btn-icon {
+    width: 16px;
+    height: 8px;
+    // background: center/contain no-repeat;
+}
+
+.quiz-modal__btn_next {
+
+}
+
+// Стили для содержимого слайда
+// 1
+.qmca-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 25px;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+        gap: 16px;
+
+        & .qmca-rcard__point {
+            top: 16px;
+            left: 16px;
+        }
+    }
+
+    @media (max-width: $mobile-l) {
+
+        & .qmca-rcard__point {
+            top: 12px;
+            left: 12px;
+        }
+    }
+
+    & .qmca-rcard__radio {
+
+        &:checked {
+
+            & ~ .qmca-rcard__img {
+                filter: grayscale(0);
+                // border-color: $firm-accent;
+            }
+        }
+    }
+
+    & .qmca-rcard__img {
+        border-color: transparent;
+        filter: grayscale(1);
+
+        & img {
+            object-fit: cover;
+        }
+
+        &::before {
+            padding-top: 67%;
+        }
+    }
+}
+
+// 13
+.qmca-13 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 32px;
+    justify-content: center;
+
+    @media (max-width: $tablet) {
+        gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(2, minmax(min-content, 180px));
+    }
+
+    & .qmca-rcard__radio {
+
+        // &:checked {
+
+        //     & ~ .qmca-rcard__img {
+        //         border-color: $firm-accent;
+        //     }
+        // }
+    }
+
+    & .qmca-rcard__point {
+        top: 16px;
+        left: 16px;
+
+        @media (max-width: $mobile-l) {
+            top: 12px;
+            left: 12px;
+        }
+    }
+
+    & .qmca-rcard__img {
+        // border: 1px solid $border-textfield;
+        filter: grayscale(0);
+
+        // & img {
+        //     object-fit: contain;
+        // }
+
+        &::before {
+            padding-top: 125%;
+        }
+    }
+}
+
+// 14
+.qmca-14 {
+    max-width: 660px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+}
+
+.qmca-14__rcards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 48px;
+    justify-content: center;
+
+    @media (max-width: $laptop) {
+        gap: 32px;
+    }
+
+    @media (max-width: $tablet) {
+        gap: 16px;
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-template-columns: repeat(2, minmax(min-content, 120px));
+    }
+}
+
+.qmca-14__range {
+    width: 100%;
+    margin-top: 32px;
+
+    & .qmca-range {
+
+        & .rangeslider {
+            margin-top: 48px;
+
+            @media (max-width: $tablet) {
+                margin-top: 32px;
+            }
+
+            @media (max-width: $mobile-l) {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+// 16
+.qmca-16 {
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+}
+
+.qmca-16__rcards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    justify-content: center;
+
+    @media (max-width: $laptop) {
+        gap: 16px;
+    }
+
+    @media (max-width: $tablet) {
+        grid-template-columns: repeat(3, minmax(min-content, 120px));
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-template-columns: repeat(2, minmax(min-content, 120px));
+    }
+}
+
+.qmca-16__range {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 48px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+
+    & .qmca-range {
+
+        & .rangeslider {
+            margin-top: 48px;
+
+            @media (max-width: $tablet) {
+                margin-top: 32px;
+            }
+
+            @media (max-width: $mobile-l) {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+// 17
+.qmca-17 {
+    max-width: 640px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 48px;
+
+    @media (max-width: $laptop) {
+        gap: 24px;
+    }
+
+    @media (max-width: $tablet) {
+        // grid-template-columns: repeat(3, minmax(min-content, 120px));
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    @media (max-width: $mobile-l) {
+        grid-template-columns: repeat(2, minmax(min-content, 120px));
+    }
+}
+
+// 18
+.qmca-18 {
+    // display: grid;
+    // grid-template-columns: repeat(2, max-content);
+    // gap: 24px 100px;
+}
+
+.qmca-18__table {
+    max-height: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    // display: grid;
+    // grid-template-columns: repeat(2, max-content);
+    // gap: 24px 100px;
+
+    @media (max-width: 600px) {
+        max-height: none;
+    }
+}
+
+.qmca-18__row {
+    // max-width: 275px;
+    max-width: 400px;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 12px 0;
+    margin-right: 32px;
+
+    @media (max-width: 600px) {
+        max-width: none;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+}
+
+.qmca-18__row-title {
+    width: 70%;
+    display: block;
+    color: $text-gray-light;
+    padding: 0 12px 0 0;
+
+    @media (max-width: 600px) {
+        width: auto;
+    }
+}
+
+.qmca-18__row-text {
+    width: 30%;
+    display: block;
+    color: $firm-dark;
+
+    @media (max-width: 600px) {
+        width: auto;
+        text-align: right;
+    }
+}
+
+// 19
+.qmca-19 {
+
+}
+
+.qmca-19-form {
+    max-width: 400px;
+
+
+    & > * {
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.qmca-19-correction {
+    display: inline-block;
+    font-size: 14px;
+    color: $text-gray-light;
+    line-height: 1.2;
+    margin-top: 60px;
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 24px;
+    }
+
+    & a {
+        color: $firm-accent;
+
+        &:hover {
+            
+            @media (min-width: $min-hover) {
+                color: #4BADF1;
+            }
+        }
+
+        &:active {
+            color: #0C7FF8;
+        }
+    }
+}
+
+
+// Radio-блоки первого слайда
+.qmca-rcard {
+    height: fit-content;
+    position: relative;
+}
+
+.qmca-rcard__radio {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked {
+
+        & ~ .qmca-rcard__img {
+            // filter: grayscale(0);
+            border-color: $firm-accent;
+        }
+
+        & ~ .qmca-rcard__title {
+            color: $firm-accent;
+        }
+
+        & ~ .qmca-rcard__point {
+            background: $firm-accent;
+
+            &::before {
+                width: 50%;
+                height: 50%;
+            }
+        }
+    }
+}
+
+.qmca-rcard__point {
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(50, 138, 230, 0.2);
+    pointer-events: none;
+    transition: $tr;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 80%;
+        background: #fff;
+        border-radius: 50%;
+        transition: $tr;
+    }
+}
+
+.qmca-rcard__img {
+    position: relative;
+    width: 100%;
+    border-radius: $radius-m;
+    overflow: hidden;
+    border: 1px solid $border-textfield;
+    // filter: grayscale(1);
+    transition: $tr;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    & img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        object-fit: contain;
+    }
+}
+
+.qmca-rcard__title {
+    display: block;
+    font-size: 16px;
+    color: $firm-dark;
+    text-align: center;
+    transition: $tr;
+    margin-top: 24px;
+
+    @media (max-width: 650px) {
+        font-size: 14px;
+        margin-top: 18px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 12px;
+    }
+}
+
+// Для контентной части с ползунком
+.qmca-range__content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.qmca-range {
+    max-width: 654px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .rangeslider {
+        width: 100%;
+        margin-top: 66px;
+
+        @media (max-width: $mobile-l) {
+            margin-top: 48px;
+        }
+
+        @media (max-width: $tablet) {
+            margin-top: 32px;
+        }
+
+        @media (max-width: $mobile-l) {
+            margin-top: 24px;
+        }
+
+        & .rangeslider__fill {
+            height: 4px;
+            background: $firm-accent;
+            border-radius: 10px;
+        }
+
+        & .rangeslider__fill__bg {
+            height: 4px;
+            background: #EDEEF2;
+            border-radius: 10px;
+        }
+
+        & .rangeslider__handle {
+            width: 32px;
+            height: 32px;
+            background: $firm-accent;
+            border: 8px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0px 8px 16px rgba(34, 19, 77, 0.07);
+        }
+    }
+
+    // & input[type=range] {
+    //     max-width: 654px;
+    //     width: 100%;
+    //     margin: 0 auto;
+    //     margin-top: 66px;
+    //     -webkit-appearance: none;
+
+    //     &::-webkit-slider-thumb {
+    //         -webkit-appearance: none;
+    //         appearance: none;
+    //         width: 15px;
+    //         height: 15px;
+    //         background: #338AE4;
+    //         border-radius: 50%;
+    //         cursor: pointer;
+    //     }
+          
+    //     &::-webkit-slider-thumb:hover {
+    //         background: var(--accent-hover);
+    //     }
+        
+    //     &::-moz-range-thumb { 
+    //         width: 15px;
+    //         height: 15px;
+    //         background: var(--accent);
+    //         border-radius: 100%;
+    //         cursor: pointer;
+    //     }
+          
+    //     &::-moz-range-thumb:hover {
+    //         background: var(--accent-hover);
+    //     }
+    // }
+}
+
+.qmca-range__textfield {
+    width: 128px;
+    height: 44px;
+    font-size: 18px;
+    font-weight: 300;
+    color: $firm-dark;
+    text-align: center;
+    border: 1px solid $border-textfield;
+    border-radius: $radius-s;
+    padding: 10px 12px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 16px;
+    }
+
+    &::-webkit-outer-spin-button, 
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}

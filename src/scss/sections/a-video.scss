@@ -11,14 +11,14 @@
     max-width: 800px;
     width: 100%;
     margin: 64px auto 0 auto;
-    border-radius: $radius-card-b;
+    border-radius: $radius-l;
     overflow: hidden;
     background: $frame-light;
     cursor: pointer;
     transition: $tr;
 
     @media (max-width: $tablet) {
-        border-radius: $radius-card-s;
+        border-radius: $radius-m;
         margin-top: 32px;
     }
 

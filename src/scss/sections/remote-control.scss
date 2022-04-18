@@ -1,0 +1,271 @@
+.remote-controls__body {
+    margin-top: 64px;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
+}
+
+.rc__img {
+    position: relative;
+    z-index: -1;
+    max-width: 912px;
+    width: 100%;
+    margin: 0 auto;
+    // margin-bottom: -110px;
+    margin-bottom: -10%;
+}
+
+.rc-block {
+    background: $frame-light;
+    border-radius: $radius-l;
+    padding: 48px 48px 72px;
+    overflow: hidden;
+
+    @media (max-width: $tablet) {
+        padding: 48px 24px 40px;
+    }
+}
+
+.rc-block__wrap {
+    max-width: 840px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+// Шапка таблицы
+.rct__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.rct__title {
+    font-size: 38px;
+    font-weight: 300;
+    color: $frame-dark;
+
+    @media (max-width: $tablet) {
+        font-size: 30px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 24px;
+    }
+}
+
+.rct__text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-top: 16px;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
+    }
+}
+
+// Слайдер
+.rct__cards {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    // column-gap: 
+    margin-top: 48px;
+    // overflow: hidden;
+
+    @media (max-width: 600px) {
+        
+        // & .swiper-slide {
+        //     opacity: 0;
+        //     transition: $tr;
+    
+        //     &-active,
+        //     &-active + .swiper-slide {
+        //         opacity: 1;
+        //     }
+        // }
+    }
+}
+
+// Карточка
+.rct-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.rct-card__img {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-radius: $radius-m;
+    overflow: hidden;
+    box-shadow: $shadow-blue;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 132%;
+    }
+
+    & img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+}
+
+.rct-card__title {
+    font-size: 28px;
+    font-weight: 300;
+    color: $firm-dark;
+    margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        font-size: 20px;
+    }
+}
+
+.rct-card__text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 16px;
+
+    @media (max-width: $tablet) {
+        font-size: 14px;
+    }
+}
+
+// Пагинация 
+.rct__cards-pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+
+    @media (min-width: 600px) {
+        display: none;
+    }
+
+    & .swiper-pagination-bullet {
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: rgba(0,0,0,.1);
+        border-radius: 50%;
+        transition: $tr;
+
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+
+        &-active {
+            background: $firm-accent;
+        }
+    }
+}
+
+// Таблица
+$border-table: adjust-color($text-gray-light, $alpha: -.5);
+
+.rct-table__container {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+
+    @include scrollbar(100%, 6px);
+}
+
+.rct-table {
+    min-width: 400px;
+    width: 100%;
+    margin-top: 64px;
+    border-spacing: 0;
+
+    @media (max-width: $tablet) {
+        margin-top: 48px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
+
+    & thead {
+        
+        & tr {
+            
+            & td {
+                font-size: 14px;
+                color: $firm-accent;
+                line-height: 1.2;
+                text-align: center;
+                border-bottom: 1px solid $border-table;
+                padding: 0 8px 16px;
+            }
+        }
+    }
+
+    & tbody {
+
+        & tr {
+
+            &:not(:last-child) {
+                
+                & td {
+                    border-bottom: 1px solid $border-table;
+                }
+            }
+
+            & td {
+                position: relative;
+                font-size: 14px;
+                line-height: 1.2;
+                padding: 24px 0;
+
+                @media (max-width: $tablet) {
+                    padding: 16px 0;
+                }
+
+                @media (max-width: $mobile-l) {
+                    padding: 8px 0;
+                }
+
+                &:not(:first-child) {
+                    
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: $firm-accent;
+                        opacity: 0;
+                    }
+
+                    &._active {
+                        
+                        &::before {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

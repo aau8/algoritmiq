@@ -64,6 +64,15 @@ scrollTrigger: {
 }})
 .fromTo(".stg-thumb__img-second", {opacity: 0, x: -100}, {opacity: 1, x: 0})
 
+// Пульт на странице с видами управляющих устройств
+gsap.timeline({defaults: {duration: 1.5},
+  scrollTrigger: {
+    trigger: ".rc__img",
+    start: 'top center',
+  }})
+  .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
+  
+
 // Анимация 404
 // gsap.registerPlugin(DrawSVGPlugin)
 // TweenLite.to('#404', 1, {drawSVG: '0', delay: .5})

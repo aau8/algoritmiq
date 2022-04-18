@@ -1,0 +1,80 @@
+// Модальное окно предлагаемой функции
+.service-modal {
+    color: $firm-dark;
+}
+
+.service-modal__content {
+    margin-top: 32px;
+
+    & h2 {
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    & p {
+        margin-top: 16px;
+        line-height: 1.6;
+        font-weight: 300;
+    }
+
+    & hr {
+        border: 1px solid $border-dark;
+        margin: 32px 0;
+    }
+
+    & h3 {
+        font-size: 28px;
+        font-weight: 300;
+        color: $firm-accent;
+    }
+
+    & ul {
+        margin-top: 24px;
+    }
+
+    & li {
+        display: flex;
+        font-weight: 300;
+        line-height: 1.4;
+    
+        &::before {
+            content: '';
+            display: block;
+            min-width: 6px;
+            width: 6px;
+            height: 6px;
+            background: $firm-accent;
+            border-radius: 50%;
+            margin: 8px 16px 0 0;
+        }
+    
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.service-modal__text {
+    margin-top: 24px;
+}
+
+.service-modal__video {
+    position: relative;
+    width: 100%;
+    background: $frame-light;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 55%;
+    }
+
+    & iframe,
+    & video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
