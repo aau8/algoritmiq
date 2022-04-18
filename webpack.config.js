@@ -44,10 +44,16 @@ export default {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: './css/style.css'
-    })
+    }),
   ],
   module: {
       rules: [
+        {
+          test: /\.m?js$/,
+          resolve: {
+            fullySpecified: false,
+          },
+        },
         // HTML
         {
           test: /\.html$/i,

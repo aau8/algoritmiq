@@ -26,6 +26,10 @@
   },
   "dependencies": {
     "gsap": "^3.9.1",
+    "jquery": "^3.6.0",
+    "lightgallery": "^2.4.0",
+    "rangeslider-js": "^3.2.5",
+    "rangeslider.js": "^2.3.3",
     "swiper": "^8.0.7"
   },
   "type": "module"
