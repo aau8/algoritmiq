@@ -51,6 +51,7 @@
         margin-right: 12px;
         vertical-align: middle;
         transition: $tr;
+        pointer-events: none;
 
         &::after {
             content: '';

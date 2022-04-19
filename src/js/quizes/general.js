@@ -1,7 +1,12 @@
 import Swiper, { Navigation, EffectFade, Thumbs, Autoplay, Pagination, FreeMode } from 'swiper'
 
 export const quizSlider = new Swiper('.quiz-slider', {
-    // modules: [EffectFade, Thumbs],
+    modules: [EffectFade, Thumbs],
+
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
 
     slidesPerView: 1,
     autoHeight: true,

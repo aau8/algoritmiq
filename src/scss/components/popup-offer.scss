@@ -8,7 +8,7 @@
     max-width: 822px;
     // width: 100%;
     width: calc(100% - 32px);
-    background: $frame-dark;
+    background: rgba(41, 40, 49, .9);
     border-radius: $radius-round;
     transition: transform ease-in-out .5s, bottom ease-in-out .5s;
     pointer-events: none;
