@@ -25,6 +25,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "dropzone": "^6.0.0-beta.2",
     "gsap": "^3.9.1",
     "jquery": "^3.6.0",
     "lightgallery": "^2.4.0",
