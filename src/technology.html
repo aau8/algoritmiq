@@ -359,9 +359,9 @@
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">МУЛЬТИРУМ</h3>
                                 </div>
-                                <span class="st-card__show-video">
-                                    <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                                    <span class="st-card__show-video-text">Смотреть видео</span>
+                                <span class="show-video">
+                                    <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
+                                    <span class="show-video__text">Смотреть видео</span>
                                 </span>
                             </div>
                             <div class="st-card" data-modal-open="savant-product" data-product-id="4">
@@ -388,9 +388,9 @@
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">Освещение</h3>
                                 </div>
-                                <span class="st-card__show-video">
-                                    <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                                    <span class="st-card__show-video-text">Смотреть видео</span>
+                                <span class="show-video">
+                                    <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
+                                    <span class="show-video__text">Смотреть видео</span>
                                 </span>
                             </div>
                             <div class="st-card" data-modal-open="savant-product" data-product-id="6">
@@ -405,9 +405,9 @@
                                 <div class="st-card__content">
                                     <h3 class="st-card__title">Биодинамическое освещение</h3>
                                 </div>
-                                <span class="st-card__show-video">
-                                    <span class="st-card__show-video-icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                                    <span class="st-card__show-video-text">Смотреть видео</span>
+                                <span class="show-video">
+                                    <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
+                                    <span class="show-video__text">Смотреть видео</span>
                                 </span>
                             </div>
                             <div class="st-card" data-modal-open="savant-product" data-product-id="7">
@@ -564,16 +564,16 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popup-offer" id="popup-offer">
-			<!-- po - popup offer -->
-			<div class="po__wrap">
-				<p class="po__text">Пройдите небольшой опрос и получите расчет стоимости</p>
-				<div class="po__buttons">
-					<button class="btn btn_outline po__hide">Скрыть</button>
-					<button class="btn btn_fill po__start">Пройти опрос</button>
-				</div>
+	<div class="popup-offer" id="popup-offer">
+		<!-- po - popup offer -->
+		<div class="po__wrap">
+			<p class="po__text">Пройдите небольшой опрос и получите расчет стоимости</p>
+			<div class="po__buttons">
+				<button class="btn btn_outline po__hide">Скрыть</button>
+				<button class="btn btn_fill po__start" data-modal-open="pquiz">Пройти опрос</button>
 			</div>
 		</div>
+	</div>
 		<div class="modal service-modal _load" id="savant-product">
 			<div class="modal__wrap">
 				<div class="modal__window">

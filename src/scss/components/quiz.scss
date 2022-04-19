@@ -4,6 +4,12 @@
 
 .quiz-slider {
     width: 100%;
+    transition: opacity $tr;
+
+    &._hide {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 $quiz-padding: 32px;
@@ -26,6 +32,7 @@ $quiz-padding-mob: 16px;
     overflow: hidden;
     background: #fff;
     box-shadow: $shadow-gray;
+    pointer-events: all;
 
     @media (max-width: $tablet) {
         border-radius: 0;
@@ -39,7 +46,7 @@ $quiz-padding-mob: 16px;
 // Шапка модалки
 .quiz-modal__header {
     width: 100%;
-    height: 78px;
+    min-height: 78px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -48,18 +55,18 @@ $quiz-padding-mob: 16px;
     font-weight: 400;
     color: #fff;
     line-height: 1.2;
-    padding: 0 $quiz-padding;
+    padding: 8px $quiz-padding;
 
     @media (max-width: $tablet) {
-        height: 70px;
+        min-height: 70px;
         font-size: 15px;
-        padding: 0 $quiz-padding-tablet;
+        padding: 8px $quiz-padding-tablet;
     }
 
     @media (max-width: $mobile-l) {
-        height: 60px;
+        min-height: 60px;
         font-size: 14px;
-        padding: 0 $quiz-padding-mob;
+        padding: 6px $quiz-padding-mob;
     }
 }
 
@@ -99,6 +106,12 @@ $quiz-padding-mob: 16px;
     }
 }
 
+.quiz-modal__subtitle {
+    font-size: 16px;
+    color: $firm-accent;
+    line-height: 1.2;
+}
+
 .quiz-modal__score {
     white-space: nowrap;
     margin-left: 16px;
@@ -107,6 +120,18 @@ $quiz-padding-mob: 16px;
 .quiz-modal__content {
     flex: 1 1 0;
     margin-top: 32px;
+}
+
+.qmc_large-indent {
+    margin-top: 96px;
+
+    @media (max-width: $tablet) {
+        margin-top: 64px;
+    }
+
+    @media (max-width: $mobile-l) {
+        margin-top: 32px;
+    }
 }
 
 // Подвал модалки
@@ -433,7 +458,6 @@ $quiz-padding-mob: 16px;
     }
 
     @media (max-width: $tablet) {
-        // grid-template-columns: repeat(3, minmax(min-content, 120px));
         gap: 16px;
         margin-top: 32px;
     }
@@ -445,9 +469,6 @@ $quiz-padding-mob: 16px;
 
 // 18
 .qmca-18 {
-    // display: grid;
-    // grid-template-columns: repeat(2, max-content);
-    // gap: 24px 100px;
 }
 
 .qmca-18__table {
@@ -455,9 +476,6 @@ $quiz-padding-mob: 16px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    // display: grid;
-    // grid-template-columns: repeat(2, max-content);
-    // gap: 24px 100px;
 
     @media (max-width: 600px) {
         max-height: none;
@@ -465,7 +483,6 @@ $quiz-padding-mob: 16px;
 }
 
 .qmca-18__row {
-    // max-width: 275px;
     max-width: 400px;
     width: 48%;
     display: flex;
@@ -579,7 +596,6 @@ $quiz-padding-mob: 16px;
     &:checked {
 
         & ~ .qmca-rcard__img {
-            // filter: grayscale(0);
             border-color: $firm-accent;
         }
 
@@ -630,7 +646,6 @@ $quiz-padding-mob: 16px;
     border-radius: $radius-m;
     overflow: hidden;
     border: 1px solid $border-textfield;
-    // filter: grayscale(1);
     transition: $tr;
 
     &::before {
@@ -720,40 +735,6 @@ $quiz-padding-mob: 16px;
             box-shadow: 0px 8px 16px rgba(34, 19, 77, 0.07);
         }
     }
-
-    // & input[type=range] {
-    //     max-width: 654px;
-    //     width: 100%;
-    //     margin: 0 auto;
-    //     margin-top: 66px;
-    //     -webkit-appearance: none;
-
-    //     &::-webkit-slider-thumb {
-    //         -webkit-appearance: none;
-    //         appearance: none;
-    //         width: 15px;
-    //         height: 15px;
-    //         background: #338AE4;
-    //         border-radius: 50%;
-    //         cursor: pointer;
-    //     }
-          
-    //     &::-webkit-slider-thumb:hover {
-    //         background: var(--accent-hover);
-    //     }
-        
-    //     &::-moz-range-thumb { 
-    //         width: 15px;
-    //         height: 15px;
-    //         background: var(--accent);
-    //         border-radius: 100%;
-    //         cursor: pointer;
-    //     }
-          
-    //     &::-moz-range-thumb:hover {
-    //         background: var(--accent-hover);
-    //     }
-    // }
 }
 
 .qmca-range__textfield {
@@ -775,5 +756,161 @@ $quiz-padding-mob: 16px;
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
+    }
+}
+
+// Блок с пунктами выбора
+.qs-modal__content {
+
+    & > * {
+        
+        &:not(:last-child) {
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.qs-block {
+
+}
+
+.q-block__textfield {
+    margin-top: 24px;
+
+    @media (max-width: $mobile-l) {
+        margin-top: 16px;
+    }
+}
+
+.qs-block__title {
+
+}
+
+.qs-block__list {
+    margin-top: 24px;
+
+    & > * {
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.qs-block__another {
+    
+}
+
+// Номера слайдов квиза в popup
+// 4
+.qmp-4 {
+    display: grid;
+    grid-template-columns: minmax(min-content, 155px) minmax(min-content, 120px);
+    gap: 48px;
+
+    @media (max-width: $mobile-l) {
+        gap: 24px;
+    }
+}
+
+.qmp-4-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.qmp-4-card__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked {
+
+        & ~ .qmp-4-card__title {
+            color: $firm-accent;
+        }
+    }
+}
+
+.qmp-4-card__img {
+    flex: 1 1 0;
+
+    & img {
+        object-position: bottom;
+    }
+}
+
+.qmp-4-card__title {
+    font-size: 14px;
+    color: $text-gray-light;
+    line-height: 1.2;
+    margin-top: 16px;
+    transition: $tr;
+}
+
+// Блок загрузки файлов
+.quf-block {
+
+    & .quiz-modal__subtitle {
+        color: $text-gray-light;
+    }
+}
+
+.guf-dropzone {
+    min-height: 48px !important;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    border: 1px dashed $firm-accent !important;
+    padding: 14px 20px !important;
+    margin-top: 24px;
+    transition: $tr;
+
+    & .dz-default.dz-message {
+        display: none;
+    }
+
+    &.dz-started {
+
+        & .guf-dropzone__content {
+            display: none;
+        }
+    }
+
+    &.dz-drag-hover,
+    &:hover {
+        border: 1px dashed brig-color($firm-accent, -20%) !important;
+
+        & .guf-dropzone__content {
+            color: brig-color($firm-accent, -20%);
+        }
+    }
+}
+
+.guf-dropzone__content {
+    color: $firm-accent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: $tr;
+}
+
+.guf-dropzone__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.guf-dropzone__text {
+    font-size: 16px;
+    line-height: 1.2;
+
+    @media (max-width: $mobile-l) {
+        font-size: 14px;
     }
 }

@@ -33,16 +33,22 @@ function labelTextfield() {
             label.classList.add('_change-label')
         }
 
-        input.addEventListener('focus', e => {
-            label.classList.add('_change-label')
-        })
-
-        input.addEventListener('blur', e => {
-            if (input.value === '') {
-                label.classList.remove('_change-label')
-            }
-        })
+        initLabelTextfield(input)
     }
+}
+
+export function initLabelTextfield(input) {
+    const label = input.parentElement.querySelector('label')
+
+    input.addEventListener('focus', e => {
+        label.classList.add('_change-label')
+    })
+
+    input.addEventListener('blur', e => {
+        if (input.value === '') {
+            label.classList.remove('_change-label')
+        }
+    })
 }
 
 // Списки выбора
@@ -95,27 +101,6 @@ function select() {
     })
 }
 
-// Взаимосвязь между инпутом с ползунком и соседним инпутом с числами
-// changeRangeInput()
-// function changeRangeInput() {
-//     const rangeElems = document.querySelectorAll('input[type="range"]')
-
-//     for (let i = 0; i < rangeElems.length; i++) {
-//         const range = rangeElems[i];
-//         const numInput = range.parentElement.querySelector('input[type="number"]')
-        
-//         range.addEventListener('input', () => {
-//             numInput.value = range.value
-//         })
-        
-//         numInput.addEventListener('input', () => {
-//             range.value = numInput.value
-//         })
-//     }
-// }
-
-import $ from "jquery"
-// import rangeslider from "rangeslider.js"
 import rangeslider from 'rangeslider-js/src'
 import 'rangeslider-js/dist/styles.min.css'
 
@@ -163,12 +148,9 @@ for (let i = 0; i < tfNumElems.length; i++) {
         input.type = 'text'
         input.value = parseInt(input.value)
         addPrefixToValue(input)
-        // console.log(document.activeElement)
     })
     
     input.addEventListener('keydown', function(e) {
-
-        // document.querySelector('.title_section').innerHTML = e.keyCode
 
         if (e.keyCode === 13) {
             input.blur()

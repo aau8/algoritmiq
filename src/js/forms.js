@@ -1,4 +1,4 @@
-import { quizSlider } from './quizes/calc-amount'
+import { quizSlider } from './quizes/general'
 
 // При фокусе инпутов, у них убирается класс ошибки
 const inputElems = document.querySelectorAll('input')

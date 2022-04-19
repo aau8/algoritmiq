@@ -7,19 +7,34 @@ function modal() {
     // Открытие модальных окон при клике по кнопке
     openModalWhenClickingOnBtn()
     function openModalWhenClickingOnBtn() {
-        const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
+        // const btnsOpenModal = document.querySelectorAll('[data-modal-open]');
     
-        for (let i = 0; i < btnsOpenModal.length; i++) {
-            const btn = btnsOpenModal[i];
+        // for (let i = 0; i < btnsOpenModal.length; i++) {
+        //     const btn = btnsOpenModal[i];
     
-            btn.addEventListener('click', (e) => {
+        //     btn.addEventListener('click', (e) => {
+        //         const dataBtn = btn.dataset.modalOpen;
+        //         const modal = document.querySelector(`#${dataBtn}`)
+
+        //         openModal(modal)
+        //         window.location.hash = dataBtn
+        //     });
+        // }
+
+        window.addEventListener('click', e => {
+            const target = e.target
+
+            // console.log(target.dataset.modalOpen)
+            if (target.dataset.modalOpen != undefined || target.closest('[data-modal-open]')) {
+                const btn = target.closest('[data-modal-open]') ? target.closest('[data-modal-open]') : target;
                 const dataBtn = btn.dataset.modalOpen;
                 const modal = document.querySelector(`#${dataBtn}`)
 
                 openModal(modal)
-                window.location.hash = dataBtn
-            });
-        }
+                // window.location.hash = dataBtn
+
+            }
+        })
     }
 
     // Открытие модального окна, если в url указан его id
@@ -34,25 +49,29 @@ function modal() {
     // }
 
     // Показываем/убираем модальное окно при изменения хеша в адресной строке
-    checkHash()
-    function checkHash() {
-        window.addEventListener('hashchange', e => {
-            const hash = window.location.hash
-            const modal = document.querySelector(`.modal${hash}`)
+    // checkHash()
+    // function checkHash() {
+    //     window.addEventListener('hashchange', e => {
+    //         const hash = window.location.hash
+    //         const modal = document.querySelector(`.modal${hash}`)
 
-            if (find('.modal._show')) find('.modal._show').classList.remove('_show')
-            if (modal && hash != '') openModal(modal)
-        })
-    }
+    //         if (find('.modal._show')) find('.modal._show').classList.remove('_show')
+    //         if (modal && hash != '') openModal(modal)
+    //     })
+    // }
 
     // Закрытие модального окна при клике по заднему фону
-    closeModalWhenClickingOnBg()
+    // closeModalWhenClickingOnBg()
     function closeModalWhenClickingOnBg() {
         document.addEventListener('click', (e) => {
             const target = e.target
-            const modal = document.querySelector('.modal._show')
+            // const modal = document.querySelector('.modal._show')
 
-            if (modal && target.classList.contains('modal__wrap')) closeModal(modal)
+            if (modal && target.classList.contains('modal__wrap')) {
+                const modal = target.closest('.modal')
+
+                closeModal(modal)
+            }
         })
     }
 
@@ -63,32 +82,44 @@ function modal() {
         for (let i = 0; i < modalElems.length; i++) {
             const modal = modalElems[i];
             const closeThisModal = modal.querySelector('.modal-close')
-    
+
             closeThisModal.addEventListener('click', () => {
                 closeModal(modal)
             })
+
+            const modalBg = modal.querySelector('.modal__bg')
+
+            if (modalBg) {
+                
+                modalBg.addEventListener('click', e => {
+                    // e.stopPropagation()
+                    // console.log('ok')
+                    closeModal(modal)
+
+                })
+            }
         }
     }
 
     // Закрытие модальных окон при нажатии по клавише ESC
-    closeModalWhenClickingOnESC()
-    function closeModalWhenClickingOnESC() {
-        const modalElems = document.querySelectorAll('.modal')
-        for (let i = 0; i < modalElems.length; i++) {
-            const modal = modalElems[i];
+    // closeModalWhenClickingOnESC()
+    // function closeModalWhenClickingOnESC() {
+    //     const modalElems = document.querySelectorAll('.modal')
+    //     for (let i = 0; i < modalElems.length; i++) {
+    //         const modal = modalElems[i];
     
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape') closeModal(modal)
-            })
-        }
-    }
+    //         document.addEventListener('keydown', e => {
+    //             if (e.key === 'Escape') closeModal(modal)
+    //         })
+    //     }
+    // }
 
     // Сброс id модального окна в url
-    function resetHash() {
-        const windowTop = window.pageYOffset
-        window.location.hash = ''
-        window.scrollTo(0, windowTop)
-    }
+    // function resetHash() {
+    //     const windowTop = window.pageYOffset
+    //     window.location.hash = ''
+    //     window.scrollTo(0, windowTop)
+    // }
 
     // Открытие модального окна
     function openModal(modal) {
@@ -99,8 +130,11 @@ function modal() {
     // Закрытие модального окна
     function closeModal(modal) {
         modal.classList.remove('_show')
-        bodyLock(false)
-        resetHash()
+
+        if (!document.querySelector('.modal._show')) {
+            bodyLock(false)
+        }
+        // resetHash()
     }
 }
 
@@ -187,6 +221,51 @@ if (document.querySelector('.st-card')) {
         }
     }
 }
+
+// Открыть модалку с видео
+const svModal = document.getElementById('video')
+const svModalContent = svModal.querySelector('.modal__window')
+
+window.addEventListener('click', e => {
+    const target = e.target
+
+    if (target.dataset.videoOpen != undefined || target.closest('[data-video-open]')) {
+        const btn = target.closest('[data-video-open]') ? target.closest('[data-video-open]') : target;
+        const videoSrc = btn.dataset.videoSrc
+
+        if (!svModalContent.querySelector('video', 'iframe')) {
+            if (videoSrc.match(/http(s)?:/)) {
+                const iframe = document.createElement('iframe')
+                iframe.src = videoSrc
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture')
+                iframe.setAttribute('allowfullscreen', '')
+
+                svModalContent.append(iframe)
+            }
+            else {
+                const video = document.createElement('video')
+                video.src = videoSrc
+                video.setAttribute('autoplay', '')
+                video.setAttribute('controls', '')
+
+                svModalContent.append(video)
+            }
+        }
+    }
+})
+
+// const svButtonElems = document.querySelectorAll('[data-video-open]')
+let observer = new MutationObserver(e => {
+    const elem = e[0].target
+
+    if (!elem.classList.contains('_show')) {
+        svModalContent.innerHTML = ''
+    }
+    // console.log(e)
+})
+observer.observe(svModal, { 
+    attributes: true,
+})
 
 /**
  * Функционал модального окна

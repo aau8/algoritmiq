@@ -582,7 +582,7 @@
 						<div class="section-header">
 							<h2 class="title_section">У вас остались вопросы? <br> <span>Задайте их нам!</span></h2>
 							<p class="section-text">Lorem ipsum is placeholder text commonly used in the graphic, print.</p>
-							<button class="btn btn_fill btn_large section-button">Задать вопрос</button>
+							<button class="btn btn_fill btn_large section-button" data-modal-open="quest">Задать вопрос</button>
 						</div>
 					</div>
 				</div>
@@ -649,7 +649,7 @@
 			<p class="po__text">Пройдите небольшой опрос и получите расчет стоимости</p>
 			<div class="po__buttons">
 				<button class="btn btn_outline po__hide">Скрыть</button>
-				<button class="btn btn_fill po__start">Пройти опрос</button>
+				<button class="btn btn_fill po__start" data-modal-open="pquiz">Пройти опрос</button>
 			</div>
 		</div>
 	</div>
@@ -675,6 +675,7 @@
 					<span></span>
 				</button>
 			</div>
+			<div class="modal__bg"></div>
 		</div>
 	</div>
 	<div class="modal quest-modal" id="quest">
@@ -684,7 +685,6 @@
 					<h3 class="quest-modal__title">Задать вопрос</h3>
 					<p class="quest-modal__text">Наши специалисты постараются вам помочь</p>
 				</div>
-				<button data-modal-open="service">opend service</button>
 				<form action="#" class="quest-modal__form">
 					<div class="textfield">
 						<input type="text" name="name" id="" data-tf-required>
@@ -726,6 +726,32 @@
 					<span></span>
 				</button>
 			</div>
+			<div class="modal__bg"></div>
+		</div>
+	</div>
+	<div class="modal video-modal" id="video">
+		<div class="modal__wrap">
+			<div class="modal__window"></div>
+			<button class="modal-close">
+				<span></span>
+				<span></span>
+			</button>
+			<div class="modal__bg"></div>
+		</div>
+	</div>
+	<div class="modal pquiz-modal" id="pquiz">
+		<div class="modal__wrap">
+			<div class="modal__window _preload">
+				<div class="quiz-slider _hide">
+					<div class="swiper-wrapper">
+					</div>
+				</div>
+			</div>
+			<button class="modal-close">
+				<span></span>
+				<span></span>
+			</button>
+			<div class="modal__bg"></div>
 		</div>
 	</div>
 </body>

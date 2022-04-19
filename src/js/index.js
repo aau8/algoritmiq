@@ -9,7 +9,10 @@ import './modal.js'
 import './forms.js'
 
 // Квизы
-import './quizes/calc-amount.js'
+import './quizes/general'
+// import './quizes/calc-amount'
+import './quizes/professionals'
+import './quizes/popup'
 
 // Картинки, которые добавляются фоном
 import '../img/main/main.png'
@@ -48,23 +51,6 @@ import '../db/lighting.json'
         }
     })
 })()
-
-// Предложение пройти опрос
-const popupOffer = document.getElementById('popup-offer')
-const btnHide = popupOffer.querySelector('.po__hide')
-const btnStart = popupOffer.querySelector('.po__start')
-
-btnHide.addEventListener('click', e => {
-    popupOffer.classList.remove('_show')
-})
-
-btnStart.addEventListener('click', e => {
-    console.log('Start quiz')
-})
-
-setTimeout(e => {
-    // popupOffer.classList.add('_show')
-}, 2000)
 
 // Стрелка "Наверх"
 document.querySelector('.back-to-top').addEventListener('click', e => {

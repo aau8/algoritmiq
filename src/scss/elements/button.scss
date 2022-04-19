@@ -218,3 +218,53 @@ $link-active: findLightColor($link-hover, 65%);
         bottom: 0;
     }
 }
+
+// Смотреть видео
+.show-video {
+    position: relative;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: $firm-accent;
+    margin: 12px 0 0 0;
+}
+
+.show-video.link {
+
+    &:hover {
+        
+        @media (min-width: $min-hover) {
+            color: brig-color($firm-accent, 10%);
+
+            & svg {
+                fill: none;
+            }
+        }
+    }
+
+    &:active {
+        color: brig-color($firm-accent, -10%)
+    }
+}
+
+.show-video__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.show-video__text {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $firm-accent;
+    }
+}
