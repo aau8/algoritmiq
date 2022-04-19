@@ -1,15 +1,23 @@
 import { quizSlider } from './quizes/general'
 
 // При фокусе инпутов, у них убирается класс ошибки
-const inputElems = document.querySelectorAll('input')
+// const inputElems = document.querySelectorAll('input')
 
-for (let i = 0; i < inputElems.length; i++) {
-    const input = inputElems[i]
+// for (let i = 0; i < inputElems.length; i++) {
+//     const input = inputElems[i]
     
-    input.addEventListener('focus', e => {
-        textfieldRemoveError(input.parentElement)
-    })
-}
+//     input.addEventListener('focus', e => {
+//         textfieldRemoveError(input.parentElement)
+//     })
+// }
+
+window.addEventListener('click', e => {
+    const target = e.target
+
+    if (target.nodeName == 'INPUT') {
+        textfieldRemoveError(target.parentElement)
+    }
+})
 
 // Форма вопроса
 if (document.querySelector('.quest-modal__form')) {
@@ -83,13 +91,17 @@ if (document.querySelector('.quest-modal__form')) {
 }
 
 // Форма калькулятора
-if (document.querySelector('.calc-form')) {
-    const calcForm = document.querySelector('.calc-form')
-    const cfInputElems = calcForm.querySelectorAll('input[data-tf-required]')
-    const cfInputEmail = calcForm.querySelector('input[data-tf-email]')
-    const cfSubmit = calcForm.querySelector('button[type="submit"]')
+if (document.querySelector('.quiz-modal-form')) {
+    const calcForm = document.querySelector('.quiz-modal-form')
+    initForm(calcForm)
+}
+
+export function initForm(form) {
+    const cfInputElems = form.querySelectorAll('input[data-tf-required]')
+    const cfInputEmail = form.querySelector('input[data-tf-email]')
+    const cfSubmit = form.querySelector('button[type="submit"]')
     
-    calcForm.addEventListener('submit', async e => {
+    form.addEventListener('submit', async e => {
         let validForm = true
         e.preventDefault()
     
@@ -105,15 +117,15 @@ if (document.querySelector('.calc-form')) {
                 validForm = false
             }
         })
-    
+
         if (validForm === false) {
             console.log('Форма не до конца заполнена!')
             return
         }
     
-        const formData = new FormData(calcForm)
-        const formAction = calcForm.getAttribute('action')
-    
+        const formData = new FormData(form)
+        const formAction = form.getAttribute('action')
+
         formData.append('quize_calc_arr', localStorage.getItem('quizCalcArr'))
         showPreloadSubmit(cfSubmit)
     
@@ -132,7 +144,7 @@ if (document.querySelector('.calc-form')) {
         else {
     
             setTimeout(e => {
-                resetForm(calcForm)
+                // resetForm(form)
                 submitFormAlert(cfSubmit, 'Ошибка! Вопрос не отправлен')
                 hidePreloadSubmit(cfSubmit)
                 
@@ -141,7 +153,6 @@ if (document.querySelector('.calc-form')) {
         }
     })
 }
-
 
 // Если пустое поле...
 function textfieldEmpty(textfield) {

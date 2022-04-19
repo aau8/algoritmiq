@@ -1,4 +1,6 @@
 import { quizSlider, quantSlides } from './general'
+import { initForm } from '../forms'
+import { initLabelTextfield } from '../render'
 import Dropzone from 'dropzone'
 import 'dropzone/dist/dropzone.css'
 
@@ -18,10 +20,7 @@ if (popupOffer) {
         const modalWindow = modal.querySelector('.modal__window')
         const slider = modal.querySelector('.quiz-slider')
         const sliderWrapper = slider.querySelector('.swiper-wrapper')
-    
-        // popupOffer.classList.remove('_show')
-        // console.log(sliderWrapper.innerHTML)
-    
+
         if (sliderWrapper.innerHTML.trim() == '') {
             await fetch('./pop-up-quiz-slides.html')
             .then(data => data.text())
@@ -29,11 +28,17 @@ if (popupOffer) {
                 sliderWrapper.innerHTML = html
             })
             .then(e => {
+                const quizForm = modal.querySelector('.quiz-modal-form')
+                const qfInputElems = quizForm.querySelectorAll('.textfield input')
+
                 quantSlides(quizSlider)
                 initDropzone()
+                initForm(quizForm)
+
+                qfInputElems.forEach(initLabelTextfield)
+
                 modalWindow.classList.remove('_preload')
                 slider.classList.remove('_hide')
-                console.log('Start quiz')
             })
         }
     })
