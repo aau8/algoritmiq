@@ -67,7 +67,7 @@ scrollTrigger: {
 // Пульт на странице с видами управляющих устройств
 gsap.timeline({defaults: {duration: 1.5},
   scrollTrigger: {
-    trigger: ".rc__img",
+    trigger: ".rc-block",
     start: 'top bottom',
   }})
   .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
