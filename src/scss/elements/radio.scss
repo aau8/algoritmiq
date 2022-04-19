@@ -26,9 +26,12 @@
 
     & label {
         font-size: 16px;
-        line-height: lhperc(12, 20);
         color: $firm-dark;
         line-height: 1.2;
+
+        @media (max-width: $mobile-l) {
+            font-size: 14px;
+        }
 
         & a {
             position: relative;

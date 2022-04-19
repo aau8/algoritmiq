@@ -64,9 +64,12 @@ $quiz-padding-mob: 16px;
     }
 
     @media (max-width: $mobile-l) {
+        flex-direction: column;
+        justify-content: flex-start;
         min-height: 60px;
         font-size: 14px;
-        padding: 6px $quiz-padding-mob;
+        text-align: center;
+        padding: 10px $quiz-padding-mob;
     }
 }
 
@@ -102,7 +105,7 @@ $quiz-padding-mob: 16px;
     }
 
     @media (max-width: $mobile-l) {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 
@@ -110,16 +113,29 @@ $quiz-padding-mob: 16px;
     font-size: 16px;
     color: $firm-accent;
     line-height: 1.2;
+
+    @media (max-width: $mobile-l) {
+        font-size: 15px;
+    }
 }
 
 .quiz-modal__score {
     white-space: nowrap;
     margin-left: 16px;
+
+    @media (max-width: $mobile-l) {
+        font-size: 12px;
+        margin: 8px 0 0 0;
+    }
 }
 
 .quiz-modal__content {
     flex: 1 1 0;
     margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        margin-top: 24px;
+    }
 }
 
 .qmc_large-indent {
@@ -870,6 +886,21 @@ $quiz-padding-mob: 16px;
     margin-top: 24px;
     transition: $tr;
 
+    & .dz-preview {
+        
+        @media (max-width: $mobile-l) {
+            margin: 8px !important;
+        }
+
+        & .dz-image {
+            
+            @media (max-width: $mobile-l) {
+                width: 100px !important;
+                height: 100px !important;
+            }
+        }
+    }
+
     & .dz-default.dz-message {
         display: none;
     }
@@ -879,6 +910,10 @@ $quiz-padding-mob: 16px;
         & .guf-dropzone__content {
             display: none;
         }
+    }
+
+    & .dz-remove {
+        margin-top: 8px;
     }
 
     &.dz-drag-hover,
