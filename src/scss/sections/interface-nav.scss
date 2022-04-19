@@ -3,10 +3,13 @@
     z-index: 1;
     background: #fff;
     padding: 64px 0;
+    overflow: auto;
+    @include scrollbar(100%, 6px)
 
     @media (max-width: $tablet) {
-        padding: 48px 0;
+        padding: 24px 0;
     }
+
 }
 
 .interface-nav__wrap {
@@ -14,20 +17,48 @@
 }
 
 .interface-nav__list {
+    width: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin: 0 auto;
+    white-space: nowrap;
 
     & li {
 
         &:not(:last-child) {
             margin-right: 48px;
+            
+            @media (max-width: $laptop) {
+                margin-right: 24px;
+            }
+            
+            @media (max-width: $mobile-l) {
+                margin-right: 16px;
+            }
         }
 
         & a {
             font-size: 21px;
             font-weight: 300;
-            // color: $text-gray-dark;
+            
+            @media (max-width: $laptop) {
+                font-size: 18px;
+            }
+            
+            @media (max-width: $tablet) {
+                font-size: 16px;
+            }
+            
+            @media (max-width: $mobile-l) {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            
+            &:last-child {
+                padding-right: 16px;
+            }
         }
     }
 }

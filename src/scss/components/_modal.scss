@@ -84,6 +84,14 @@
     border-radius: $radius-m;
     padding: 32px;
 
+    @media (max-width: $tablet) {
+        padding: 32px 24px;
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 24px 16px;
+    }
+
     &._preload {
 
         &::before {

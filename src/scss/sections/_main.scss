@@ -327,6 +327,18 @@
     bottom: 0;
     right: 0;
     width: 78%;
+
+}
+
+.main-half-bg_phone {
+    
+    @media (max-width: 970px) {
+        right: -110px; 
+    }
+
+    @media (max-width: 520px) {
+        display: none;
+    }
 }
 
 .main-half-bg__img {

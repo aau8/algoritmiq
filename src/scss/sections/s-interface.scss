@@ -29,7 +29,7 @@
     margin-top: 96px;
     
     @media (max-width: $tablet) {
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     @media (max-width: $mobile-l) {
@@ -80,7 +80,7 @@
         margin: 0 auto;
     }
 
-    & svg {
+    & .si__thumb-mask-phone svg {
         fill: $interface-dark;
     }
 }
@@ -112,6 +112,21 @@
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+.si__thumb-lines-phone {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.5);
+
+    @media (max-width: $tablet) {
+        display: none;
+    }
 }
 
 .si__list {
@@ -156,13 +171,6 @@
         }
     }
 
-    // @media (max-width: 550px) {
-    //     min-width: auto;
-    //     width: 50%;
-    //     padding-left: 12px;
-    //     opacity: 0;
-    // }
-
     &::after {
         content: '';
         position: absolute;
@@ -179,11 +187,6 @@
         @media (max-width: $tablet) {
             display: none;
         }
-
-        // @media (max-width: 550px) {
-        //     min-width: auto;
-        //     max-width: none;
-        // }
     }
 
     &_left {
@@ -193,18 +196,6 @@
             right: -10px;
             transform: translate(100%, -50%);
         }
-
-        // @media (max-width: 550px) {
-        //     left: auto;
-        //     right: 0;
-
-        //     &::after {
-        //         right: auto;
-        //         left: -10px;
-        //         transform: translate(-100%, -50%);
-        //         // background: $interface-light;
-        //     }
-        // }
     }
 
     &_right {
@@ -301,6 +292,80 @@
                 max-width: 290px;
                 width: calc( (100vw - 768px)/(1110 - 768) * (290 - 190) + 190px);
             }
+        }
+    }
+}
+
+.s-interface_settings {
+
+    & .si__presentation {
+        grid-template-columns: auto;
+    }
+
+    & .si-column-center {
+        max-width: none;
+
+        & .si__thumb {
+            width: 35%;
+            margin: 0 auto;
+
+            @media (max-width: $tablet) {
+                width: 100%;
+            }
+        }
+    }
+    
+    & .si-answer {
+
+        & .si-answer__text {
+
+            @media (max-width: 970px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 820px) {
+                font-size: 13px;
+            }
+
+            @media (max-width: $tablet) {
+                font-size: 14px;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+        
+        &:nth-child(1) {
+            top: 15%;
+        }
+        
+        &:nth-child(2) {
+            top: 37%;
+        }
+        
+        &:nth-child(3) {
+            top: 55%;
+        }
+        
+        &:nth-child(4) {
+            top: 88%;
+        }
+        
+        &:nth-child(5) {
+            top: 12%;
+        }
+        
+        &:nth-child(6) {
+            top: 29%;
+        }
+        
+        &:nth-child(7) {
+            top: 49%;
+        }
+        
+        &:nth-child(8) {
+            top: 81%;
         }
     }
 }

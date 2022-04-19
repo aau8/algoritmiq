@@ -159,5 +159,22 @@
         <path d="M11.3253 13.9771L9.11555 16.1868C8.41225 16.8899 7.45849 17.2848 6.46403 17.2847C5.46958 17.2846 4.51589 16.8896 3.8127 16.1864C3.10952 15.4832 2.71444 14.5295 2.71436 13.5351C2.71427 12.5406 3.10919 11.5868 3.81225 10.8835L6.02196 8.67383" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M13.9774 11.3253L16.1871 9.11555C16.8901 8.41225 17.2851 7.45849 17.285 6.46403C17.2849 5.46958 16.8898 4.51589 16.1866 3.81271C15.4834 3.10952 14.5298 2.71444 13.5353 2.71436C12.5408 2.71427 11.5871 3.10919 10.8838 3.81225L8.67407 6.02196" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="lines-phone" viewBox="0 0 526 576">
+        <g clip-path="url(#clip0_2873_2719)">
+        <path d="M0 1H54.7375V280H117" stroke="#454352"/>
+        <path d="M506 118H451.262V397H389" stroke="#454352"/>
+        <path d="M506 267H451.262V529H389" stroke="#454352"/>
+        <path d="M0 181H54.7375V439H117" stroke="#454352"/>
+        <path d="M0 300H54.7375V483H117" stroke="#454352"/>
+        <path d="M526 12H373" stroke="#454352"/>
+        <path d="M117 575H0" stroke="#454352"/>
+        <path d="M506 575H389" stroke="#454352"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_2873_2719">
+        <rect width="526" height="576" fill="white"/>
+        </clipPath>
+        </defs>
+    </symbol>
 
 </svg>

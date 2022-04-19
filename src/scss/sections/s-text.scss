@@ -8,6 +8,10 @@
     @media (max-width: $tablet) {
         margin: 80px 0;
     }
+
+    @media (max-width: $mobile-l) {
+        margin: 64px 0;
+    }
 }
 
 .s-text__content {
@@ -24,5 +28,9 @@
 
     @media (max-width: $mobile-l) {
         font-size: 16px;
+    }
+
+    @media (max-width: $mobile-m) {
+        font-size: 14px;
     }
 }
