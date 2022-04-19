@@ -3,7 +3,7 @@ import { initLabelTextfield } from "../render";
 window.addEventListener('click', e => {
     const target = e.target
 
-    if (target.type == 'radio') {
+    if (target.type == 'radio' && target.closest('.radio')) {
 
         if (target.dataset.radioAnother != undefined && !target.closest('.qs-block').querySelector('.qs-block__another')) {
             const qsBlock = target.closest('.qs-block')
@@ -20,8 +20,7 @@ window.addEventListener('click', e => {
         }
 
         if (target.dataset.radioAnother == undefined) {
-            const qsBlock = target.closest('.qs-block')
-            const qsBlockAnother = qsBlock.querySelector('.qs-block__another')
+            const qsBlockAnother = target.closest('.qs-block').querySelector('.qs-block__another')
             
             if (qsBlockAnother) {
                 qsBlockAnother.remove()
