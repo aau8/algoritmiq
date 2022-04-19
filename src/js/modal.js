@@ -153,7 +153,7 @@ if (document.querySelector('.st-card')) {
             clearContent()
             showPreload()
     
-            await fetch('../db/products.json')
+            await fetch('./db/products.json')
                 .then(data => data.json())
                 .then(json => json.filter(e => { return e.id == productId })[0])
                 .then(product => {

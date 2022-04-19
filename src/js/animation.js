@@ -68,7 +68,8 @@ scrollTrigger: {
 gsap.timeline({defaults: {duration: 1.5},
   scrollTrigger: {
     trigger: ".rc__img",
-    start: 'top center',
+    start: 'top bottom',
+    markers: true,
   }})
   .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
   

@@ -14,7 +14,7 @@ export const quizSlider = new Swiper('.quiz-slider', {
     observer: true,
 })
 
-quizSlider.slideTo(quizSlider.slides.length - 1)
+// quizSlider.slideTo(quizSlider.slides.length - 1)
 
 // Устанавливаем текущий номер слайда и общее их кол-во
 quantSlides(quizSlider)
