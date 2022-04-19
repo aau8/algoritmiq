@@ -73,19 +73,19 @@ gsap.timeline({defaults: {duration: 1.5},
   .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
   
 // Анимация раздела с интерфейсом приложения
-const sInter = gsap.timeline( { defaults: { duration: 2 } },{
-  scrollTrigger: {
-    trigger: "#i-body",
-    start: "center center",
-    end: "bottom top",
-    scrub: true,
-    pin: true
-  }
-})
-.fromTo("#si-answer-1", {opacity: 0}, {opacity: 1})
-.fromTo("#si-answer-1", {opacity: 1}, {opacity: 2})
-.fromTo("#si-answer-2", {opacity: 0}, {opacity: 1})
-.fromTo("#si-answer-2", {opacity: 1}, {opacity: 2})
+// const sInter = gsap.timeline( { defaults: { duration: 2 } },{
+//   scrollTrigger: {
+//     trigger: "#i-body",
+//     start: "center center",
+//     end: "bottom top",
+//     scrub: true,
+//     pin: true
+//   }
+// })
+// .fromTo("#si-answer-1", {opacity: 0}, {opacity: 1})
+// .fromTo("#si-answer-1", {opacity: 1}, {opacity: 2})
+// .fromTo("#si-answer-2", {opacity: 0}, {opacity: 1})
+// .fromTo("#si-answer-2", {opacity: 1}, {opacity: 2})
 
 // .from("#si-answer-1",  { opacity: 1 })
 // .from("#si-answer-1",  { opacity: 0 })

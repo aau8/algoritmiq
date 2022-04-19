@@ -5,16 +5,16 @@
 
     &_dark {
 
-        & .si-answer {
+        // & .si-answer {
 
-            &::after {
-                background: $interface-dark;
+        //     &::after {
+        //         background: $interface-dark;
 
-                @media (max-width: 550px) {
-                    background: #696874;
-                }
-            }
-        }
+        //         @media (max-width: 550px) {
+        //             background: #696874;
+        //         }
+        //     }
+        // }
 
         & .si-answer__text {
             color: $text-light;
@@ -50,7 +50,7 @@
     display: grid;
     grid-template-columns: 1fr minmax(min-content, 342px) 1fr;
 
-    @media (max-width: 550px) {
+    @media (max-width: $tablet) {
         grid-template-columns: auto;
     }
 }
@@ -61,7 +61,7 @@
     // width: 100%;
     // flex: 1 1 0;
 
-    @media (max-width: 550px) {
+    @media (max-width: $tablet) {
         
         &:not(.si-column-center) {
             display: none;
@@ -73,10 +73,11 @@
     max-width: 342px;
     width: 100%;
 
-    @media (max-width: 550px) {
+    @media (max-width: $tablet) {
         max-width: none;
         min-width: auto;
         width: 50%;
+        margin: 0 auto;
     }
 
     & svg {
@@ -113,6 +114,13 @@
     left: 0;
 }
 
+.si__list {
+
+    @media (max-width: $tablet) {
+        margin-top: 32px;
+    }
+}
+
 .si-answer {
     position: absolute;
     min-width: 160px;
@@ -121,12 +129,39 @@
     max-width: 240px;
     transform: translate(0px, -50%);
 
-    @media (max-width: 550px) {
-        min-width: auto;
-        width: 50%;
-        padding-left: 12px;
-        opacity: 0;
+    @media (max-width: $tablet) {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        transform: translate(0, 0);
+        max-width: none;
+        width: 100%;
+        padding-left: 16px;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 50%;
+        }
     }
+
+    // @media (max-width: 550px) {
+    //     min-width: auto;
+    //     width: 50%;
+    //     padding-left: 12px;
+    //     opacity: 0;
+    // }
 
     &::after {
         content: '';
@@ -141,10 +176,14 @@
         height: 1px;
         background: $interface-light;
 
-        @media (max-width: 550px) {
-            min-width: auto;
-            max-width: none;
+        @media (max-width: $tablet) {
+            display: none;
         }
+
+        // @media (max-width: 550px) {
+        //     min-width: auto;
+        //     max-width: none;
+        // }
     }
 
     &_left {
@@ -155,17 +194,17 @@
             transform: translate(100%, -50%);
         }
 
-        @media (max-width: 550px) {
-            left: auto;
-            right: 0;
+        // @media (max-width: 550px) {
+        //     left: auto;
+        //     right: 0;
 
-            &::after {
-                right: auto;
-                left: -10px;
-                transform: translate(-100%, -50%);
-                // background: $interface-light;
-            }
-        }
+        //     &::after {
+        //         right: auto;
+        //         left: -10px;
+        //         transform: translate(-100%, -50%);
+        //         // background: $interface-light;
+        //     }
+        // }
     }
 
     &_right {
@@ -186,12 +225,12 @@
             top: 10%;
             opacity: 1;
 
-            @media (max-width: 550px) {
+            // @media (max-width: 550px) {
                 
-                &::after {
-                    width: calc( (100vw - 320px)/(550 - 320) * (370 - 49) + 49px);
-                }
-            }
+            //     &::after {
+            //         width: calc( (100vw - 320px)/(550 - 320) * (370 - 49) + 49px);
+            //     }
+            // }
         }
         
         &:nth-child(2) {
@@ -275,7 +314,7 @@
         font-size: 14px;
     }
 
-    @media (max-width: 550px) {
-        font-size: calc( (100vw - 320px)/(550 - 320) * (14 - 12) + 12px);
-    }
+    // @media (max-width: 550px) {
+    //     font-size: calc( (100vw - 320px)/(550 - 320) * (14 - 12) + 12px);
+    // }
 }
