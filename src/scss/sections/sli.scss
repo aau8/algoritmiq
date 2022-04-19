@@ -21,6 +21,31 @@
             }
         }
     }
+}
+
+.sli-info {
+    
+    &._show {
+        
+        & .sli__header {
+    
+            & .title_section {
+                animation: showFromDown .5s ease-in-out forwards;
+            }
+    
+            & .section-text {
+                animation: showFromDown .5s .15s ease-in-out forwards;
+            }
+    
+            & .section-button {
+                animation: showFromDown .5s .3s ease-in-out forwards;
+            }
+        }
+    
+        & .sli__slider  {
+            animation: show .5s .45s ease-in-out forwards;
+        }
+    }
 
     // Анимация
     & .sli__header {
@@ -34,28 +59,6 @@
 
     & .sli__slider  {
         opacity: 0;
-    }
-
-    &._show {
-        
-        & .sli__header {
-
-            & .title_section {
-                animation: showFromDown .5s ease-in-out forwards;
-            }
-
-            & .section-text {
-                animation: showFromDown .5s .15s ease-in-out forwards;
-            }
-
-            & .section-button {
-                animation: showFromDown .5s .3s ease-in-out forwards;
-            }
-        }
-
-        & .sli__slider  {
-            animation: show .5s .45s ease-in-out forwards;
-        }
     }
 }
 
