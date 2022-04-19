@@ -1,5 +1,7 @@
 import { removeAll } from "./util/functions"
 
+const body = document.body
+
 // Высота линий в разделе этапов на главной странице
 if (document.querySelector('.s-steps')) {
     const ssLineDefault = document.querySelector('.s-steps__line_default')
@@ -249,53 +251,52 @@ function updateRange(textfield) {
     }
 }
 
-// Кастомный курсор в разделе Другие функции на страницах функций
-// if (document.querySelector('.mf-card__custom-cursor') && window.innerWidth > 768) {
-//     const cursorCardElems = document.querySelectorAll('.mf-card')
-    
-//     for (let i = 0; i < cursorCardElems.length; i++) {
-//         const cursorCard = cursorCardElems[i];
-//         const cursor = cursorCard.querySelector('.mf-card__custom-cursor')
+// Увеличение изображений при нажатии по ним (у изображения должен быть класс _zoom)
+if (document.querySelector('[data-zoom]')) {
+    zoomInImg();
+}
+function zoomInImg() {
+  const zoomInImgElems = document.querySelectorAll('[data-zoom]');
         
-//         document.addEventListener('mousemove', e => {
-//             const x = e.clientX
-//             const y = e.clientY
-//             const cardX = cursorCard.getBoundingClientRect().x
-//             const cardY = cursorCard.getBoundingClientRect().y
+  zoomInImgElems.forEach(zoomInImg => {
+    zoomInImg.style.cursor = 'zoom-in';
 
-//             cursor.style.opacity = 1
-//             cursor.style.left = x - cardX + 'px'
-//             cursor.style.top = y - cardY + 'px'
-//         })
+    zoomInImg.addEventListener('click', () => {
+      const imgSrc = zoomInImg.getAttribute('src');
+  
+      const bigImg = document.createElement('div');
+  
+      bigImg.classList.add('big-img');
+      bigImg.classList.add('_zoom-out');
+      bigImg.style.cursor = 'zoom-out';
+      
+      bigImg.innerHTML = `<div class="big-img__body"><img src="${imgSrc}" alt="" class="_zoom-out"></div>`
+  
+      document.querySelector('.wrapper').append(bigImg)
 
-//         document.addEventListener('mouseout', e => {
-//             cursor.style.opacity = 0
-//         })
-//     }
-// }
+      setTimeout(() => {
+        bigImg.classList.add('_show');
+      }, 50)
 
-// import lightGallery from 'lightgallery';
+      body.classList.add('_lock');
+      zoomOutImg(bigImg);
+    })
+  })
+}
 
-// // Plugins
-// import lgThumbnail from 'lightgallery/plugins/thumbnail'
-// import lgZoom from 'lightgallery/plugins/zoom'
+function zoomOutImg(bigImg) {
+  const zoomOutImgElems = document.querySelectorAll('._zoom-out');
 
+  zoomOutImgElems.forEach(zoomOutImg => {
+    zoomOutImg.addEventListener('click', () => {
 
+      bigImg.classList.remove('_show');
+      body.classList.remove('_lock');
 
-// import lightGallery from 'lightgallery';
-// import lightGallery from 'https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js'
+      setTimeout(() => {
+        bigImg.remove();
+      }, 300)
 
-// Plugins
-// import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.es5.js'
-// // import lgThumbnail from 'lightgallery/plugins/thumbnail'
-// import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.es5.js'
-// import lgZoom from 'lightgallery/plugins/zoom'
-
-// lightGallery(document.querySelector('.sa__slider'));
-
-// lightGallery(document.querySelector('.sa__slider'), {
-//     plugins: [lgZoom],
-//     speed: 500, 
-// });
-
-
+    })
+  })
+}

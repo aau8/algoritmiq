@@ -38,7 +38,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         console.log(manufId)
         if (window.location.hash.includes('#manuf-') && manufId != 0) {
             const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
-        
+
             showPreloader()
             clearContentAndSlider()
         
@@ -82,6 +82,8 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         abortController = new AbortController()
         const signal = abortController.signal
     
+        sli.classList.remove('_show')
+
         try {
             await fetch('./db/lighting.json', { signal })
                 .then(res => res.json())
@@ -92,6 +94,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
                     sliContent.innerHTML = renderSLIHeader(manuf)
                     sliSlider.innerHTML = renderSLISlides(manuf)
                     lightingInfoSlider.slideTo(0, 0)
+                    sli.classList.add('_show')
                 })
         }
         catch(err) {

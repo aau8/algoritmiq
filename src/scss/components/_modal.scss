@@ -83,6 +83,14 @@
     background: #fff;
     border-radius: $radius-m;
     padding: 32px;
+
+    &._preload {
+
+        &::before {
+            width: 32px;
+            height: 32px;
+        }
+    }
 }
 
 .modal__big-icon {
