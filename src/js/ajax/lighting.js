@@ -7,6 +7,15 @@ const lightingInfoSlider = new Swiper('.sli__slider', {
     slidesPerView: 1,
     spaceBetween: 48,
     observer: true,
+    loop: true,
+    loopedSlides: 2,
+    allowTouchMove: true,
+    
+    breakpoints: {
+        768: {
+            allowTouchMove: false,
+        }
+    },
     
     navigation: {
       prevEl: ".sli__slider-arrow_prev",
@@ -35,7 +44,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     let currentHashName = window.location.hash
     let manufId = Number(currentHashName.replace('#manuf-', ''))
 
-        console.log(manufId)
+        // console.log(manufId)
         if (window.location.hash.includes('#manuf-') && manufId != 0) {
             const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
 
@@ -53,9 +62,9 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
 
     if (currentHashName != '' && currentHashName.includes('#manuf-') && manufId != 0) {
         const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
-    
+
         activeTab.classList.add('_active')
-    
+
         requireToDB(manufId)
     }
     else {
@@ -93,7 +102,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         
                     sliContent.innerHTML = renderSLIHeader(manuf)
                     sliSlider.innerHTML = renderSLISlides(manuf)
-                    lightingInfoSlider.slideTo(0, 0)
+                    lightingInfoSlider.slideToLoop(0, 0)
                     sli.classList.add('_show')
                 })
         }

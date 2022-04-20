@@ -1,47 +1,24 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Персональная информация</h2>
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qmp-1">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш статус</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Заказчик" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Заказчик</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Представитель заказчика">
-                            <span class="radio__point"></span>
-                            <label for="">Представитель заказчика</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Дизайнер/архитектор">
-                            <span class="radio__point"></span>
-                            <label for="">Дизайнер/архитектор</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Строитель">
-                            <span class="radio__point"></span>
-                            <label for="">Строитель</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Коллега из смежных сфер">
-                            <span class="radio__point"></span>
-                            <label for="">Коллега из смежных сфер</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Тип помещения">Какой у Вас тип помещения?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-1">
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" name="type-apart" value="Квартира">
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/1.png" alt=""></div>
+                    <span class="qmca-rcard__title">Квартира</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" name="type-apart" value="Дом" checked>
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/2.png" alt=""></div>
+                    <span class="qmca-rcard__title">Дом</span>
                 </div>
             </div>
         </div>
@@ -56,38 +33,395 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Информация об объекте</h2>
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Тип объекта</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="info-object" value="Дом" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Дом</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="info-object" value="Квартира">
-                            <span class="radio__point"></span>
-                            <label for="">Квартира</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="info-object" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Площадь, кв.м">Какая площадь Вашего помещения?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content qmca-2">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" type="text" min="1" max="2000" value="200" step="10" data-prefix="м2" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="2000" value="200">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Группы осв. on/off">Сколько групп освещения on/off?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" type="text" min="1" max="5" value="2" step="1" data-prefix="групп(ы) " data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Группы дим. осв.">Сколько диммированных групп освещения?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="групп(ы) " data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Группы LED осв.">Сколько групп управления лентами LED?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="групп(ы) " data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Зоны упр. штор.">Сколько зон управления приводами штор?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="0" max="5" value="2" step="1" data-prefix="зон(ы)" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="0" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Зоны с тепл. полом">Сколько зон с теплыми полами?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="зон(ы)" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Зоны отопл.">Сколько зон отопления в Вашем помещении?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="зон(ы)" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Зоны кондиционер.">Сколько зон с кондиционированием?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Розеточн. группы">Сколько управляемых розеточных групп?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="групп(ы)" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Датч. протечки">Количество датчиков протечки?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Датч. движения">Сколько датчиков движения?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Инстр. визуал.">Какой инструмент визуализации Вы планируете использовать?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-13">
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Gira x1" name="visual-tool" checked>
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/visual-1.png" alt=""></div>
+                    <span class="qmca-rcard__title">Gira x1</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Pairot (Apple Home Kit)" name="visual-tool">
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/visual-2.png" alt=""></div>
+                    <span class="qmca-rcard__title">Pairot (Apple Home Kit)</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Iridium" name="visual-tool">
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/visual-3.png" alt=""></div>
+                    <span class="qmca-rcard__title">Iridium</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="ABB" name="visual-tool">
+                    <div class="qmca-rcard__point"></div>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/visual-4.png" alt=""></div>
+                    <span class="qmca-rcard__title">ABB</span>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-modal__footer">
+            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
+                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+                <span class="quiz-modal__btn-text">Назад</span>
+            </button>
+            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
+                <span class="quiz-modal__btn-text">Далее</span>
+                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="swiper-slide quiz-slide">
+    <div class="quiz-modal">
+        <div class="quiz-modal__header">
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
+            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
+        </div>
+        <div class="quiz-modal__body">
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Производитель и кол-во выключ.">Выберите производителя и количество выключателей</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-14">
+                <div class="qmca-14__rcards">
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Tense" name="manuf-switch" checked>
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-1.png" alt=""></div>
+                        <span class="qmca-rcard__title">Tense</span>
+                    </div>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Gira" name="manuf-switch">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-2.png" alt=""></div>
+                        <span class="qmca-rcard__title">Gira</span>
+                    </div>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Zennio" name="manuf-switch">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-3.png" alt=""></div>
+                        <span class="qmca-rcard__title">Zennio</span>
+                    </div>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Jung" name="manuf-switch">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-4.png" alt=""></div>
+                        <span class="qmca-rcard__title">Jung</span>
                     </div>
                 </div>
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Адрес и общая площадь объекта</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
+                <div class="qmca-14__range">
+                    <div class="qmca-range">
+                        <input class="qmca-range__textfield" name="manuf-quantity" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                        <input class="qmca-range__range" type="range" min="1" max="5" value="2">
                     </div>
                 </div>
             </div>
@@ -107,38 +441,16 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление электронагрузками</h2>
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Автоматизация управлением светом, шторами, климатом, мультимедийными устройствами и системой безопасности из одного интерфейса, (умный дом).</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="electric-manag" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="electric-manag" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="electric-manag" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Кол-во терморег.">Количество терморегуляторов?</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-range__content">
+                <div class="qmca-range">
+                    <input class="qmca-range__textfield" name="" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                    <input class="qmca-range__range" type="range" min="1" max="5" value="2">
                 </div>
             </div>
         </div>
@@ -157,189 +469,49 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Использование для управления сенсорных панелей.</h2>
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qmp-4">
-                    <div class="qmp-4-card">
-                        <input type="radio" name="touch-screen" class="qmp-4-card__input" checked>
-                        <div class="qmp-4-card__img"><img src="./img/quiz-pop-up/touch-screen-l.svg" alt=""></div>
-                        <h3 class="qmp-4-card__title">Savant Touch 8 inch - Black&White</h3>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Производитель и кол-во сенс. панелей">Выберите производителя и кол-во сенсорных панелей</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-16">
+                <div class="qmca-16__rcards">
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Gira G1" name="manuf-touch-panel" checked>
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-1.png" alt=""></div>
+                        <span class="qmca-rcard__title">Gira G1</span>
                     </div>
-                    <div class="qmp-4-card">
-                        <input type="radio" name="touch-screen" class="qmp-4-card__input">
-                        <div class="qmp-4-card__img"><img src="./img/quiz-pop-up/touch-screen-s.svg" alt=""></div>
-                        <h3 class="qmp-4-card__title">Savant Touch 5.5 inch - Black&White</h3>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Basalte Ellie" name="manuf-touch-panel">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-2.png" alt=""></div>
+                        <span class="qmca-rcard__title">Basalte Ellie</span>
                     </div>
-                </div>
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество.</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Zennio z40" name="manuf-touch-panel">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-3.png" alt=""></div>
+                        <span class="qmca-rcard__title">Zennio z40</span>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Плавная регулировка яркости освещения, (диммирование).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Zennio z41 Pro" name="manuf-touch-panel">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-4.png" alt=""></div>
+                        <span class="qmca-rcard__title">Zennio z41 Pro</span>
+                    </div>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Zennio z35" name="manuf-touch-panel">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-4.png" alt=""></div>
+                        <span class="qmca-rcard__title">Zennio z35</span>
+                    </div>
+                    <div class="qmca-rcard">
+                        <input class="qmca-rcard__radio" type="radio" value="Zennio z70" name="manuf-touch-panel">
+                        <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-switch-4.png" alt=""></div>
+                        <span class="qmca-rcard__title">Zennio z70</span>
                     </div>
                 </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Количество релейных групп освещения, (только вкл./выкл.).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое включение/ выключение света, <br>(датчики движения).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Биодинамическое освещение, (температура освещения <br>привязана к циклу солнца).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
+                <div class="qmca-16__range">
+                    <div class="qmca-range">
+                        <input class="qmca-range__textfield" name="manuf-quantity" type="text" min="1" max="5" value="2" step="1" data-prefix="шт" data-textfield-num>
+                        <input class="qmca-range__range" type="range" min="1" max="5" value="2">
                     </div>
                 </div>
             </div>
@@ -359,39 +531,52 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Биодинамическое освещение 2, (температура освещения <br>привязана к циклу солнца).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting-2" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting-2" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="biodynamic-lighting-2" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="Производитель KNX">Выберите производителя для KNX оборудования</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-17">
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Zennio" name="manuf-knx" checked>
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-1.png" alt=""></div>
+                    <span class="qmca-rcard__title">Zennio</span>
                 </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Schneider" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-2.png" alt=""></div>
+                    <span class="qmca-rcard__title">Schneider</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Module-electronic" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-2.png" alt=""></div>
+                    <span class="qmca-rcard__title">Module-electronic</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Hager" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-4.png" alt=""></div>
+                    <span class="qmca-rcard__title">Hager</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="MDT" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-4.png" alt=""></div>
+                    <span class="qmca-rcard__title">MDT</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="ABB" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-6.png" alt=""></div>
+                    <span class="qmca-rcard__title">ABB</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Gira" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-7.png" alt=""></div>
+                    <span class="qmca-rcard__title">Gira</span>
+                </div>
+                <div class="qmca-rcard">
+                    <input class="qmca-rcard__radio" type="radio" value="Jung" name="manuf-knx">
+                    <div class="qmca-rcard__img"><img src="./img/calc-amount/manuf-knx-8.png" alt=""></div>
+                    <span class="qmca-rcard__title">Jung</span>
                 </div>
             </div>
         </div>
@@ -410,1493 +595,14 @@
 <div class="swiper-slide quiz-slide">
     <div class="quiz-modal">
         <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
+            <h3 class="quiz-modal__quiz-title">Калькулятор коммерческих предложений</h3>
             <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
         </div>
         <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление розеточными группами.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Использование сценариев домашней автоматизации.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление приводами штор, маркиз.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите номера помещений и количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите номер помещения или место предполагаемой установки силовых и слаботочных щитов, рэковой стойки.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Возможно имеется дизайн-проект, проект электроснабжения, техническое задание.</h2>
-            <!-- qs - quiz select -->
-            <!-- quf - quiz upload file -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="quf-block">
-                    <h3 class="quiz-modal__subtitle">Файл не должен превышать более 5 Мб.</h3>
-                    <div class="dropzone guf-dropzone">
-                        <div class="guf-dropzone__content">
-                            <div class="guf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
-                            <span class="guf-dropzone__text">Прикрепите ваш файл здесь</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Климат-контроль</span>. Управление кондиционированием воздуха.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите количество <span>приточных</span> установок системы вентиляции.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите количество <span>вытяжных</span> установок системы вентиляции.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление радиаторами, конвекторами отопления.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество комнат</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление радиаторами, конвекторами отопления.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество комнат</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое поддержание температуры в специализированных помещениях.</h2>
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qmp-1">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Бассейн" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Бассейн</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Винный погреб">
-                            <span class="radio__point"></span>
-                            <label for="">Винный погреб</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Библиотека">
-                            <span class="radio__point"></span>
-                            <label for="">Библиотека</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Галерея">
-                            <span class="radio__point"></span>
-                            <label for="">Галерея</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Хранилище для шуб">
-                            <span class="radio__point"></span>
-                            <label for="">Хранилище для шуб</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="personal-info" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Возможность проветривания с помощью автоматического открывания окон. Укажите количество окон и фрамуг.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество комнат</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Возможно имеется проект теплоснабжения, вентиляции, кондиционирования воздуха, техническое задание.</h2>
-            <!-- qs - quiz select -->
-            <!-- quf - quiz upload file -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="quf-block">
-                    <h3 class="quiz-modal__subtitle">Файл не должен превышать более 5 Мб.</h3>
-                    <div class="dropzone guf-dropzone" id="">
-                        <div class="guf-dropzone__content">
-                            <div class="guf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
-                            <span class="guf-dropzone__text">Прикрепите ваш файл здесь</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Инженерная безопасность</span>. Защита от протечек воды.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Пожарный датчик с сенсорами дыма, температуры и угарного газа.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автономное энергоснабжение, (система гарантированного бесперебойного электроснабжения).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Личная безопасность</span>. Система безопасности для дома или квартиры, (окна, двери, датчики движения).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматизированный контроль доступа в помещение, (кодовый, карта доступа или биометрический замок).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Видеонаблюдение за прилегающей территорией.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Видеонаблюдение внутри дома или квартиры.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Аудио-контроль за происходящим в помещении.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Вызывные панели видеодомофона.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество панелей</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Абонентские устройства видеодомофона.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество мониторов</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление защитными жалюзи</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Возможность вызова группы быстрого реагирования, (автоматически, тревожной кнопкой).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Медиа-домашнее развлечение</span>. Подбор оборудования и помощь в организации системы "Домашний кинотеатр".</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Медиа-домашнее развлечение</span>. Подбор оборудования и помощь в организации системы "Домашний кинотеатр".</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Строительство персонального кинозала.</h2> 
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Мультимедийные зоны.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Умный пульт дистанционного управления.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="q-block">
-                    <button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
-                        <span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
-                        <span class="show-video__text">Смотреть пояснительное видео</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Управление всеми мультимедийными устройствами из одного интерфейса управления.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое управление светом и шторами в кинозале, (режим освещения «КИНО»).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое управление экраном, лифтом проектора, приводом ТВ панели и т.п.)</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Система озвучивания отдельных помещений и пространств, (МУЛЬТИРУМ).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Медиа-архив с выходом в internet, (фото, музыка, фильмы).</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Караоке система.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content">
-                <div class="qs-block">
-                    <h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
-                    <div class="qs-block__list">
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Да" checked>
-                            <span class="radio__point"></span>
-                            <label for="">Да</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Нет">
-                            <span class="radio__point"></span>
-                            <label for="">Нет</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="home-automation" value="Другое" data-radio-another>
-                            <span class="radio__point"></span>
-                            <label for="">Другое</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Система для видеоигр.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Системы связи</span>. Компьютерная проводная и беспроводная, бесшовная сеть.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle="">Усиление мобильного (GSM) сигнала.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="quiz-modal__footer">
-            <button class="btn quiz-modal__btn quiz-modal__btn_prev" data-quiz-prev>
-                <span class="quiz-modal__btn-icon" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-                <span class="quiz-modal__btn-text">Назад</span>
-            </button>
-            <button class="btn quiz-modal__btn quiz-modal__btn_next" data-quiz-next>
-                <span class="quiz-modal__btn-text">Далее</span>
-                <span class="quiz-modal__btn-icon"><svg><use href='./img/sprite.svg#quiz-button'></use></svg></span>
-            </button>
-        </div>
-    </div>
-</div>
-<div class="swiper-slide quiz-slide">
-    <div class="quiz-modal">
-        <div class="quiz-modal__header">
-            <h3 class="quiz-modal__quiz-title">Пройдите небольшой опрос и получите персональное предложение</h3>
-            <span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
-        </div>
-        <div class="quiz-modal__body">
-            <h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Телевидение</span>. Эфирное, спутниковое, ip tv. Укажите количество телевизоров.</h2>
-            <!-- qp - quiz popup -->
-            <!-- qs - quiz select -->
-            <div class="quiz-modal__content qs-modal__content qmc_large-indent">
-                <div class="q-block">
-                    <h3 class="quiz-modal__subtitle">Укажите количество помещений с плохой (GSM) связью</h3>
-                    <div class="textfield q-block__textfield">
-                        <input type="text">
-                        <label></label>
-                    </div>
-                </div>
+            <h2 class="quiz-modal__title" data-quiz-subtitle="">Предлагаем Вам проверить введенные данные</h2>
+            <!-- qmca - quiz modal calc amount -->
+            <div class="quiz-modal__content qmca-18">
+                <div class="qmca-18__table"></div>
             </div>
         </div>
         <div class="quiz-modal__footer">
@@ -1931,7 +637,7 @@
                         <label for="">Ваш номер телефона</label>
                     </div>
                     <div class="textfield">
-                        <input type="email" name="email" id="" data-tf-email data-tf-required>
+                        <input type="text" name="email" id="" data-tf-email data-tf-required>
                         <label for="">Электронная почта</label>
                     </div>
                 </div>

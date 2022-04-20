@@ -37,6 +37,7 @@ $quiz-padding-mob: 16px;
     max-width: 927px;
     width: 100%;
     min-height: 528px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border-radius: $radius-m;
@@ -87,6 +88,7 @@ $quiz-padding-mob: 16px;
 // Тело модалки
 .quiz-modal__body {
     flex: 1 1 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     padding: $quiz-padding $quiz-padding 0;

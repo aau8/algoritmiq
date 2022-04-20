@@ -1,7 +1,7 @@
 import { quizSlider, quantSlides } from './general'
 import { initForm } from '../forms'
 import { initLabelTextfield } from '../render'
-import Dropzone from 'dropzone'
+import { initRanges } from '../render'
 import 'dropzone/dist/dropzone.css'
 
 // Предложение пройти опрос
@@ -30,9 +30,12 @@ if (popupOffer) {
             .then(e => {
                 const quizForm = modal.querySelector('.quiz-modal-form')
                 const qfInputElems = quizForm.querySelectorAll('.textfield input')
+                const rangeBlockElems = sliderWrapper.querySelectorAll('.qmca-range')
 
+                // console.log(rangeBlockElems)
                 quantSlides(quizSlider)
-                initDropzone()
+                initRanges(rangeBlockElems)
+                // initDropzone()
                 initForm(quizForm)
 
                 qfInputElems.forEach(initLabelTextfield)
@@ -46,24 +49,5 @@ if (popupOffer) {
     setTimeout(e => {
         popupOffer.classList.add('_show')
     }, 2000)
-
-    initDropzone()
-    function initDropzone() {
-        const gufDropzoneElems = document.querySelectorAll('.guf-dropzone')
-        
-        gufDropzoneElems.forEach(gufDropzone => {
-        
-            let myDropzone = new Dropzone(gufDropzone, {
-                paramName: "file",
-                maxFilesize: 2, // MB
-                addRemoveLinks: true,
-                url: '/upload-docs',
-            });
-            
-            myDropzone.on("addedfile", file => {
-              console.log(`File added: ${file.name}`);
-            });
-        })
-    }
 }
 

@@ -16,8 +16,10 @@
 
 .a-clients__wrap {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    margin: -16px -12px;
     
     @media (max-width: 600px) {
         // display: grid;
@@ -28,7 +30,8 @@
 }
 
 .a-client {
-    margin: 0 12px;
+    margin: 16px 48px;
+    // margin: 0 12px;
 
     &:first-child {
         margin-left: 0;
@@ -38,16 +41,25 @@
         margin-right: 0;
     }
 
-    @media (max-width: $laptop) {
-        width: 100%;
+    @media (max-width: $tablet) {
+        margin: 16px 32px;
     }
-
+    
     @media (max-width: 600px) {
+        // width: 100%;
         max-width: 120px;
 
         &:not(:last-child) {
             margin-bottom: 24px;
         }
+    }
+
+    @media (max-width: $mobile-l) {
+        margin: 12px 20px;
+    }
+
+    @media (max-width: $mobile-m) {
+        margin: 12px 16px;
     }
 
     @media (max-width: $mobile-m) {

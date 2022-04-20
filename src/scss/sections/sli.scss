@@ -14,10 +14,10 @@
         }
 
         & .sli__body {
-            margin: 0 0 48px 0;
+            margin-bottom: 48px;
         
             @media (max-width: $tablet) {
-                margin: 0 0 32px 0;
+                margin-bottom: 32px;
             }
         }
     }
@@ -101,6 +101,9 @@
 }
 
 .sli__body {
+    max-width: 1028px;
+    width: 100%;
+    margin: 0 auto;
     margin-top: 96px;
 
     @media (max-width: $tablet) {

@@ -44,6 +44,7 @@
 
 // Карточка
 .sp-card {
+    height: 100%;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -99,6 +100,7 @@
 }
 
 .sp-card__content {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

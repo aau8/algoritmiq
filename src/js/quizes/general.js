@@ -1,4 +1,5 @@
 import Swiper, { Navigation, EffectFade, Thumbs, Autoplay, Pagination, FreeMode } from 'swiper'
+import Dropzone from 'dropzone'
 
 export const quizSlider = new Swiper('.quiz-slider', {
     modules: [EffectFade, Thumbs],
@@ -110,4 +111,24 @@ function removeRowEnteredData(slide, i) {
 
     quizArr.splice(i-1)
     localStorage.setItem('quizCalcArr', JSON.stringify(quizArr))
+}
+
+// Инициализация зон для загрузки документов, изображений
+initDropzone()
+function initDropzone() {
+    const gufDropzoneElems = document.querySelectorAll('.guf-dropzone')
+    
+    gufDropzoneElems.forEach(gufDropzone => {
+    
+        let myDropzone = new Dropzone(gufDropzone, {
+            paramName: "file",
+            maxFilesize: 2, // MB
+            addRemoveLinks: true,
+            url: '/upload-docs',
+        });
+        
+        myDropzone.on("addedfile", file => {
+          console.log(`File added: ${file.name}`);
+        });
+    })
 }
