@@ -36,10 +36,7 @@ export default {
       template: `./src/${page}`, // Где находится файл
       filename: `./${page}`, // Название файла
       inject: page === 'index.html' ? false : 'body', // Все скрипты помещаются внизу body, кроме страницы index.html
-      minify: {
-        collapseWhitespace: false, // Убирать пространство между тегами не нужно
-        removeComments: false, // Удалять комментарии не нужно
-      },
+      minify: false,
     })),
     // Очищаем папку dist
     new CleanWebpackPlugin(),
@@ -56,10 +53,10 @@ export default {
           },
         },
         // HTML
-        {
-          test: /\.html$/i,
-          use: 'html-loader'
-        },
+        // {
+        //   test: /\.html$/i,
+        //   use: 'html-loader'
+        // },
         // CSS
         // {
         //   test: /\.(s[ac]ss|css)$/i,
