@@ -30,7 +30,6 @@
 }
 
 .textfield textarea {
-    // height: auto;
     height: 128px;
     font-size: 14px;
 
@@ -61,8 +60,6 @@
     
     &._change-label {
         opacity: 0;
-        // top: 0;
-        // transform: translate(0, -50%) scale(.8);
         transform: translate(30px, 0);
     }
 }
@@ -77,7 +74,6 @@
         content: attr(data-textfield-error);
         display: inline-block;
         font-size: 12px;
-        // padding: 0 4px;
         margin-top: 6px;
         color: $error;
     }

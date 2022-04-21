@@ -72,21 +72,12 @@ if (document.querySelector('.main__slider')) {
     const msNumValue = msNum.querySelector('span')
   
     msNumValue.innerText = e.realIndex + 1
-  
-    // progressSlider.classList.add('_reset')
     progressSlider.classList.remove('_active')
   
     setTimeout(e => {
       progressSlider.classList.add('_active')
     }, 10)
   })
-  
-  // mainSlider.on('autoplay', e => {
-  
-  //   setTimeout(e => {
-  //     // progressSlider.classList.remove('_reset')
-  //   }, 500)
-  // })
 }
 
 if (document.querySelector('.sa__slider')) {
@@ -151,7 +142,6 @@ if (document.querySelector('.ssc__screen-slider')) {
       
       slidesPerView: 1,
       effect: 'fade',
-      // loop: true,
       fadeEffect: {
         crossFade: true
       },
@@ -163,7 +153,6 @@ if (document.querySelector('.ssc__screen-slider')) {
 
       pagination: {
         el: '.ssc-content__slider-pagin',
-        // type: 'bullet',
         clickable: true,
         renderBullet: (i, className) => {
           return `<span class="${className}"><span>0${i+1}</span></span>`
@@ -193,52 +182,6 @@ const mainLightingSlider = new Swiper('.sml__slider', {
     }
   }
 })
-
-// const touchSwitchTitlesSlider = new Swiper('.ts-title-slider', {
-//   modules: [ EffectFade ],
-
-//   slidesPerView: 1,
-//   allowTouchMove: false,
-
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true
-//   },
-// })
-
-// const touchSwitchSlider = new Swiper('.ts-slider', {
-//   modules: [ Navigation, Pagination, EffectFade, Thumbs ],
-
-//   slidesPerView: 1,
-
-//   effect: 'fade',
-//   fadeEffect: {
-//     crossFade: true
-//   },
-
-//   navigation: {
-//     nextEl: '.ts-slider__arrow-next',
-//     prevEl: '.ts-slider__arrow-prev'
-//   },
-
-//   pagination: {
-//     el: '.ts-slider__pagination',
-//     clickable: true,
-//     renderBullet: (i, className) => {
-//       const slider = document.querySelector('.ts-slider')
-//       const slide = slider.querySelectorAll('.ts-slide')[i]
-
-//       console.log(i, className, slide)
-//       return `<span class="${className}"  style="background-color: ${slide.dataset.tsColor}"></span>`
-//     }
-//   },
-  
-//   thumbs: {
-//       swiper: touchSwitchTitlesSlider,
-//   }
-// })
-
-
 
 const touchSwitchSlider = new Swiper('.ts-slider', {
   modules: [ Navigation, Pagination, EffectFade, Thumbs ],

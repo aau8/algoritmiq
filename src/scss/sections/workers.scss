@@ -7,33 +7,16 @@
     }
 }
 
-.workers__wrap {
-
-}
-
 .workers__list {
     display: grid;
     grid-template-columns: repeat(4, minmax(190px, 1fr));
     gap: 24px 27px;
     overflow-x: auto;
     padding-bottom: 20px;
-
     @include scrollbar(100%, 4px, $text-gray-light)
-
-    // @media (max-width: 900px) {
-    //     grid-template-columns: 1fr 1fr;
-    // }
-
-    // @media (max-width: $mobile-l) {
-    //     grid-template-columns: 1fr;
-    // }
 }
 
 // Карточка сотрудника
-.w-card {
-
-}
-
 .w-card__avatar {
     width: 72px;
     height: 72px;
@@ -67,10 +50,6 @@
     height: 1px;
     background: $border-dark;
     margin: 24px 0;
-}
-
-.w-card__contacts {
-
 }
 
 .w-card__contact {

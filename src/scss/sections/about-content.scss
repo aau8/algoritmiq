@@ -1,8 +1,3 @@
-
-.about-content {
-
-}
-
 .about-content__wrap {
     display: flex;
 
@@ -47,6 +42,5 @@
 
     @media (max-width: $mobile-l) {
         font-size: 14px;
-        // line-height: 1.6;
     }
 }

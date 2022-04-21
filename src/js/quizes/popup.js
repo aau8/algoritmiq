@@ -32,10 +32,8 @@ if (popupOffer) {
                 const qfInputElems = quizForm.querySelectorAll('.textfield input')
                 const rangeBlockElems = sliderWrapper.querySelectorAll('.qmca-range')
 
-                // console.log(rangeBlockElems)
                 quantSlides(quizSlider)
                 initRanges(rangeBlockElems)
-                // initDropzone()
                 initForm(quizForm)
 
                 qfInputElems.forEach(initLabelTextfield)

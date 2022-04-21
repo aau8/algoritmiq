@@ -42,8 +42,6 @@
     @if $brightness == 'active' {
         @return adjust-color($color, $lightness: -5%);
     }
-    // @if type-of($brightness) == number {
-    // }
 
     @return adjust-color($color, $lightness: $brightness);
 }

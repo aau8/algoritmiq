@@ -56,10 +56,6 @@ export function getSiblings(elem) {
   return siblings;
 }
 
-// export function getSiblings(element) {
-//   return element.parentElement.children
-// }
-
 export default {
   find,
   findAll,

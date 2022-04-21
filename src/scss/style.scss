@@ -4,11 +4,6 @@
 @import '_reset'; // Сброс css
 
 
-// Общие стили для страниц
-// @include selection {} // Стиль выделения элементов на странице
-// @include scrollbar(); // Стиль скроллбара
-
-
 html {
     scroll-behavior: smooth;
 }
@@ -45,7 +40,6 @@ body {
 @import './_animation';
 
 // Компоненты
-// @import './components/_forms';
 @import './components/_modal';
 
 // Елементы

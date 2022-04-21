@@ -81,10 +81,6 @@ $adaptive-menu-hide: 1130px;
     @media (max-width: $mobile-l) {
         margin-right: 12px;
     }
-
-    @media (max-width: $mobile-m) {
-        // max-width: 90px;
-    }
 }
 
 // Меню
@@ -123,7 +119,6 @@ $adaptive-menu-hide: 1130px;
         display: flex;
         flex-direction: column;
         background: #fff;
-        // padding: 32px;
         margin: 0 0 0 auto;
         overflow-y: auto;
         overflow-x: hidden;
@@ -154,7 +149,6 @@ $adaptive-menu-hide: 1130px;
         justify-content: space-between;
         background: #fff;
         border-bottom: 1px solid $border-dark;
-        // padding: 24px;
     }
 
     @media (max-width: $mobile-l) {
@@ -174,7 +168,6 @@ $adaptive-menu-hide: 1130px;
 }
 
 .menu-close {
-    // display: none;
     position: relative;
     width: 24px;
     height: 24px;
@@ -247,7 +240,6 @@ $adaptive-menu-hide: 1130px;
 
     @media (max-width: $adaptive-menu-hide) {
         height: 50px;
-        // padding: 12px 24px;
     }
 }
 
@@ -427,9 +419,6 @@ $adaptive-menu-hide: 1130px;
 }
 
 // Смена языка
-.lang {
-}
-
 .header__lang {
     margin: 0 32px;
 
@@ -483,17 +472,12 @@ $adaptive-menu-hide: 1130px;
     }
 }
 
-.lang__dropdown {
-
-}
-
 // Кнопка "Отправить зявку"
 .header__btn-applic {
     height: 100%;
     border-radius: 0;
 
     @media (max-width: $mobile-m) {
-        // font-size: 13px;
         padding-right: 16px;
         padding-left: 16px;
     }

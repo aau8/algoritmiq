@@ -16,7 +16,6 @@
     max-width: 912px;
     width: 100%;
     margin: 0 auto;
-    // margin-bottom: -110px;
     margin-bottom: -10%;
 
     &::before {
@@ -90,24 +89,7 @@
 
 // Слайдер
 .rct__cards {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr);
-    // column-gap: 
     margin-top: 48px;
-    // overflow: hidden;
-
-    @media (max-width: 600px) {
-        
-        // & .swiper-slide {
-        //     opacity: 0;
-        //     transition: $tr;
-    
-        //     &-active,
-        //     &-active + .swiper-slide {
-        //         opacity: 1;
-        //     }
-        // }
-    }
 }
 
 // Карточка

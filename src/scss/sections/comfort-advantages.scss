@@ -58,7 +58,6 @@
 
 .ca-block__wrap {
     display: flex;
-    // align-items: center;
     justify-content: space-between;
 
     @media (max-width: $tablet) {
@@ -149,19 +148,6 @@
     }
 }
 
-// .ca-block__indent-top {
-//     width: 100%;
-//     height: auto;
-// }
-
-.ca-block__header {
-
-}
-
-.ca-block__title {
-
-}
-
 .ca-block__text {
     max-width: 480px;
     width: 100%;
@@ -199,20 +185,6 @@
             margin-bottom: 16px;
         }
     }
-
-    &:hover {
-        
-        @media (min-width: $min-hover) {
-            
-            & .cab-row__icon {
-                // transform: scale(1.1);
-            }
-        }
-    }
-}
-
-.cab-row__icon {
-    // transition: $tr;
 }
 
 .cab-row__content {

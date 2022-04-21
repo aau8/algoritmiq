@@ -1,7 +1,6 @@
 import { gsap } from 'gsap'
 import { TweenLite } from 'gsap/gsap-core.js'
 import ScrollTrigger from 'gsap/ScrollTrigger.js'
-// import DrawSVGPlugin from 'gsap/DrawSVGPlugin.js'
 
 gsap.registerPlugin(ScrollTrigger)
 

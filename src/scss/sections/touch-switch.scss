@@ -64,10 +64,6 @@
         margin: 5px 10px;
         cursor: pointer;
 
-        // &:not(:last-child) {
-        //     margin-right: 20px;
-        // }
-
         &:hover {
             
             @media (min-width: $min-hover) {
@@ -79,7 +75,6 @@
         }
 
         &::before {
-            // content: attr("data-ts-title"),
             content: attr(data-ts-title);
             position: absolute;
             z-index: 1;
@@ -89,7 +84,6 @@
             display: block;
             font-size: 13px;
             color: $firm-dark;
-            // line-height: 1.4;
             text-align: center;
             background: #fff;
             border-radius: 4px;
@@ -113,10 +107,6 @@
     @media (max-width: $tablet) {
         margin-top: 32px;
     }
-
-    // @media (max-width: $mobile-l) {
-    //     margin-top: 24px;
-    // }
 }
 
 .ts-slider {
@@ -139,10 +129,6 @@
         width: 100%;
         height: 100%;
     }
-}
-
-.ts-slider__arrows {
-
 }
 
 .ts-slider__arrow {

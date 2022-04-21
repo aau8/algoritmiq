@@ -111,7 +111,6 @@ const rangeBlockElems = document.querySelectorAll('.qmca-range')
 // Инициализируем блоки с ползунками
 initRanges(rangeBlockElems)
 export function initRanges(elems) {
-    // console.log(elems)
     for (let i = 0; i < elems.length; i++) {
         const rangeBlock = elems[i];
         const range = rangeBlock.querySelector('.qmca-range__range')
@@ -238,7 +237,6 @@ export function initRanges(elems) {
     
     // Изменение атрибута value
     function setValueInput(selectors, value) {
-        // console.log(value)
         for (let i = 0; i < selectors.length; i++) {
             const input = selectors[i];
             input.setAttribute('value', value == undefined ? parseInt(input.value) : parseInt(value))

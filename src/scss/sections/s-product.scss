@@ -32,12 +32,6 @@
         
         @media (max-width: 500px) {
             grid-template-columns: 1fr;
-            // gap: 16px;
-            // margin-top: 48px;
-        }
-    
-        @media (max-width: $mobile-l) {
-            // margin-top: 32px;
         }
     }
 }
@@ -84,23 +78,16 @@
 
 .sp-card__img {
     width: 100%;
-    // max-width: 200px;
     height: auto;
-    // padding: 0 18px;
     margin: 0 auto;
     margin-bottom: 24px;
 
     @media (max-width: $tablet) {
         margin-bottom: 16px;
     }
-
-    & img {
-        // margin-bottom: 14%;
-    }
 }
 
 .sp-card__content {
-    // height: 100%;
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;

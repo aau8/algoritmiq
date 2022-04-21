@@ -1,16 +1,5 @@
 import { quizSlider } from './quizes/general'
 
-// При фокусе инпутов, у них убирается класс ошибки
-// const inputElems = document.querySelectorAll('input')
-
-// for (let i = 0; i < inputElems.length; i++) {
-//     const input = inputElems[i]
-    
-//     input.addEventListener('focus', e => {
-//         textfieldRemoveError(input.parentElement)
-//     })
-// }
-
 window.addEventListener('click', e => {
     const target = e.target
 
@@ -144,7 +133,6 @@ export function initForm(form) {
         else {
     
             setTimeout(e => {
-                // resetForm(form)
                 submitFormAlert(cfSubmit, 'Ошибка! Вопрос не отправлен')
                 hidePreloadSubmit(cfSubmit)
                 

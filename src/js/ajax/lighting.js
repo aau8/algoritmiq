@@ -44,7 +44,6 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     let currentHashName = window.location.hash
     let manufId = Number(currentHashName.replace('#manuf-', ''))
 
-        // console.log(manufId)
         if (window.location.hash.includes('#manuf-') && manufId != 0) {
             const activeTab = document.querySelector(`[data-manuf-id="${manufId}"]`)
 

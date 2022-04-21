@@ -42,11 +42,8 @@
     display: grid;
     grid-template-columns: 1fr minmax(200px, 1fr);
     gap: 70px;
-    // display: flex;
-    // align-items: center;
     margin: 0 auto;
     margin-top: 54px;
-    // margin-left: 150px;
 
     @media (max-width: $laptop) {
         gap: 60px;
@@ -82,7 +79,6 @@
     margin: 0 auto;
 
     @media (max-width: 650px) {
-        // min-width: 200px;
         min-width: 150px;
     }
 
@@ -126,15 +122,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    // margin-left: 150px;
-
-    // @media (max-width: $laptop) {
-    //     margin-left: 100px;
-    // }
-
-    // @media (max-width: $tablet) {
-    //     margin-left: 80px;
-    // }
 
     @media (max-width: 500px) {
         width: 80%;
@@ -194,7 +181,6 @@
     font-size: 19px;
     font-weight: 300;
     line-height: 1.6;
-    // color: $text-light;
 
     @media (max-width: $laptop) {
         font-size: 18px;

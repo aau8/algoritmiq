@@ -6,7 +6,6 @@
     bottom: 0;
     transform: translate(-50%, 100%);
     max-width: 822px;
-    // width: 100%;
     width: calc(100% - 32px);
     background: rgba(41, 40, 49, .9);
     border-radius: $radius-round;
@@ -81,10 +80,6 @@
             margin-right: 8px;
         }
     }
-}
-
-.po__hide {
-
 }
 
 .po__start,
