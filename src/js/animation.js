@@ -49,24 +49,28 @@ if (document.querySelector('.s-steps')) {
     .fromTo(".s-steps__line_active", {height: 0}, {height: lineContainerHeight})
 }
 
-gsap.timeline({defaults: {duration: 1},
-scrollTrigger: {
-  trigger: ".stg-thumb",
-  start: 'top center',
-}})
-.fromTo(".stg-thumb__img-main", {opacity: 0}, {opacity: 1})
-
-gsap.timeline({defaults: {duration: .5},
-scrollTrigger: {
-  trigger: ".stg-thumb",
-  start: 'top center',
-}})
-.fromTo(".stg-thumb__img-second", {opacity: 0, x: -100}, {opacity: 1, x: 0})
+if (document.querySelector('.stg-thumb')) {
+  gsap.timeline({defaults: {duration: 1},
+  scrollTrigger: {
+    trigger: ".stg-thumb",
+    start: 'top center',
+  }})
+  .fromTo(".stg-thumb__img-main", {opacity: 0}, {opacity: 1})
+  
+  gsap.timeline({defaults: {duration: .5},
+  scrollTrigger: {
+    trigger: ".stg-thumb",
+    start: 'top center',
+  }})
+  .fromTo(".stg-thumb__img-second", {opacity: 0, x: -100}, {opacity: 1, x: 0})
+}
 
 // Пульт на странице с видами управляющих устройств
-gsap.timeline({defaults: {duration: 1.5},
-  scrollTrigger: {
-    trigger: ".rc-block",
-    start: 'top bottom',
-  }})
-  .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
+if (document.querySelector('.rc-block')) {
+  gsap.timeline({defaults: {duration: 1.5},
+    scrollTrigger: {
+      trigger: ".rc-block",
+      start: 'top bottom',
+    }})
+    .fromTo(".rc__img", {opacity: 0, y: 400}, {opacity: 1, y: 0})
+}

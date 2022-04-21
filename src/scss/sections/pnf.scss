@@ -41,6 +41,7 @@
 
 .pnf-main-bg {
     position: absolute;
+    z-index: -1;
     top: 50%;
     left: 50%;
     transform: translate(calc(-50% + 230px), calc(-50% + 55px));
