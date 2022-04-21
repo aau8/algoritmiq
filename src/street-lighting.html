@@ -157,36 +157,84 @@
                     <ul class="breadcrumbs breadcrumbs_pos-center">
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Продукция</a></li>
-                        <li class="_active">Освещение</li>
+                        <li class="_active">Освещение для улицы</li>
                     </ul>
                     <div class="section-header">
-                        <h2 class="title_section">Архитектурный свет</h2>
-						<p class="section-text">Lorem ipsum is placeholder text commonly used in the graphic, print.</p>
+                        <h2 class="title_section">Освещение для улицы</h2>
                     </div>
-					<!-- scm - section choice manufacturer -->
-                    <section class="scm">
-						<div class="scm__list">
-							<button class="btn btn_choice scm__btn" data-manuf-id="1">Occhio</button>
-							<button class="btn btn_choice scm__btn" data-manuf-id="2">ERCO</button>
-							<button class="btn btn_choice scm__btn" data-manuf-id="3">Delta Light</button>
-							<button class="btn btn_choice scm__btn" data-manuf-id="4">Flos</button>
-							<button class="btn btn_choice scm__btn" data-manuf-id="5">iGuzzini</button>
-						</div>
-					</section>
+                    <!-- sml - section main lighting -->
+                    <section class="sml">
+                        <div class="swiper-container">
+                            <div class="sml__slider">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a href="./arch-lighting.html" class="sml-card">
+                                            <div class="sml-card__img"><img src="./img/lighting/1.png" alt=""></div>
+                                            <h3 class="sml-card__title">Архитектурный свет</h3>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="./decor-lighting.html" class="sml-card">
+                                            <div class="sml-card__img"><img src="./img/lighting/2.png" alt=""></div>
+                                            <h3 class="sml-card__title">Декоративный свет</h3>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a href="./outdoor-lighting.html" class="sml-card">
+                                            <div class="sml-card__img"><img src="./img/lighting/3.png" alt=""></div>
+                                            <h3 class="sml-card__title">Наружное освещение</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 				</div>
 			</div>
 		</main>
 		<div class="content">
 			<!-- sli - section lighting info -->
-            <section class="section sli sli-info">
-				<div class="container">
+            <section class="section sli sli_reverse">
+				<!-- <div class="container"> -->
 					<div class="sli__wrap">
-						<div class="section-header sli__header">
+						<div class="section-header">
+							<h2 class="title_section">Что такое архитектура света?</h2>
+							<p class="section-text">Архитектура света – это больше, чем расчет освещенности. <br><br>Архитектура света начинается с разработки концепции освещения, для чего осуществляем анализ помещения, объектов в нем и перемещения человека в помещении, чтобы понять, что необходимо выделить, а что следует оставить в тени.</p>
 						</div>
 						<div class="sli__body">
 							<div class="swiper-container">
 								<div class="sli__slider">
-									<div class="swiper-wrapper"></div>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/1.png" alt=""></div>
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/4.png" alt=""></div>
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/5.png" alt=""></div>
+									</div>
+									<div class="sli__slider-arrows">
+										<button class="sli__slider-arrow sli__slider-arrow_prev" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#arrow-main-slider'></use></svg></button>
+										<button class="sli__slider-arrow sli__slider-arrow_next"><svg><use href='./img/sprite.svg#arrow-main-slider'></use></svg></button>
+									</div>
+									<div class="sli__slider-pagination swiper-pagination"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<!-- </div> -->
+			</section>
+            <section class="section sli sli_reverse">
+				<div class="container">
+					<div class="sli__wrap">
+						<div class="section-header">
+							<h2 class="title_section">Основные принципы <br>архитектуры света</h2>
+							<p class="section-text"><span>Индивидуальное решение</span>. Архитектуру света для каждого проекта мы разрабатываем индивидуально. Решение зависит от передвижения пользователя в помещении, его ритма жизни и привычек. Именно этим и определяется, сколько света будет использовано, каким образом будет происходить управление светом (сенсоры, выключатели), что и с помощью каких светильников будет подчеркнуто для достижения желаемого результата.</p>
+						</div>
+						<div class="sli__body">
+							<div class="swiper-container">
+								<div class="sli__slider">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/5.png" alt=""></div>
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/6.png" alt=""></div>
+										<div class="swiper-slide sli-slide"><img src="./img/lighting/1.png" alt=""></div>
+									</div>
 									<div class="sli__slider-arrows">
 										<button class="sli__slider-arrow sli__slider-arrow_prev" style="transform: rotate(180deg);"><svg><use href='./img/sprite.svg#arrow-main-slider'></use></svg></button>
 										<button class="sli__slider-arrow sli__slider-arrow_next"><svg><use href='./img/sprite.svg#arrow-main-slider'></use></svg></button>
@@ -197,7 +245,6 @@
 						</div>
 					</div>
 				</div>
-				<div id="sli-preloader" class="sli__preloader _show"></div>
 			</section>
 			<section class="section section_light ask-question">
 				<div class="container">
@@ -266,6 +313,7 @@
 			</div>
 		</footer>
 	</div>
+    
 	<div class="popup-offer" id="popup-offer">
 		<!-- po - popup offer -->
 		<div class="po__wrap">

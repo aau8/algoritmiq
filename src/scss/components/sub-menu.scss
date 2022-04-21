@@ -1,3 +1,5 @@
+$adaptive-menu-hide: 1130px;
+
 // Подменю
 .sub-menu {
     position: absolute;
@@ -8,7 +10,7 @@
     background: $frame-light;
     transition: $tr;
     
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         position: initial;
         bottom: auto;
         left: auto;
@@ -21,7 +23,7 @@
     padding: 48px 0;
     
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         padding: 24px 0;
     }
 }
@@ -30,7 +32,7 @@
     font-size: 21px;
     color: $firm-dark;
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         display: none;
     }
 }
@@ -46,13 +48,13 @@
         &:not(:last-child) {
             margin-right: 96px;
 
-            @media (max-width: 1110px) {
+            @media (max-width: $adaptive-menu-hide) {
                 margin: 0 0 24px 0;
             }
         }
     }
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         flex-direction: column;
         border-top: none;
         padding: 0;
@@ -74,7 +76,7 @@
         }
     }
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         max-width: none;
     }
 }
@@ -84,7 +86,7 @@
     color: $firm-dark;
     transition: $tr;
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         font-size: 16px;
     }
 }
@@ -95,7 +97,7 @@
     line-height: 1.4;
     margin-top: 16px;
 
-    @media (max-width: 1110px) {
+    @media (max-width: $adaptive-menu-hide) {
         margin-top: 9px;
     }
 }
