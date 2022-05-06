@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import autoprefixer from 'autoprefixer'
 import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -16,7 +15,7 @@ export default {
   entry: './src/js/index.js',
   output: {
     path: resolve(__dirname, 'dist'),
-    filename: 'js/bundle.js',
+    filename: 'js/bundle.min.js',
   },
   devServer: {
     port: 3000, // Порт сервера
@@ -53,19 +52,14 @@ export default {
           },
         },
         // HTML
-        // {
-        //   test: /\.html$/i,
-        //   use: 'html-loader'
-        // },
+        {
+          test: /\.html$/i,
+          loader: 'html-loader',
+          options: {
+              minimize: false,
+          }
+        },
         // CSS
-        // {
-        //   test: /\.(s[ac]ss|css)$/i,
-        //   use: [
-        //     MiniCssExtractPlugin.loader,
-        //     'css-loader', 
-        //     'sass-loader'
-        //   ]
-        // },
         {
           test: /\.(s[ac]ss|css)$/i,
           use: [
@@ -79,7 +73,6 @@ export default {
                     'autoprefixer'
                   ],
                 },
-                // sourceMap: true
               }
             },
             'sass-loader',

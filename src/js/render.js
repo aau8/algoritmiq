@@ -266,15 +266,14 @@ function zoomInImg() {
 
     zoomInImg.addEventListener('click', () => {
       const imgSrc = zoomInImg.getAttribute('src');
-  
       const bigImg = document.createElement('div');
   
       bigImg.classList.add('big-img');
       bigImg.classList.add('_zoom-out');
       bigImg.style.cursor = 'zoom-out';
-      
+
       bigImg.innerHTML = `<div class="big-img__body"><img src="${imgSrc}" alt="" class="_zoom-out"></div>`
-  
+
       document.querySelector('.wrapper').append(bigImg)
 
       setTimeout(() => {
@@ -299,7 +298,6 @@ function zoomOutImg(bigImg) {
       setTimeout(() => {
         bigImg.remove();
       }, 300)
-
     })
   })
 }
