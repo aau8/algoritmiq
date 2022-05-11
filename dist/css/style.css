@@ -2623,9 +2623,6 @@ b {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: end;
-    -ms-flex-pack: end;
-    justify-content: flex-end;
     margin-top: 16px;
 }
 @media (max-width: 425px) {
@@ -2634,6 +2631,13 @@ b {
     }
 }
 .service-card__title {
+    min-height: 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
     font-size: 18px;
     font-weight: 400;
     color: #292831;
@@ -2643,16 +2647,19 @@ b {
 }
 @media (max-width: 425px) {
     .service-card__title {
+        min-height: 32px;
         font-size: 16px;
     }
 }
 @media (max-width: 375px) {
     .service-card__title {
+        min-height: 28px;
         font-size: 14px;
     }
 }
 @media (max-width: 330px) {
     .service-card__title {
+        min-height: 26px;
         font-size: 13px;
     }
 }

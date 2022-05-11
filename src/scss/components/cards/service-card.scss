@@ -37,7 +37,6 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     margin-top: 16px;
 
     @media (max-width: $mobile-l) {
@@ -46,20 +45,26 @@
 }
 
 .service-card__title {
+    min-height: 36px;
+    display: flex;
+    align-items: flex-end;
     font-size: 18px;
     font-weight: 400;
     color: $frame-dark;
     transition: $tr;
 
     @media (max-width: $mobile-l) {
+        min-height: 32px;
         font-size: 16px;
     }
 
     @media (max-width: $mobile-m) {
+        min-height: 28px;
         font-size: 14px;
     }
 
     @media (max-width: 330px) {
+        min-height: 26px;
         font-size: 13px;
     }
 }
