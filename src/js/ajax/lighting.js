@@ -33,6 +33,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     const tabElems = document.querySelectorAll('.scm__btn')
     const sli = document.querySelector('.sli')
     const sliContent = sli.querySelector('.sli__header')
+    const sliBody = sli.querySelector('.sli__body')
     const sliSlider = sli.querySelector('.sli__slider .swiper-wrapper')
     const preloader = document.getElementById('sli-preloader')
     // let abortController = ''
@@ -120,7 +121,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         sli.classList.remove('_show')
         const json = JSON.parse(document.querySelector('.sli').dataset.sliJson)
         const manuf = json.filter(e => e.id == manufId)[0]
-        
+
         removePreloader()
 
         sliContent.innerHTML = renderSLIHeader(manuf)
@@ -152,15 +153,33 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     
     // Генерирует шапку раздела SLI
     function renderSLIHeader(manuf) {
-        return `
-        <h2 class="title_section">${manuf.title}</h2>
-        <p class="section-text">${manuf.text}</p>
-        <a href="${manuf.manuf_url}" class="btn btn_fill btn_large section-button">Сайт производителя</a>
-        `
+        let content = ''
+
+        if (manuf.title.trim() != '') {
+            content += `<h2 class="title_section">${manuf.title}</h2>`
+        }
+
+        if (manuf.text.trim() != '') {
+            content += `<p class="section-text">${manuf.text}</p>`
+        }
+
+        if (manuf.manuf_url.trim() != '') {
+            content += `<a href="${manuf.manuf_url}" class="btn btn_fill btn_large section-button">Сайт производителя</a>`
+        }
+
+        return content
     }
     
     // Генерирует слайды в слайдере раздела SLI
     function renderSLISlides(manuf) {
-        return manuf.images.map(img => `<div class="swiper-slide sli-slide"><img src="${img}" alt=""></div>`).join('')
+        console.log(manuf.images.length)
+        if (manuf.images.length === 0) {
+            sliBody.style.display = 'none'
+            return ''
+        }
+        else {
+            sliBody.style.display = 'block'
+            return manuf.images.map(img => `<div class="swiper-slide sli-slide"><img src="${img}" alt=""></div>`).join('')
+        }
     }
 }
