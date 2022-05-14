@@ -35,7 +35,7 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
     const sliContent = sli.querySelector('.sli__header')
     const sliSlider = sli.querySelector('.sli__slider .swiper-wrapper')
     const preloader = document.getElementById('sli-preloader')
-    let abortController = ''
+    // let abortController = ''
     
     // Начальная загрузка данных
     let currentHashName = window.location.hash
@@ -78,41 +78,55 @@ if (document.querySelector('.scm') && document.querySelector('.sli')) {
         const tab = tabElems[i];
         
         tab.addEventListener('click', e => {
-            abortController.abort()
+            // abortController.abort()
             const manufId = tab.dataset.manufId
     
             changeLocationHash(manufId)
         })
     }
     
-    // Запрос в БД и выгрузка контента
-    async function requireToDB(manufId) {
-        abortController = new AbortController()
-        const signal = abortController.signal
+    // // Запрос в БД и выгрузка контента
+    // async function requireToDB(manufId) {
+    //     abortController = new AbortController()
+    //     const signal = abortController.signal
     
-        sli.classList.remove('_show')
+    //     sli.classList.remove('_show')
 
-        try {
-            await fetch('./db/lighting.json', { signal })
-                .then(res => res.json())
-                .then(data => data.filter(e => e.id == manufId)[0])
-                .then(manuf => {
-                    removePreloader()
+    //     try {
+    //         await fetch('./db/lighting.json', { signal })
+    //             .then(res => res.json())
+    //             .then(data => data.filter(e => e.id == manufId)[0])
+    //             .then(manuf => {
+    //                 removePreloader()
+
+    //                 sliContent.innerHTML = renderSLIHeader(manuf)
+    //                 sliSlider.innerHTML = renderSLISlides(manuf)
+    //                 lightingInfoSlider.slideToLoop(0, 0)
+    //                 sli.classList.add('_show')
+    //             })
+    //     }
+    //     catch(err) {
+    //         if (err.name == 'AbortError') {
+    //             console.log('Canceling the download')
+    //         }
+    //         else {
+    //             throw err
+    //         }
+    //     }
+    // }
+    
+    // Запрос в БД и выгрузка контента
+    function requireToDB(manufId) {
+        sli.classList.remove('_show')
+        const json = JSON.parse(document.querySelector('.sli').dataset.sliJson)
+        const manuf = json.filter(e => e.id == manufId)[0]
         
-                    sliContent.innerHTML = renderSLIHeader(manuf)
-                    sliSlider.innerHTML = renderSLISlides(manuf)
-                    lightingInfoSlider.slideToLoop(0, 0)
-                    sli.classList.add('_show')
-                })
-        }
-        catch(err) {
-            if (err.name == 'AbortError') {
-                console.log('Canceling the download')
-            }
-            else {
-                throw err
-            }
-        }
+        removePreloader()
+
+        sliContent.innerHTML = renderSLIHeader(manuf)
+        sliSlider.innerHTML = renderSLISlides(manuf)
+        lightingInfoSlider.slideToLoop(0, 0)
+        sli.classList.add('_show')
     }
     
     // Показать прелоадер

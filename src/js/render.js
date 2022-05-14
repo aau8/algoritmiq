@@ -63,8 +63,10 @@ function select() {
         const selectedItem = selectedItemElems[i];
         const select = selectedItem.closest('.select')
         const sTitle = select.querySelector('.select-input__title')
+        const sInput = select.querySelector('.select-input__tf')
 
         sTitle.innerText = selectedItem.innerHTML
+        sInput.value = selectedItem.innerHTML
         select.classList.add('_valid')
     }
 
@@ -90,9 +92,11 @@ function select() {
         if (target.classList.contains('select-dropdown__item')) {
             const select = target.closest('.select')
             const sTitle = select.querySelector('.select-input__title')
+            const sInput = select.querySelector('.select-input__tf')
             const neighbourTargets = target.parentElement.querySelectorAll('.select-dropdown__item')
 
             sTitle.innerText = target.innerText
+            sInput.value = target.innerText
 
             removeAll(neighbourTargets, '_selected')
             target.classList.add('_selected')
