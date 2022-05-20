@@ -22,6 +22,7 @@ $link-active: findLightColor($link-hover, 65%);
     padding-right: 24px;
     transition: $tr;
     white-space: nowrap;
+    user-select: none;
 
     @media (min-width: $min-hover) {
         

@@ -166,7 +166,7 @@
 		<div class="content">
             <section class="quiz">
 				<div class="quiz__wrap">
-					<div class="quiz-slider">
+					<div class="quiz-slider quiz-slider_professionals">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide quiz-slide">
 								<div class="quiz-modal">
@@ -175,7 +175,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Персональная информация</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Персональная информация">Персональная информация</h2>
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qmp-1">
 											<div class="qs-block">
@@ -230,7 +230,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Информация об объекте</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Информация об объекте">Информация об объекте</h2>
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
 											<div class="qs-block">
@@ -253,9 +253,9 @@
 													</div>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Адрес и общая площадь объекта</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -281,7 +281,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление электронагрузками</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление электронагрузками">Управление электронагрузками</h2>
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
 											<div class="qs-block">
@@ -304,7 +304,7 @@
 													</div>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -331,25 +331,25 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Использование для управления сенсорных панелей.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Использование для управления сенсорных панелей.">Использование для управления сенсорных панелей.</h2>
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
-											<div class="qmp-4">
+											<div class="qs-block qmp-4">
 												<div class="qmp-4-card">
-													<input type="radio" name="touch-screen" class="qmp-4-card__input" checked>
+													<input type="radio" name="touch-screen" value="Savant Touch 8 inch - Black&White" class="qmp-4-card__input" checked>
 													<div class="qmp-4-card__img"><img src="./img/quiz-pop-up/touch-screen-l.svg" alt=""></div>
 													<h3 class="qmp-4-card__title">Savant Touch 8 inch - Black&White</h3>
 												</div>
 												<div class="qmp-4-card">
-													<input type="radio" name="touch-screen" class="qmp-4-card__input">
+													<input type="radio" name="touch-screen" value="Savant Touch 5.5 inch - Black&White" class="qmp-4-card__input">
 													<div class="qmp-4-card__img"><img src="./img/quiz-pop-up/touch-screen-s.svg" alt=""></div>
 													<h3 class="qmp-4-card__title">Savant Touch 5.5 inch - Black&White</h3>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество.</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -374,18 +374,18 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Плавная регулировка яркости освещения, (диммирование).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Плавная регулировка яркости освещения.">Плавная регулировка яркости освещения, (диммирование).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -412,18 +412,18 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Количество релейных групп освещения, (только вкл./выкл.).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Количество релейных групп освещения, (только вкл./выкл.).">Количество релейных групп освещения, (только вкл./выкл.).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -450,18 +450,18 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое включение/ выключение света, <br>(датчики движения).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автоматическое включение/ выключение света">Автоматическое включение/ выключение света, <br>(датчики движения).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -488,7 +488,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Биодинамическое освещение, (температура освещения <br>привязана к циклу солнца).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Биодинамическое освещение">Биодинамическое освещение, (температура освещения <br>привязана к циклу солнца).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -533,18 +533,18 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление розеточными группами.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление розеточными группами">Управление розеточными группами.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -571,7 +571,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Использование сценариев домашней автоматизации.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Использование сценариев домашней автоматизации">Использование сценариев домашней автоматизации.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -579,23 +579,23 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="home-automation-scenarios" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="home-automation-scenarios" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="home-automation-scenarios" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -622,13 +622,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление приводами штор, маркиз.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление приводами штор, маркиз">Управление приводами штор, маркиз.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите номера помещений и количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -654,13 +654,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите номер помещения или место предполагаемой установки силовых и слаботочных щитов, рэковой стойки.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Укажите номер помещения или место предполагаемой установки силовых и слаботочных щитов, рэковой стойки">Укажите номер помещения или место предполагаемой установки силовых и слаботочных щитов, рэковой стойки.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -686,17 +686,21 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Возможно имеется дизайн-проект, проект электроснабжения, техническое задание.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Дизайн-проект, проект электроснабжения, техническое задание">Возможно имеется дизайн-проект, проект электроснабжения, техническое задание.</h2>
 										<!-- qs - quiz select -->
 										<!-- quf - quiz upload file -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="quf-block">
+											<div class="qs-block quf-block">
 												<h3 class="quiz-modal__subtitle">Файл не должен превышать более 5 Мб.</h3>
-												<div class="dropzone guf-dropzone">
-													<div class="guf-dropzone__content">
-														<div class="guf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
-														<span class="guf-dropzone__text">Прикрепите ваш файл здесь</span>
-													</div>
+												<div class="dropzone quf-dropzone" data-error>
+													<div class="quf-dropzone__content">
+														<div class="quf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
+														<span class="quf-dropzone__text">Прикрепите ваш файл здесь</span>
+														<span class="quf-dropzone__info"></span>
+                                                    </div>
+                                                    <label class="quf-dropzone__input">
+                                                        <input type="file" data-dropzone-id="project-design">
+                                                    </label>
 												</div>
 											</div>
 										</div>
@@ -720,14 +724,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Климат-контроль</span>. Управление кондиционированием воздуха.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Климат-контроль. Управление кондиционированием воздуха"><span>Климат-контроль</span>. Управление кондиционированием воздуха.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -752,13 +756,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите количество <span>приточных</span> установок системы вентиляции.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Количество приточных установок системы вентиляции">Укажите количество <span>приточных</span> установок системы вентиляции.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -784,13 +788,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Укажите количество <span>вытяжных</span> установок системы вентиляции.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Количество вытяжных установок системы вентиляции">Укажите количество <span>вытяжных</span> установок системы вентиляции.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Ваш ответ</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -816,13 +820,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление радиаторами, конвекторами отопления.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление радиаторами, конвекторами отопления">Управление радиаторами, конвекторами отопления.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество комнат</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -848,39 +852,39 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое поддержание температуры в специализированных помещениях.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автоматическое поддержание температуры в специализированных помещениях">Автоматическое поддержание температуры в специализированных помещениях.</h2>
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qmp-1">
 											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Бассейн" checked>
+														<input type="radio" name="auto-temp" value="Бассейн" checked>
 														<span class="radio__point"></span>
 														<label for="">Бассейн</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Винный погреб">
+														<input type="radio" name="auto-temp" value="Винный погреб">
 														<span class="radio__point"></span>
 														<label for="">Винный погреб</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Библиотека">
+														<input type="radio" name="auto-temp" value="Библиотека">
 														<span class="radio__point"></span>
 														<label for="">Библиотека</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Галерея">
+														<input type="radio" name="auto-temp" value="Галерея">
 														<span class="radio__point"></span>
 														<label for="">Галерея</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Хранилище для шуб">
+														<input type="radio" name="auto-temp" value="Хранилище для шуб">
 														<span class="radio__point"></span>
 														<label for="">Хранилище для шуб</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="personal-info" value="Другое" data-radio-another>
+														<input type="radio" name="auto-temp" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -907,13 +911,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Возможность проветривания с помощью автоматического открывания окон. Укажите количество окон и фрамуг.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Возможность проветривания с помощью автоматического открывания окон. Укажите количество окон и фрамуг">Возможность проветривания с помощью автоматического открывания окон. Укажите количество окон и фрамуг.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество комнат</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -939,17 +943,21 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Возможно имеется проект теплоснабжения, вентиляции, кондиционирования воздуха, техническое задание.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Проект теплоснабжения, вентиляции, кондиционирования воздуха, техническое задание">Возможно имеется проект теплоснабжения, вентиляции, кондиционирования воздуха, техническое задание.</h2>
 										<!-- qs - quiz select -->
 										<!-- quf - quiz upload file -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="quf-block">
+											<div class="qs-block quf-block">
 												<h3 class="quiz-modal__subtitle">Файл не должен превышать более 5 Мб.</h3>
-												<div class="dropzone guf-dropzone" id="">
-													<div class="guf-dropzone__content">
-														<div class="guf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
-														<span class="guf-dropzone__text">Прикрепите ваш файл здесь</span>
+												<div class="dropzone quf-dropzone" data-error>
+													<div class="quf-dropzone__content">
+														<div class="quf-dropzone__icon"><svg><use href='./img/sprite.svg#upload-file'></use></svg></div>
+														<span class="quf-dropzone__text">Прикрепите ваш файл здесь</span>
+                                                        <span class="quf-dropzone__info"></span>
 													</div>
+                                                    <label class="quf-dropzone__input">
+                                                        <input type="file" data-dropzone-id="project-tech">
+                                                    </label>
 												</div>
 											</div>
 										</div>
@@ -973,14 +981,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Инженерная безопасность</span>. Защита от протечек воды.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Инженерная безопасность. Защита от протечек воды"><span>Инженерная безопасность</span>. Защита от протечек воды.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1005,14 +1013,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Пожарный датчик с сенсорами дыма, температуры и угарного газа.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Пожарный датчик с сенсорами дыма, температуры и угарного газа">Пожарный датчик с сенсорами дыма, температуры и угарного газа.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1037,7 +1045,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автономное энергоснабжение, (система гарантированного бесперебойного электроснабжения).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автономное энергоснабжение">Автономное энергоснабжение, (система гарантированного бесперебойного электроснабжения).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1045,17 +1053,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="autonomous-power-supply" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="autonomous-power-supply" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="autonomous-power-supply" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1082,7 +1090,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Личная безопасность</span>. Система безопасности для дома или квартиры, (окна, двери, датчики движения).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Личная безопасность"><span>Личная безопасность</span>. Система безопасности для дома или квартиры, (окна, двери, датчики движения).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1090,17 +1098,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="personal-safety" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="personal-safety" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="personal-safety" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1127,13 +1135,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматизированный контроль доступа в помещение, (кодовый, карта доступа или биометрический замок).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автоматизированный контроль доступа в помещение">Автоматизированный контроль доступа в помещение, (кодовый, карта доступа или биометрический замок).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1159,13 +1167,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Видеонаблюдение за прилегающей территорией.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Видеонаблюдение за прилегающей территорией">Видеонаблюдение за прилегающей территорией.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1191,14 +1199,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Видеонаблюдение внутри дома или квартиры.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Видеонаблюдение внутри дома или квартиры">Видеонаблюдение внутри дома или квартиры.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1223,14 +1231,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Аудио-контроль за происходящим в помещении.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Аудио-контроль за происходящим в помещении">Аудио-контроль за происходящим в помещении.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1255,13 +1263,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Вызывные панели видеодомофона.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Вызывные панели видеодомофона">Вызывные панели видеодомофона.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество панелей</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1287,13 +1295,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Абонентские устройства видеодомофона.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Абонентские устройства видеодомофона">Абонентские устройства видеодомофона.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество мониторов</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1319,13 +1327,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление защитными жалюзи</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление защитными жалюзи">Управление защитными жалюзи</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1351,7 +1359,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Возможность вызова группы быстрого реагирования, (автоматически, тревожной кнопкой).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Возможность вызова группы быстрого реагирования">Возможность вызова группы быстрого реагирования, (автоматически, тревожной кнопкой).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1359,17 +1367,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="rapid-response-team" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="rapid-response-team" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="rapid-response-team" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1396,7 +1404,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Медиа-домашнее развлечение</span>. Подбор оборудования и помощь в организации системы "Домашний кинотеатр".</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Медиа-домашнее развлечение"><span>Медиа-домашнее развлечение</span>. Подбор оборудования и помощь в организации системы "Домашний кинотеатр".</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1404,17 +1412,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="media-home-entertainment" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="media-home-entertainment" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="media-home-entertainment" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1441,7 +1449,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Строительство персонального кинозала.</h2> 
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Строительство персонального кинозала">Строительство персонального кинозала.</h2> 
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1449,17 +1457,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="personal-cinema-hall" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="personal-cinema-hall" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="personal-cinema-hall" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1486,13 +1494,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Мультимедийные зоны.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Мультимедийные зоны">Мультимедийные зоны.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1518,7 +1526,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Умный пульт дистанционного управления.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Умный пульт дистанционного управления">Умный пульт дистанционного управления.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1526,23 +1534,23 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="smart-remote-control" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="smart-remote-control" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="smart-remote-control" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
 												</div>
 											</div>
-											<div class="q-block">
+											<div class="qs-block">
 												<button class="link show-video" data-modal-open="video" data-video-open data-video-src="https://www.youtube.com/embed/VYOjWnS4cMY">
 													<span class="show-video__icon"><svg><use href='./img/sprite.svg#info'></use></svg></span>
 													<span class="show-video__text">Смотреть пояснительное видео</span>
@@ -1569,7 +1577,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Управление всеми мультимедийными устройствами из одного интерфейса управления.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Управление всеми мультимедийными устройствами из одного интерфейса управления">Управление всеми мультимедийными устройствами из одного интерфейса управления.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1577,17 +1585,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="managing-all-devices" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="managing-all-devices" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="managing-all-devices" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1614,7 +1622,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое управление светом и шторами в кинозале, (режим освещения «КИНО»).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автоматическое управление светом и шторами в кинозале">Автоматическое управление светом и шторами в кинозале, (режим освещения «КИНО»).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1622,17 +1630,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="automatic-light-control" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="automatic-light-control" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="automatic-light-control" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1659,7 +1667,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Автоматическое управление экраном, лифтом проектора, приводом ТВ панели и т.п.)</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Автоматическое управление экраном, лифтом проектора, приводом ТВ панели и т.п.">Автоматическое управление экраном, лифтом проектора, приводом ТВ панели и т.п.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1667,17 +1675,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="automatic-screen-control" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="automatic-screen-control" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="automatic-screen-control" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1704,14 +1712,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Система озвучивания отдельных помещений и пространств, (МУЛЬТИРУМ).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Система озвучивания отдельных помещений и пространств">Система озвучивания отдельных помещений и пространств, (МУЛЬТИРУМ).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1736,7 +1744,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Медиа-архив с выходом в internet, (фото, музыка, фильмы).</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Медиа-архив с выходом в internet">Медиа-архив с выходом в internet, (фото, музыка, фильмы).</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1744,17 +1752,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="media-archive" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="media-archive" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="media-archive" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1781,7 +1789,7 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Караоке система.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Караоке система">Караоке система.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content">
@@ -1789,17 +1797,17 @@
 												<h3 class="quiz-modal__subtitle qs-block__title">Ваш ответ</h3>
 												<div class="qs-block__list">
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Да" checked>
+														<input type="radio" name="karaoke-system" value="Да" checked>
 														<span class="radio__point"></span>
 														<label for="">Да</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Нет">
+														<input type="radio" name="karaoke-system" value="Нет">
 														<span class="radio__point"></span>
 														<label for="">Нет</label>
 													</div>
 													<div class="radio">
-														<input type="radio" name="home-automation" value="Другое" data-radio-another>
+														<input type="radio" name="karaoke-system" value="Другое" data-radio-another>
 														<span class="radio__point"></span>
 														<label for="">Другое</label>
 													</div>
@@ -1826,14 +1834,14 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Система для видеоигр.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Система для видеоигр">Система для видеоигр.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество зон</h3>
-												<div class="textfield q-block__textfield">
-													<input type="text">
+												<div class="textfield qs-block__textfield">
+													<input type="number">
 													<label></label>
 												</div>
 											</div>
@@ -1858,13 +1866,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Системы связи</span>. Компьютерная проводная и беспроводная, бесшовная сеть.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Системы связи"><span>Системы связи</span>. Компьютерная проводная и беспроводная, бесшовная сеть.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1890,13 +1898,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle="">Усиление мобильного (GSM) сигнала.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Усиление мобильного (GSM) сигнала">Усиление мобильного (GSM) сигнала.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1922,13 +1930,13 @@
 										<span class="quiz-modal__score"><span class="quiz-modal__score-current"></span> из <span class="quiz-modal__score-total"></span></span>
 									</div>
 									<div class="quiz-modal__body">
-										<h2 class="quiz-modal__title" data-quiz-subtitle=""><span>Телевидение</span>. Эфирное, спутниковое, ip tv. Укажите количество телевизоров.</h2>
+										<h2 class="quiz-modal__title" data-quiz-subtitle="Телевидение"><span>Телевидение</span>. Эфирное, спутниковое, ip tv. Укажите количество телевизоров.</h2>
 										<!-- qp - quiz popup -->
 										<!-- qs - quiz select -->
 										<div class="quiz-modal__content qs-modal__content qmc_large-indent">
-											<div class="q-block">
+											<div class="qs-block">
 												<h3 class="quiz-modal__subtitle">Укажите количество помещений с плохой (GSM) связью</h3>
-												<div class="textfield q-block__textfield">
+												<div class="textfield qs-block__textfield">
 													<input type="text">
 													<label></label>
 												</div>
@@ -1970,6 +1978,9 @@
 													<input type="text" name="email" id="" data-tf-email data-tf-required>
 													<label for="">Электронная почта</label>
 												</div>
+                                                <input id="qmca-data-form" type="hidden">
+                                                <input class="qmca-19__input-file qmca-19__file-project-design" type="file">
+                                                <input class="qmca-19__input-file qmca-19__file-project-tech" type="file">
 											</div>
 											<span class="qmca-19-correction">Нажимая кнопку “Получить предложение” вы принимаете <a href="#">правила сайта и политику конфиденциальности</a></span>
 										</div>

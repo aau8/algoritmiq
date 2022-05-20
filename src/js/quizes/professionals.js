@@ -10,7 +10,7 @@ window.addEventListener('click', e => {
             const qsBlockList = qsBlock.querySelector('.qs-block__list')
             const radioName = target.name
             const content = `
-            <div class="textfield q-block__textfield qs-block__another">
+            <div class="textfield qs-block__textfield qs-block__another">
                 <input type="text" name="${radioName}-input">
                 <label>Ваш вариант</label>
             </div>
