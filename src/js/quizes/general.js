@@ -56,13 +56,12 @@ export function quantSlides(slider) {
 // Добавляет строку с заполненными данными в предпоследний слайд с таблицей
 function addRowEnteredData(slide, i) {
     const slider = slide.closest('.quiz-slider')
-    const quizDataInputHidden = document.getElementById('qmca-data-form')
+    const quizDataInputHidden = slider.querySelector('.quiz-modal-form .qmca-data-form')
     const slideBody = slide.querySelector('.quiz-modal__body')
     const slideTitle = slideBody.querySelector('.quiz-modal__title')
     let rowText = ''
     
     if (slider.classList.contains('quiz-slider_calc-amount')) {
-        // return
         const table = slider.querySelector('.qmca-18__table')
         const checkedRadio = slideBody.querySelector('[type="radio"]:checked')
         const rangeInput = slideBody.querySelector('.qmca-range input[type="text"]')
@@ -154,7 +153,7 @@ function addRowEnteredData(slide, i) {
 // Удаляет строку
 function removeRowEnteredData(slide, i) {
     const slider = slide.closest('.quiz-slider')
-    const quizDataInputHidden = document.getElementById('qmca-data-form')
+    const quizDataInputHidden = slider.querySelector('.quiz-modal-form .qmca-data-form')
     
     if (slider.classList.contains('quiz-slider_calc-amount')) {
         const row = document.getElementById(`qmca-row-${i-1}`)
@@ -171,36 +170,6 @@ function removeRowEnteredData(slide, i) {
     // console.log(quizDataInputHidden.value)
     // document.querySelector('.test').innerHTML = quizDataInputHidden.value
 }
-
-// Инициализация зон для загрузки документов, изображений
-// initDropzone()
-// function initDropzone() {
-//     const qufDropzoneElems = document.querySelectorAll('.quf-dropzone')
-    
-//     qufDropzoneElems.forEach(qufDropzone => {
-//         const slideBody = qufDropzone.closest('.quiz-modal__body')
-//         const slideTitle = slideBody.querySelector('.quiz-modal__title')
-//         const input = document.createElement('input')
-
-//         input.type = 'hidden'
-//         // input.dataset
-    
-//         let myDropzone = new Dropzone(qufDropzone, {
-//             paramName: "file",
-//             maxFilesize: 5, // MB
-//             // addRemoveLinks: true,
-//             url: '/upload-docs',
-//             uploadMultiple: true,
-//             acceptedFiles: '.png,.jpg,.jpeg,.pdf,.doc'
-//         });
-        
-//         myDropzone.on("addedfile", file => {
-            
-//             console.log(myDropzone)
-//             console.log(file);
-//         });
-//     })
-// }
 
 dropzone()
 function dropzone() {
