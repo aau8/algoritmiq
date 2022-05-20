@@ -139,12 +139,12 @@ function addRowEnteredData(slide, i) {
     // Добавляем данные в массиве в LocalStorage
     // let quizArr = i == 0 ? [] : JSON.parse(localStorage.getItem('quizCalcArr'))
     // let quizArr = i == 0 ? [] : JSON.parse(quizDataInputHidden.value)
-    let quizArr = i == 0 ? [] : quizDataInputHidden.value.split('<br>')
+    let quizArr = i == 0 ? [] : quizDataInputHidden.value.split('\r\n')
 
-    quizArr.push(`<strong>${slideTitle.dataset.quizSubtitle}</strong>: ${rowText}`)
+    quizArr.push(`${slideTitle.dataset.quizSubtitle}: ${rowText};\r\n`)
     // localStorage.setItem('quizCalcArr', JSON.stringify(quizArr))
     // quizDataInputHidden.value = JSON.stringify(quizArr)
-    quizDataInputHidden.value = quizArr.join('<br>')
+    quizDataInputHidden.value = quizArr.join('\r\n')
 
     // console.log(quizDataInputHidden.value)
     // document.querySelector('.test').innerHTML = quizDataInputHidden.value
@@ -162,11 +162,11 @@ function removeRowEnteredData(slide, i) {
     }
 
     // let quizArr = i == 0 ? [] : JSON.parse(localStorage.getItem('quizCalcArr'))
-    let quizArr = i == 0 ? [] : quizDataInputHidden.value.split('<br>')
+    let quizArr = i == 0 ? [] : quizDataInputHidden.value.split('\r\n')
 
     quizArr.splice(i-1)
     // localStorage.setItem('quizCalcArr', JSON.stringify(quizArr))
-    quizDataInputHidden.value = quizArr.join('<br>')
+    quizDataInputHidden.value = quizArr.join('\r\n')
     // console.log(quizDataInputHidden.value)
     // document.querySelector('.test').innerHTML = quizDataInputHidden.value
 }
