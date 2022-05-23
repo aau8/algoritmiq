@@ -22,36 +22,36 @@ export function heightToLine(line, height) {
 }
 
 // Плейсхолдер текстовых полей
-// labelTextfield()
-// function labelTextfield() {
-//     const textfieldElems = document.querySelectorAll('.textfield')
+labelTextfield()
+function labelTextfield() {
+    const textfieldElems = document.querySelectorAll('.textfield')
 
-//     for (let i = 0; i < textfieldElems.length; i++) {
-//         const textfield = textfieldElems[i];
-//         const input = textfield.querySelector('input, textarea')
-//         const label = textfield.querySelector('label')
+    for (let i = 0; i < textfieldElems.length; i++) {
+        const textfield = textfieldElems[i];
+        const input = textfield.querySelector('input, textarea')
+        const label = textfield.querySelector('label')
 
-//         if (input.value != '') {
-//             label.classList.add('_change-label')
-//         }
+        if (input.value != '') {
+            label.classList.add('_change-label')
+        }
 
-//         initLabelTextfield(input)
-//     }
-// }
+        initLabelTextfield(input)
+    }
+}
 
-// export function initLabelTextfield(input) {
-//     const label = input.parentElement.querySelector('label')
+export function initLabelTextfield(input) {
+    const label = input.parentElement.querySelector('label')
 
-//     input.addEventListener('focus', e => {
-//         label.classList.add('_change-label')
-//     })
+    input.addEventListener('focus', e => {
+        label.classList.add('_change-label')
+    })
 
-//     input.addEventListener('blur', e => {
-//         if (input.value === '') {
-//             label.classList.remove('_change-label')
-//         }
-//     })
-// }
+    input.addEventListener('blur', e => {
+        if (input.value === '') {
+            label.classList.remove('_change-label')
+        }
+    })
+}
 
 // Списки выбора
 select()

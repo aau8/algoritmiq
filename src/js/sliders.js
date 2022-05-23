@@ -172,6 +172,10 @@ const mainLightingSlider = new Swiper('.sml__slider', {
   freeMode: true,
 
   breakpoints: {
+    1920: {
+      slidesPerView: 4,
+      spaceBetween: 24,
+    },
     768: {
       slidesPerView: 3,
       spaceBetween: 24,

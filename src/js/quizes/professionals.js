@@ -16,7 +16,7 @@ window.addEventListener('click', e => {
             </div>
             `
             qsBlockList.insertAdjacentHTML('afterend', content)
-            // initLabelTextfield(qsBlockList.parentElement.querySelector('.qs-block__another input'))        
+            initLabelTextfield(qsBlockList.parentElement.querySelector('.qs-block__another input'))        
         }
 
         if (target.dataset.radioAnother == undefined) {
