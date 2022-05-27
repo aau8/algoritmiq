@@ -16,7 +16,7 @@ export const quizSlider = new Swiper('.quiz-slider', {
 })
 
 // quizSlider.slideTo(quizSlider.slides.length - 1)
-// quizSlider.slideTo(12)
+// quizSlider.slideTo(17)
 
 // Устанавливаем текущий номер слайда и общее их кол-во
 quantSlides(quizSlider)
@@ -97,10 +97,29 @@ function addRowEnteredData(slide, i) {
         for (let i = 0; i < blockElems.length; i++) {
             const block = blockElems[i];
             const checkedRadio = block.querySelector('input[type=radio]:checked')
+            const checkedCheckboxElems = block.querySelectorAll('input[type=checkbox]:checked')
             const input = block.querySelector('input[type=text], input[type=number]')
             const dropzone = block.querySelector('input[type=file]')
-    
-            // console.log(checkedRadio)
+
+            console.log(checkedCheckboxElems)
+
+            if (checkedCheckboxElems.length != 0) {
+                
+                for (let i = 0; i < checkedCheckboxElems.length; i++) {
+                    const checkedCheckbox = checkedCheckboxElems[i];
+                    
+                    if (checkedCheckbox.value === 'Другое') {
+                        const inputAnother = checkedCheckbox.closest('.qs-block').querySelector('.qs-block__another input')
+                        
+                        rowText += `*${inputAnother.value != '' ? inputAnother.value : 'Другое'}`
+                    }
+                    else {
+                        rowText += checkedCheckbox.value
+                        rowText += (i == checkedCheckboxElems.length - 1) ? '' : ', '
+                    }
+                }
+            }
+
             if (checkedRadio) {
                 
                 if (checkedRadio.value === 'Другое') {
@@ -129,8 +148,9 @@ function addRowEnteredData(slide, i) {
 
                     formInputFile.files = dropzone.files
                     rowText = `${rowText} ${dropzone.fileName}`
-
-                    // console.log({formInputFile})
+                }
+                else {
+                    rowText = '(-)'
                 }
             }
         }
@@ -147,7 +167,7 @@ function addRowEnteredData(slide, i) {
     quizDataInputHidden.value = quizArr.join('\r\n')
 
     // console.log(quizDataInputHidden.value)
-    // document.querySelector('.test').innerHTML = quizDataInputHidden.value
+    document.querySelector('.test').innerHTML = quizDataInputHidden.value
 }
 
 // Удаляет строку
