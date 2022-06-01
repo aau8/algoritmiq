@@ -25,11 +25,20 @@ export function quantSlides(slider) {
     
     for (let i = 0; i < quizSlides.length; i++) {
         const quizSlide = quizSlides[i];
+        const modal = quizSlide.querySelector('.quiz-modal')
+        const modalHeader = quizSlide.querySelector('.quiz-modal__header')
+        const score = quizSlide.querySelector('.quiz-modal__score')
         const scoreCurrent = quizSlide.querySelector('.quiz-modal__score-current')
         const scoreTotal = quizSlide.querySelector('.quiz-modal__score-total')
-        // console.log(quizSlide)
+        const progressbar = document.createElement('div')
+
         scoreCurrent.innerText = i+1
         scoreTotal.innerText = quizSlides.length
+
+        progressbar.classList.add('quiz-modal__progressbar')
+        modalHeader.append(progressbar)
+
+        progressbar.style.width = i * ((modal.clientWidth - parseInt(window.getComputedStyle(modalHeader).paddingRight) * 2 - score.clientWidth - 12) / (quizSlides.length - 1))  + 'px'
     
         // Переключение слайдеров
         const quizButtonPrev = quizSlide.querySelector('[data-quiz-prev]')
@@ -167,7 +176,7 @@ function addRowEnteredData(slide, i) {
     quizDataInputHidden.value = quizArr.join('\r\n')
 
     // console.log(quizDataInputHidden.value)
-    document.querySelector('.test').innerHTML = quizDataInputHidden.value
+    // document.querySelector('.test').innerHTML = quizDataInputHidden.value
 }
 
 // Удаляет строку
