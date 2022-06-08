@@ -63,7 +63,7 @@ function modal() {
 if (document.querySelector('.st-card')) {
     const cardElems = document.querySelectorAll('.st-card')
     const modal = document.getElementById('savant-product')
-    const modalContent = modal.querySelector('.service-modal__content')
+    const modalContent = modal ? modal.querySelector('.service-modal__content') : false
     const modalIcon = modal.querySelector('.service-modal__icon')
     
     for (let i = 0; i < cardElems.length; i++) {

@@ -166,14 +166,15 @@ if (document.querySelector('.ssc__screen-slider')) {
   })
 }
 
-const mainLightingSlider = new Swiper('.sml__slider', {
+const mainLightingSliderEl = document.querySelector('.sml__slider')
+const mainLightingSlider = new Swiper(mainLightingSliderEl, {
   modules: [FreeMode],
   
   freeMode: true,
 
   breakpoints: {
     1920: {
-      slidesPerView: 4,
+      slidesPerView: mainLightingSliderEl.querySelectorAll('.swiper-slide').length >= 4 ? 4 : 3,
       spaceBetween: 24,
     },
     768: {
@@ -184,7 +185,7 @@ const mainLightingSlider = new Swiper('.sml__slider', {
         slidesPerView: 'auto',
         spaceBetween: 16,
     }
-  }
+  },
 })
 
 const touchSwitchSlider = new Swiper('.ts-slider', {
