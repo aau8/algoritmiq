@@ -19,15 +19,19 @@ if (document.querySelector('.s-steps')) {
   
           title.style.transform = 'translate(0, 0)'
           title.style.opacity = 1
-          setTimeout(e => {
-            text.style.transform = 'translate(0, 0)'
-            text.style.opacity = 1
-          }, 100)
+          if (text) {
+              setTimeout(e => {
+                text.style.transform = 'translate(0, 0)'
+                text.style.opacity = 1
+              }, 100)
+          }
         },
         onLeaveBack: () => {
           elem.classList.remove('_active')
   
-          text.style = ''
+          if (text) {
+              text.style = ''
+          }
           setTimeout(e => {
             title.style = ''
           }, 100) 

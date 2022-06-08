@@ -167,26 +167,28 @@ if (document.querySelector('.ssc__screen-slider')) {
 }
 
 const mainLightingSliderEl = document.querySelector('.sml__slider')
-const mainLightingSlider = new Swiper(mainLightingSliderEl, {
-  modules: [FreeMode],
-  
-  freeMode: true,
-
-  breakpoints: {
-    1920: {
-      slidesPerView: mainLightingSliderEl.querySelectorAll('.swiper-slide').length >= 4 ? 4 : 3,
-      spaceBetween: 24,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 24,
-    },
-      0: { 
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-    }
-  },
-})
+if (mainLightingSliderEl) {
+    const mainLightingSlider = new Swiper(mainLightingSliderEl, {
+      modules: [FreeMode],
+      
+      freeMode: true,
+    
+      breakpoints: {
+        1920: {
+          slidesPerView: mainLightingSliderEl.querySelectorAll('.swiper-slide').length >= 4 ? 4 : 3,
+          spaceBetween: 24,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+          0: { 
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+        }
+      },
+    })
+}
 
 const touchSwitchSlider = new Swiper('.ts-slider', {
   modules: [ Navigation, Pagination, EffectFade, Thumbs ],
