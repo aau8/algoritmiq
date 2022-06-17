@@ -138,6 +138,9 @@ class DismallMenuItems {
 			if (!this.btnMore) this._createBtnMore()
 			this.notFit = this._setNotFit()
 			this.fewRow = this.notFit.length === 0 ? false : true
+			// this.fewRow = this.menuList.clientHeight / Array.from(this.menuItemElems).reduce((accumulator, menuItem) => menuItem.clientHeight > accumulator ? menuItem.clientHeight : accumulator, 0) >= 2 ? true : false
+
+			// console.log(this.notFit)
 
 			if (this.fewRow) {
 				this.btnMore.classList.remove(this.classes.btnMoreHide)
@@ -213,7 +216,7 @@ class DismallMenuItems {
 				// this.notFit = this._setNotFit()
 				this.menuList.dispatchEvent(this.events.change)
 
-				console.log(this.notFit)
+				// console.log(this.notFit)
 			}, 25)
 		})
 
@@ -237,12 +240,13 @@ class DismallMenuItems {
 
 	_setNotFit = () => {
 		this.menuListWidth = this.menuList.getBoundingClientRect().width - (this.btnMore.getBoundingClientRect().width + 16)
+		// this.menuListWidth = this.menuList.getBoundingClientRect().width
 		// let totalWidth = this.btnMore.getBoundingClientRect().width + 16
 		let totalWidth = 0
 
-		console.log(this.menuList.getBoundingClientRect().width)
+		// console.log(this.menuListWidth)
 
-		return Array.from(this.menuItemElems).filter((menuItem) => {
+		return Array.from(this.menuItemElems).filter((menuItem, i) => {
 			totalWidth += menuItem.getBoundingClientRect().width
 			if (totalWidth > this.menuListWidth) return menuItem
 		})

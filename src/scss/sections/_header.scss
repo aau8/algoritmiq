@@ -86,6 +86,7 @@ $adaptive-menu-hide: $tablet;
 
 // Меню
 .menu {
+	// width: 80%;
 	// flex: 1 0 auto;
     margin-left: 48px;
 
@@ -201,7 +202,7 @@ $adaptive-menu-hide: $tablet;
 }
 
 .menu__list {
-	// width: 100%;
+	// width: max-content;
     display: flex;
     align-items: center;
 	flex-wrap: wrap;
