@@ -77,6 +77,7 @@
     max-width: 250px;
     width: 100%;
     margin: 0 auto;
+	aspect-ratio: 1.5;
 
     @media (max-width: 650px) {
         min-width: 150px;
@@ -102,6 +103,10 @@
     right: 0;
     left: 0;
     transform: scale(0.93);
+
+	& .swiper-slide {
+		mask: center/contain no-repeat url("data:image/svg+xml,%3Csvg width=\"295\" height=\"638\" viewBox=\"0 0 295 638\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M259 0C278.882 0 295 16.1177 295 36V602C295 621.882 278.882 638 259 638H36C16.1177 638 0 621.882 0 602V36C0 16.1178 16.1178 0 36 0H70V1C70 13.1503 79.8497 23 92 23H203C215.15 23 225 13.1503 225 1V0H259Z\" fill=\"white\"/%3E%3C/svg%3E");
+	}
 }
 
 .ssc__mask-phone {

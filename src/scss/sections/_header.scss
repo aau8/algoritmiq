@@ -1,4 +1,5 @@
-$adaptive-menu-hide: 1130px;
+// $adaptive-menu-hide: 1130px;
+$adaptive-menu-hide: $tablet;
 
 .header {
     position: relative;
@@ -73,7 +74,7 @@ $adaptive-menu-hide: 1130px;
 }
 
 .logo_header {
-    
+
     @media (max-width: 1380px) {
         max-width: 110px;
     }
@@ -85,6 +86,7 @@ $adaptive-menu-hide: 1130px;
 
 // Меню
 .menu {
+	// flex: 1 0 auto;
     margin-left: 48px;
 
     @media (max-width: 1200px) {
@@ -112,11 +114,12 @@ $adaptive-menu-hide: 1130px;
 }
 
 .menu__wrap {
+	display: flex;
 
     @media (max-width: $adaptive-menu-hide) {
         width: 50%;
         height: 100%;
-        display: flex;
+        // display: flex;
         flex-direction: column;
         background: #fff;
         margin: 0 0 0 auto;
@@ -137,7 +140,7 @@ $adaptive-menu-hide: 1130px;
 
 .menu__header {
     display: none;
-    
+
     @media (max-width: $adaptive-menu-hide) {
         position: sticky;
         z-index: 2;
@@ -198,9 +201,16 @@ $adaptive-menu-hide: 1130px;
 }
 
 .menu__list {
+	// width: 100%;
     display: flex;
     align-items: center;
-    
+	flex-wrap: wrap;
+	opacity: 0;
+
+	&.is-render {
+		opacity: 1;
+	}
+
     @media (max-width: $adaptive-menu-hide) {
         flex-direction: column;
         align-items: flex-start;
@@ -208,19 +218,52 @@ $adaptive-menu-hide: 1130px;
     }
 }
 
+.menu__list-more {
+	// display: none;
+	min-width: 24px;
+	width: 24px;
+	height: 24px;
+	margin-right: 16px;
+
+	// &.is-show {
+	// 	display: block;
+	// }
+
+	&.is-hide {
+		position: absolute;
+		z-index: -100;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	@media (max-width: $adaptive-menu-hide) {
+		display: none;
+	}
+}
+
 .menu__item {
 
     &:not(:last-child) {
-        margin-right: 32px;
+        padding-right: 32px;
 
         @media (max-width: 1350px) {
-            margin-right: 16px;
+            padding-right: 16px;
         }
 
         @media (max-width: $adaptive-menu-hide) {
-            margin: 0;
+            padding: 0;
         }
     }
+
+	&.is-hide {
+		position: absolute;
+		z-index: -100;
+		opacity: 0;
+		visibility: hidden;
+		user-select: none;
+		pointer-events: none;
+	}
 
     @media (max-width: $adaptive-menu-hide) {
         width: 100%;
@@ -248,28 +291,28 @@ $adaptive-menu-hide: 1130px;
     &:hover {
 
         @media (min-width: $adaptive-menu-hide) {
-            
+
             & > .menu__link {
-    
+
                 &::after {
                     display: block;
-    
+
                     @media (max-width: $adaptive-menu-hide) {
                         display: none;
                     }
                 }
-    
+
                 & .menu__link-chevron svg {
-    
+
                     @media (min-width: $adaptive-menu-hide + 1px) {
                         stroke: $firm-accent;
                         transform: scale(1, -1);
                     }
                 }
-    
+
                 & + .sub-menu {
                     box-shadow: 0px 15px 30px rgba(44, 103, 144, 0.09);
-    
+
                     @media (min-width: $adaptive-menu-hide + 1px) {
                         transform: translate(0, 100%);
                     }
@@ -302,19 +345,19 @@ $adaptive-menu-hide: 1130px;
             height: 30px;
             transform: translate(-50%, 100%);
             background: transparent;
-        }        
+        }
     }
 }
 
 .menu__link-title {
 
     &:hover {
-        
+
         @media (min-width: $min-hover) {
             color: $firm-accent;
         }
     }
-    
+
     @media (max-width: $adaptive-menu-hide) {
         width: 100%;
         height: 100%;
@@ -329,7 +372,7 @@ $adaptive-menu-hide: 1130px;
     align-items: center;
     justify-content: center;
     margin-left: 7px;
-    
+
     & svg {
         width: 9px;
         height: 5px;
@@ -357,7 +400,7 @@ $adaptive-menu-hide: 1130px;
     }
 
     @media (min-width: $min-hover) and (max-width: $adaptive-menu-hide) {
-        
+
         &:hover {
 
             & svg {
@@ -397,6 +440,46 @@ $adaptive-menu-hide: 1130px;
     }
 }
 
+// Блок с пунктами, которые не влезли в меню
+.menu-more {
+	position: absolute;
+	z-index: 5;
+	max-width: 300px;
+	// width: 100%;
+	width: max-content;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: $shadow-gray;
+	visibility: hidden;
+	opacity: 0;
+	// transition: $tr;
+	transition: visibility $tr, opacity $tr;
+
+	&.is-show {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.menu-more__list {
+	padding: 8px 0;
+}
+
+.menu-more__item {
+	color: #212121;
+	padding: 0;
+
+	&:not(:last-child) {
+		padding: 0;
+	}
+
+	& a {
+		width: 100%;
+		display: block;
+		padding: 6px 12px;
+	}
+}
+
 // Правый блок
 .header__tools {
     height: 100%;
@@ -408,6 +491,7 @@ $adaptive-menu-hide: 1130px;
 .header__phone {
     font-size: 15px;
     text-align: right;
+	white-space: nowrap;
 
     @media (max-width: 1200px) {
         font-size: 14px;
@@ -436,7 +520,7 @@ $adaptive-menu-hide: 1130px;
     align-items: center;
 
     &:hover {
-        
+
         @media (min-width: $min-hover) {
 
             & .lang__selected {

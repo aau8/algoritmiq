@@ -11,7 +11,7 @@ export function findAll(selectors) {
 }
 
 // Удаляет у всех элементов items класс itemClass
-export function removeAll(items,itemClass) {   
+export function removeAll(items,itemClass) {
     if (typeof items == 'string') {
       items = document.querySelectorAll(items)
     }

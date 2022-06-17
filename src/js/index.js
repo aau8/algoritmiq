@@ -1,7 +1,7 @@
 import { find, findAll, removeAll, bodyLock, getSiblings } from "./util/functions.js"
 import '../scss/style.scss'
 import './ajax/lighting.js'
-import './render.js' 
+import './render.js'
 import './animation.js'
 import './sliders.js'
 import './modal.js'
@@ -22,33 +22,252 @@ import '../db/products.json'
 import '../db/lighting.json'
 
 // Мобильное меню
-(function menu() {
-	const burger = find('.burger')
-	const menu = find('.menu');
-    const closeElems = findAll('[data-menu-close]')
+const burger = find('.burger')
+const menu = find('.menu');
+const closeElems = findAll('[data-menu-close]')
 
-    for (let i = 0; i < closeElems.length; i++) {
-        const close = closeElems[i];
-        
-        close.addEventListener('click', e => {
-            menu.classList.remove('_show')
-            bodyLock(false)
-        })
-    }
+for (let i = 0; i < closeElems.length; i++) {
+	const close = closeElems[i];
 
-	burger.addEventListener('click', (e) => {
-		menu.classList.toggle('_show')
-		bodyLock()
+	close.addEventListener('click', e => {
+		menu.classList.remove('_show')
+		bodyLock(false)
 	})
+}
 
-    window.addEventListener('click', e => {
+burger.addEventListener('click', (e) => {
+	menu.classList.toggle('_show')
+	bodyLock()
+})
 
-        if (e.target.classList.contains('menu')) {
-            menu.classList.remove('_show')
-            bodyLock(false)
-        }
-    })
-})()
+window.addEventListener('click', e => {
+
+	if (e.target.classList.contains('menu')) {
+		menu.classList.remove('_show')
+		bodyLock(false)
+	}
+})
+
+// Перенос пунктов меню
+// const menuList = menu.querySelector('.menu__list')
+// const menuItemElems = menuList.querySelectorAll('.menu__item')
+// const menuMoreBtn = menu.querySelector('.menu__list-more')
+
+// // console.log(menuItemElems[0].getBoundingClientRect().top)
+// // console.log(menuItemElems[0].getBoundingClientRect().bottom)
+
+// placingItemsInMenu()
+// window.addEventListener('resize', placingItemsInMenu)
+
+// function placingItemsInMenu() {
+// 	const menuListWidth = menuList.clientWidth
+// 	let totalWidth = 0
+// 	const menuItemNotFit = Array.from(menuItemElems).filter((menuItem) => {
+// 		totalWidth += menuItem.clientWidth
+// 		if (totalWidth > menuListWidth) return menuItem
+// 	})
+
+// 	console.log(menuItemNotFit)
+
+// 	if (menuItemNotFit.length != 0) {
+// 		menuMoreBtn.classList.add('is-show')
+
+// 		menuItemNotFit.forEach(menuItem => {
+// 			menuItem.classList.add('is-hide')
+// 		})
+// 	}
+// 	else {
+// 		if (menuList.querySelector('.menu__item.is-hide')) menuList.querySelector('.menu__item.is-hide').classList.remove('is-hide')
+// 		menuMoreBtn.classList.remove('is-show')
+// 	}
+
+// 	// const menuItemHeight = Array.from(menuItemElems).reduce((accumulator, menuItem) => menuItem.clientHeight > accumulator ? menuItem.clientHeight : accumulator, 0)
+// 	// const menuItemFewRow = menuList.clientHeight / menuItemHeight >= 2 ? true : false
+
+// 	// console.dir(menuItemElems[menuItemElems.length-1])
+
+// 	// if (menuItemFewRow) {
+
+// 	// 	menuMoreBtn.classList.add('is-show')
+
+
+// 	// 	menuItemNotFit.forEach(menuItem => {
+// 	// 		menuItem.classList.add('is-hide')
+// 	// 	})
+
+// 	// 	console.log(menuItemNotFit)
+// 	// }
+// 	// else {
+// 	// 	menuMoreBtn.classList.remove('is-show')
+// 	// }
+
+// 	// console.log(menuItemFewRow)
+// 	// console.log(menuList)
+// }
+
+class DismallMenuItems {
+	btnMore = null
+	menuMore = null
+	renderMinWidth = 768
+	classes = {
+		menuItem: 'menu__item',
+		menuItemHide: 'is-hide',
+		btnMore: 'menu__list-more',
+		btnMoreHide: 'is-hide',
+		menuMore: 'menu-more',
+	}
+	events = {
+		change: new Event('change'),
+	}
+
+	constructor(menuList, options) {
+		this.menuList = typeof(menuList) === 'string' ? document.querySelector(menuList) : menuList
+		this.menuItemElems = this.menuList.querySelectorAll(`.${this.classes.menuItem}`)
+
+		if (options !== undefined) {
+			this.classes.btnMore = options.classes.btnMore
+		}
+
+		this._render()
+		this._events()
+	}
+
+	_render() {
+		if (window.innerWidth > this.renderMinWidth) {
+
+			if (!this.btnMore) this._createBtnMore()
+			this.notFit = this._setNotFit()
+			this.fewRow = this.notFit.length === 0 ? false : true
+
+			if (this.fewRow) {
+				this.btnMore.classList.remove(this.classes.btnMoreHide)
+			}
+
+			this._renderMenuMore()
+		}
+
+		this.menuList.classList.add('is-render')
+	}
+
+	_reset() {
+		this.notFit = null
+		this.fewRow = null
+		this.menuList.classList.remove('is-render')
+		if (this.btnMore) this.btnMore.classList.add(this.classes.btnMoreHide)
+		// if (this.btnMore) {
+		// 	this.btnMore.remove()
+		// 	this.btnMore = null
+		// }
+		this.menuItemElems.forEach(menuItem => menuItem.classList.remove(this.classes.menuItemHide))
+	}
+
+	_renderMenuMore() {
+		if (this.notFit.length !== 0) {
+			const menuItems = this.notFit.map(e => {
+				const cloneElem = e.cloneNode(true)
+				cloneElem.classList.add('menu-more__item')
+
+				return cloneElem.outerHTML
+			}).join('')
+
+			if (!this.menuMore) {
+				this.menuMore = document.createElement('div')
+				this.menuMore.classList.add(this.classes.menuMore)
+			}
+
+			this.menuMore.innerHTML = `<ul class="menu-more__list">${menuItems}</ul>`
+			this.notFit.forEach(menuItem => {
+				menuItem.classList.add(this.classes.menuItemHide)
+			})
+
+			document.body.append(this.menuMore)
+		}
+		else {
+			if (this.menuMore) {
+				this.menuMore.remove()
+				this.menuMore = null
+			}
+		}
+
+		this._setCoordsMenuMore()
+	}
+
+	_setCoordsMenuMore() {
+		if (this.menuMore) {
+			const btnMoreBoundingRect = this.btnMore.getBoundingClientRect()
+
+			// console.log(btnMoreBoundingRect)
+
+			this.menuMore.style.left = btnMoreBoundingRect.left + btnMoreBoundingRect.width - this.menuMore.getBoundingClientRect().width + 'px'
+			this.menuMore.style.top = btnMoreBoundingRect.top + btnMoreBoundingRect.height + 4 + 'px'
+		}
+	}
+
+	_events() {
+		let resizeTimeout
+
+		window.addEventListener('resize', e => {
+			clearTimeout(resizeTimeout)
+
+			resizeTimeout = setTimeout(() => {
+				// this.notFit = this._setNotFit()
+				this.menuList.dispatchEvent(this.events.change)
+
+				console.log(this.notFit)
+			}, 25)
+		})
+
+		window.addEventListener('click', e => {
+
+			if (e.target.classList.contains(this.classes.btnMore) || e.target.closest(`.${this.classes.btnMore}`)) {
+				this.menuMore.classList.toggle('is-show')
+			}
+			else {
+				if (!e.target.classList.contains(this.classes.menuMore) && !e.target.closest(`.${this.classes.menuMore}`)) {
+					this.menuMore.classList.remove('is-show')
+				}
+			}
+		})
+
+		this.menuList.addEventListener('change', () => {
+			this._reset()
+			this._render()
+		})
+	}
+
+	_setNotFit = () => {
+		this.menuListWidth = this.menuList.getBoundingClientRect().width - (this.btnMore.getBoundingClientRect().width + 16)
+		// let totalWidth = this.btnMore.getBoundingClientRect().width + 16
+		let totalWidth = 0
+
+		console.log(this.menuList.getBoundingClientRect().width)
+
+		return Array.from(this.menuItemElems).filter((menuItem) => {
+			totalWidth += menuItem.getBoundingClientRect().width
+			if (totalWidth > this.menuListWidth) return menuItem
+		})
+	}
+
+	_createBtnMore() {
+		const btnMore = `
+		<button class="${this.classes.btnMore} ${this.classes.btnMoreHide}">
+			<svg fill="none" viewBox="0 0 24 24">
+				<circle cx="5" cy="12" r="2" fill="#292831"/>
+				<circle cx="12" cy="12" r="2" fill="#292831"/>
+				<circle cx="19" cy="12" r="2" fill="#292831"/>
+			</svg>
+		</button>
+		`
+		this.menuList.insertAdjacentHTML('afterend', btnMore)
+		this.btnMore = document.querySelector(`.${this.classes.btnMore}`)
+	}
+}
+
+new DismallMenuItems('.menu__list')
+
+
+// (function menu() {
+// })()
 
 // Стрелка "Наверх"
 document.querySelector('.back-to-top').addEventListener('click', e => {
@@ -60,37 +279,37 @@ accFAQ()
 function accFAQ() {
   const hiddenSiblingAcc = true // Скрывать соседние аккордеоны. false если не нужно.
   const accHeaderElems = document.querySelectorAll('[data-acc-header]')
-  
+
   for (let i = 0; i < accHeaderElems.length; i++) {
     const accHeader = accHeaderElems[i]
-    
+
     accHeader.addEventListener('click', e => {
       const container = (!accHeader.closest('[data-acc]')) ? accHeader.parentElement.parentElement : accHeader.closest('[data-acc]')
       const parent = (!accHeader.closest('[data-acc]')) ? accHeader.parentElement.parentElement : accHeader.closest('[data-acc]')
       const accBody = parent.querySelector('[data-acc-body]')
-      parent.classList.toggle('_acc-show') 
-      
-      if (accBody.style.maxHeight) { 
+      parent.classList.toggle('_acc-show')
+
+      if (accBody.style.maxHeight) {
         accBody.style.maxHeight = null
-        parent.classList.remove('_acc-show') 
+        parent.classList.remove('_acc-show')
       }
       else {
-          
+
         if (hiddenSiblingAcc) {
             const adjacentElems = getSiblings(parent)
 
             for (let i = 0; i < adjacentElems.length; i++) {
                 const elem = adjacentElems[i]
-                
+
                 if (elem.getAttribute('data-acc') != null) {
                     const elemBody = elem.querySelector('[data-acc-body]')
-                    
+
                     elem.classList.remove('_acc-show')
                     elemBody.style.maxHeight = null
                 }
             }
         }
-        
+
         accBody.style.maxHeight = accBody.scrollHeight + 'px'
         container.style.maxHeight = parseInt(container.scrollHeight) + accBody.scrollHeight + 'px'
       }
@@ -115,7 +334,7 @@ function videoPlayer() {
 
             videoBlock.append(img)
         }
-        
+
         videoBlock.addEventListener('click', e => {
             const src = videoBlock.dataset.videoSrc
 
@@ -133,13 +352,13 @@ function videoPlayer() {
                     video.src = src
                     video.setAttribute('autoplay', '')
                     video.setAttribute('controls', '')
-    
+
                     videoBlock.append(video)
                 }
-    
+
                 videoBlock.classList.add('video-playing')
             }
-        }) 
+        })
     }
 }
 

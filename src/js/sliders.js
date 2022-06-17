@@ -5,38 +5,38 @@ import 'swiper/css/effect-fade'
 if (document.querySelector('.main__slider')) {
   const mainSliderButtons = new Swiper('.main__slider-buttons', {
       modules: [EffectFade],
-  
+
       slidesPerView: 1,
       allowTouchMove: false,
-  
+
       effect: 'fade',
       fadeEffect: {
         crossFade: true
       },
   })
-  
+
   const mainBg = new Swiper('.main-full-bg', {
       modules: [EffectFade, Thumbs],
-  
+
       slidesPerView: 1,
       allowTouchMove: false,
-  
+
       effect: 'fade',
       fadeEffect: {
         crossFade: true
       },
-  
+
       thumbs: {
           swiper: mainSliderButtons,
       }
   })
-  
+
   const progressSlider = document.getElementById('progress-slider')
   const sliderDelay = 4000
-  
+
   const mainSlider = new Swiper('.main__slider', {
       modules: [Navigation, EffectFade, Thumbs, Autoplay],
-      
+
       allowTouchMove: false,
       autoHeight: true,
       effect: 'fade',
@@ -44,21 +44,21 @@ if (document.querySelector('.main__slider')) {
       fadeEffect: {
         crossFade: true
       },
-      
+
       autoplay: {
         delay: sliderDelay,
         disableOnInteraction: false,
       },
-  
+
       navigation: {
           prevEl: '.main__slider-arrow_prev',
           nextEl: '.main__slider-arrow_next',
       },
-  
+
       thumbs: {
           swiper: mainBg,
       },
-  
+
       on: {
         init: e => {
           progressSlider.style.animationDuration = sliderDelay + 'ms'
@@ -66,14 +66,14 @@ if (document.querySelector('.main__slider')) {
         }
       }
   })
-  
+
   mainSlider.on('slideChange', e => {
     const msNum = document.querySelector('.ms-num__elem')
     const msNumValue = msNum.querySelector('span')
-  
+
     msNumValue.innerText = e.realIndex + 1
     progressSlider.classList.remove('_active')
-  
+
     setTimeout(e => {
       progressSlider.classList.add('_active')
     }, 10)
@@ -83,7 +83,7 @@ if (document.querySelector('.main__slider')) {
 if (document.querySelector('.sa__slider')) {
   const availableSlider = new Swiper('.sa__slider', {
     modules: [Pagination],
-    
+
     breakpoints: {
       1024: {
         slidesPerView: 5,
@@ -110,7 +110,7 @@ if (document.querySelector('.sa__slider')) {
     pagination: {
       el: '.sa__slider-pagination'
     },
-    
+
     on: {
       init: e => {
 
@@ -128,7 +128,7 @@ if (document.querySelector('.ssc__screen-slider')) {
 
     const screenSlider = new Swiper(section.querySelector('.ssc__screen-slider'), {
       modules: [EffectFade],
-      
+
       allowTouchMove: false,
       slidesPerView: 1,
       effect: 'fade',
@@ -136,10 +136,11 @@ if (document.querySelector('.ssc__screen-slider')) {
         crossFade: true
       },
     })
-    
+
     const screenContentSlider = new Swiper(section.querySelector('.ssc-content__slider'), {
       modules: [EffectFade, Navigation, Thumbs, Pagination],
-      
+
+	  autoHeight: true,
       slidesPerView: 1,
       effect: 'fade',
       fadeEffect: {
@@ -170,9 +171,9 @@ const mainLightingSliderEl = document.querySelector('.sml__slider')
 if (mainLightingSliderEl) {
     const mainLightingSlider = new Swiper(mainLightingSliderEl, {
       modules: [FreeMode],
-      
+
       freeMode: true,
-    
+
       breakpoints: {
         1920: {
           slidesPerView: mainLightingSliderEl.querySelectorAll('.swiper-slide').length >= 4 ? 4 : 3,
@@ -182,7 +183,7 @@ if (mainLightingSliderEl) {
           slidesPerView: 3,
           spaceBetween: 24,
         },
-          0: { 
+          0: {
             slidesPerView: 'auto',
             spaceBetween: 16,
         }
@@ -228,7 +229,7 @@ const touchSwitchTitlesSlider = new Swiper('.ts-title-slider', {
       return `<span class="${className}" data-ts-title="${slide.innerText}" style="background-color: ${slide.dataset.tsColor}"></span>`
     }
   },
-  
+
   thumbs: {
       swiper: touchSwitchSlider,
   }
@@ -236,7 +237,7 @@ const touchSwitchTitlesSlider = new Swiper('.ts-title-slider', {
 
 const rctCards = new Swiper('.rct__cards', {
   modules: [ Pagination ],
-  
+
   breakpoints: {
     768: {
       slidesPerView: 3,
