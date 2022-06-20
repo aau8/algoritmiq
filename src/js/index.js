@@ -56,22 +56,16 @@ class DismallMenuItems {
 		this.menuMore = null
 		this.renderMinWidth = 768
 
-		this.classes = {}
-		this.classes.menuItem = 'menu__item'
-		this.classes.menuItemHide = 'is-hide'
-		this.classes.btnMore = 'menu__list-more'
-		this.classes.btnMoreHide = 'is-hide'
-		this.classes.menuMore = 'menu-more'
+		this.menuItemClass = 'menu__item'
+		this.menuItemHideClass = 'is-hide'
+		this.btnMoreClass = 'menu__list-more'
+		this.btnMoreHideClass = 'is-hide'
+		this.menuMoreClass = 'menu-more'
 
-		this.events = {}
-		this.events.change = new Event('change')
+		this.eChange = new Event('change')
 
 		this.menuList = typeof(menuList) === 'string' ? document.querySelector(menuList) : menuList
-		this.menuItemElems = this.menuList.querySelectorAll(`.${this.classes.menuItem}`)
-
-		if (options !== undefined) {
-			this.classes.btnMore = options.classes.btnMore
-		}
+		this.menuItemElems = this.menuList.querySelectorAll(`.${this.menuItemClass}`)
 
 		this._render()
 		this._events()
@@ -83,12 +77,9 @@ class DismallMenuItems {
 			if (!this.btnMore) this._createBtnMore()
 			this.notFit = this._setNotFit()
 			this.fewRow = this.notFit.length === 0 ? false : true
-			// this.fewRow = this.menuList.clientHeight / Array.from(this.menuItemElems).reduce((accumulator, menuItem) => menuItem.clientHeight > accumulator ? menuItem.clientHeight : accumulator, 0) >= 2 ? true : false
-
-			// console.log(this.notFit)
 
 			if (this.fewRow) {
-				this.btnMore.classList.remove(this.classes.btnMoreHide)
+				this.btnMore.classList.remove(this.btnMoreHideClass)
 			}
 
 			this._renderMenuMore()
@@ -101,12 +92,8 @@ class DismallMenuItems {
 		this.notFit = null
 		this.fewRow = null
 		this.menuList.classList.remove('is-render')
-		if (this.btnMore) this.btnMore.classList.add(this.classes.btnMoreHide)
-		// if (this.btnMore) {
-		// 	this.btnMore.remove()
-		// 	this.btnMore = null
-		// }
-		this.menuItemElems.forEach(menuItem => menuItem.classList.remove(this.classes.menuItemHide))
+		if (this.btnMore) this.btnMore.classList.add(this.btnMoreHideClass)
+		this.menuItemElems.forEach(menuItem => menuItem.classList.remove(this.menuItemHideClass))
 	}
 
 	_renderMenuMore() {
@@ -120,12 +107,12 @@ class DismallMenuItems {
 
 			if (!this.menuMore) {
 				this.menuMore = document.createElement('div')
-				this.menuMore.classList.add(this.classes.menuMore)
+				this.menuMore.classList.add(this.menuMoreClass)
 			}
 
 			this.menuMore.innerHTML = `<ul class="menu-more__list">${menuItems}</ul>`
 			this.notFit.forEach(menuItem => {
-				menuItem.classList.add(this.classes.menuItemHide)
+				menuItem.classList.add(this.menuItemHideClass)
 			})
 
 			document.body.append(this.menuMore)
@@ -158,20 +145,17 @@ class DismallMenuItems {
 			clearTimeout(resizeTimeout)
 
 			resizeTimeout = setTimeout(() => {
-				// this.notFit = this._setNotFit()
-				this.menuList.dispatchEvent(this.events.change)
-
-				// console.log(this.notFit)
+				this.menuList.dispatchEvent(this.eChange)
 			}, 25)
 		})
 
 		window.addEventListener('click', e => {
 
-			if (e.target.classList.contains(this.classes.btnMore) || e.target.closest(`.${this.classes.btnMore}`)) {
+			if (e.target.classList.contains(this.btnMoreClass) || e.target.closest(`.${this.btnMoreClass}`)) {
 				this.menuMore.classList.toggle('is-show')
 			}
 			else {
-				if (!e.target.classList.contains(this.classes.menuMore) && !e.target.closest(`.${this.classes.menuMore}`)) {
+				if (!e.target.classList.contains(this.menuMoreClass) && !e.target.closest(`.${this.menuMoreClass}`)) {
 					this.menuMore.classList.remove('is-show')
 				}
 			}
@@ -185,11 +169,7 @@ class DismallMenuItems {
 
 	_setNotFit = () => {
 		this.menuListWidth = this.menuList.getBoundingClientRect().width - (this.btnMore.getBoundingClientRect().width + 16)
-		// this.menuListWidth = this.menuList.getBoundingClientRect().width
-		// let totalWidth = this.btnMore.getBoundingClientRect().width + 16
 		let totalWidth = 0
-
-		// console.log(this.menuListWidth)
 
 		return Array.from(this.menuItemElems).filter((menuItem, i) => {
 			totalWidth += menuItem.getBoundingClientRect().width
@@ -199,7 +179,7 @@ class DismallMenuItems {
 
 	_createBtnMore() {
 		const btnMore = `
-		<button class="${this.classes.btnMore} ${this.classes.btnMoreHide}">
+		<button class="${this.btnMoreClass} ${this.btnMoreHideClass}">
 			<svg fill="none" viewBox="0 0 24 24">
 				<circle cx="5" cy="12" r="2" fill="#292831"/>
 				<circle cx="12" cy="12" r="2" fill="#292831"/>
@@ -208,7 +188,7 @@ class DismallMenuItems {
 		</button>
 		`
 		this.menuList.insertAdjacentHTML('afterend', btnMore)
-		this.btnMore = document.querySelector(`.${this.classes.btnMore}`)
+		this.btnMore = document.querySelector(`.${this.btnMoreClass}`)
 	}
 }
 
