@@ -49,78 +49,23 @@ window.addEventListener('click', e => {
 })
 
 // Перенос пунктов меню
-// const menuList = menu.querySelector('.menu__list')
-// const menuItemElems = menuList.querySelectorAll('.menu__item')
-// const menuMoreBtn = menu.querySelector('.menu__list-more')
-
-// // console.log(menuItemElems[0].getBoundingClientRect().top)
-// // console.log(menuItemElems[0].getBoundingClientRect().bottom)
-
-// placingItemsInMenu()
-// window.addEventListener('resize', placingItemsInMenu)
-
-// function placingItemsInMenu() {
-// 	const menuListWidth = menuList.clientWidth
-// 	let totalWidth = 0
-// 	const menuItemNotFit = Array.from(menuItemElems).filter((menuItem) => {
-// 		totalWidth += menuItem.clientWidth
-// 		if (totalWidth > menuListWidth) return menuItem
-// 	})
-
-// 	console.log(menuItemNotFit)
-
-// 	if (menuItemNotFit.length != 0) {
-// 		menuMoreBtn.classList.add('is-show')
-
-// 		menuItemNotFit.forEach(menuItem => {
-// 			menuItem.classList.add('is-hide')
-// 		})
-// 	}
-// 	else {
-// 		if (menuList.querySelector('.menu__item.is-hide')) menuList.querySelector('.menu__item.is-hide').classList.remove('is-hide')
-// 		menuMoreBtn.classList.remove('is-show')
-// 	}
-
-// 	// const menuItemHeight = Array.from(menuItemElems).reduce((accumulator, menuItem) => menuItem.clientHeight > accumulator ? menuItem.clientHeight : accumulator, 0)
-// 	// const menuItemFewRow = menuList.clientHeight / menuItemHeight >= 2 ? true : false
-
-// 	// console.dir(menuItemElems[menuItemElems.length-1])
-
-// 	// if (menuItemFewRow) {
-
-// 	// 	menuMoreBtn.classList.add('is-show')
-
-
-// 	// 	menuItemNotFit.forEach(menuItem => {
-// 	// 		menuItem.classList.add('is-hide')
-// 	// 	})
-
-// 	// 	console.log(menuItemNotFit)
-// 	// }
-// 	// else {
-// 	// 	menuMoreBtn.classList.remove('is-show')
-// 	// }
-
-// 	// console.log(menuItemFewRow)
-// 	// console.log(menuList)
-// }
-
 class DismallMenuItems {
-	btnMore = null
-	menuMore = null
-	renderMinWidth = 768
-	classes = {
-		menuItem: 'menu__item',
-		menuItemHide: 'is-hide',
-		btnMore: 'menu__list-more',
-		btnMoreHide: 'is-hide',
-		menuMore: 'menu-more',
-	}
-	events = {
-		change: new Event('change'),
-	}
 
 	constructor(menuList, options) {
+		this.btnMore = null
+		this.menuMore = null
+		this.renderMinWidth = 768
+
+		this.classes = {}
+		this.classes.menuItem = 'menu__item'
+		this.classes.menuItemHide = 'is-hide'
+		this.classes.btnMore = 'menu__list-more'
+		this.classes.btnMoreHide = 'is-hide'
+		this.classes.menuMore = 'menu-more'
+
+		this.events = {}
+		this.events.change = new Event('change')
+
 		this.menuList = typeof(menuList) === 'string' ? document.querySelector(menuList) : menuList
 		this.menuItemElems = this.menuList.querySelectorAll(`.${this.classes.menuItem}`)
 

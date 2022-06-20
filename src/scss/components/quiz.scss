@@ -377,7 +377,7 @@ $quiz-padding-mob: 16px;
 .qmca-14__rcards {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 48px;
     justify-content: center;
 
@@ -426,7 +426,7 @@ $quiz-padding-mob: 16px;
 .qmca-16__rcards {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     justify-content: center;
 
