@@ -7,7 +7,7 @@
     transition: opacity $tr;
 
     &._hide {
-        opacity: 0;
+        // opacity: 0;
         pointer-events: none;
     }
 }
@@ -83,7 +83,7 @@ $quiz-padding-mob: 16px;
 }
 
 .quiz-modal__quiz-title {
-    
+
     .quiz-slider_professionals & {
         display: none;
     }
@@ -226,7 +226,7 @@ $quiz-padding-mob: 16px;
         background: #F6F7F9;
 
         &:hover {
-            
+
             @media (min-width: $min-hover) {
                 background: brig-color(#F6F7F9, hover);
             }
@@ -254,7 +254,7 @@ $quiz-padding-mob: 16px;
     &_submit {
 
         @media (max-width: $mobile-l) {
-            
+
             & .quiz-modal__btn-icon {
                 display: none;
             }
@@ -586,7 +586,7 @@ $quiz-padding-mob: 16px;
         color: $firm-accent;
 
         &:hover {
-            
+
             @media (min-width: $min-hover) {
                 color: #4BADF1;
             }
@@ -776,7 +776,7 @@ $quiz-padding-mob: 16px;
         font-size: 16px;
     }
 
-    &::-webkit-outer-spin-button, 
+    &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
@@ -787,7 +787,7 @@ $quiz-padding-mob: 16px;
 .qs-modal__content {
 
     & > * {
-        
+
         &:not(:last-child) {
             margin-bottom: 32px;
         }
@@ -883,7 +883,7 @@ $quiz-padding-mob: 16px;
     &.is-dragenter {
             border: 1px dashed brig-color($firm-accent, -20%) !important;
             background: rgba(19, 87, 160, .1);
-            
+
             & .quf-dropzone__content {
                 color: brig-color($firm-accent, -20%);
             }
@@ -913,10 +913,10 @@ $quiz-padding-mob: 16px;
     }
 
     @media (any-hover: hover) {
-        
+
         &:hover {
             border: 1px dashed brig-color($firm-accent, -20%) !important;
-    
+
             & .quf-dropzone__content {
                 color: brig-color($firm-accent, -20%);
             }
@@ -924,13 +924,13 @@ $quiz-padding-mob: 16px;
     }
 
     // & .dz-preview {
-        
+
     //     @media (max-width: $mobile-l) {
     //         margin: 8px !important;
     //     }
 
     //     & .dz-image {
-            
+
     //         @media (max-width: $mobile-l) {
     //             width: 100px !important;
     //             height: 100px !important;
