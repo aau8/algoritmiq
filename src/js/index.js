@@ -131,8 +131,6 @@ class DismallMenuItems {
 		if (this.menuMore) {
 			const btnMoreBoundingRect = this.btnMore.getBoundingClientRect()
 
-			// console.log(btnMoreBoundingRect)
-
 			this.menuMore.style.left = btnMoreBoundingRect.left + btnMoreBoundingRect.width - this.menuMore.getBoundingClientRect().width + 'px'
 			this.menuMore.style.top = btnMoreBoundingRect.top + btnMoreBoundingRect.height + 4 + 'px'
 		}
@@ -167,7 +165,7 @@ class DismallMenuItems {
 		})
 	}
 
-	_setNotFit = () => {
+	_setNotFit() {
 		this.menuListWidth = this.menuList.getBoundingClientRect().width - (this.btnMore.getBoundingClientRect().width + 16)
 		let totalWidth = 0
 
