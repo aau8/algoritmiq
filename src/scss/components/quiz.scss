@@ -294,6 +294,9 @@ $quiz-padding-mob: 16px;
     }
 
     @media (max-width: $mobile-l) {
+		grid-template-columns: repeat(1, 1fr);
+		align-items: initial;
+		// gap: 16px;
 
         & .qmca-rcard__point {
             top: 12px;
