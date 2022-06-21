@@ -67,22 +67,21 @@ class DismallMenuItems {
 		this.menuList = typeof(menuList) === 'string' ? document.querySelector(menuList) : menuList
 		this.menuItemElems = this.menuList.querySelectorAll(`.${this.menuItemClass}`)
 
-		this._render()
+		this._init()
 		this._events()
 	}
 
-	_render() {
+	_init() {
 		if (window.innerWidth > this.renderMinWidth) {
 
 			if (!this.btnMore) this._createBtnMore()
-			this.notFit = this._setNotFit()
-			this.fewRow = this.notFit.length === 0 ? false : true
+			this.fewRow = this.menuList.clientHeight / Array.from(this.menuItemElems).reduce((accumulator, menuItem) => menuItem.clientHeight > accumulator ? menuItem.clientHeight : accumulator, 0) >= 2 ? true : false
 
 			if (this.fewRow) {
+				this.notFit = this._setNotFit()
 				this.btnMore.classList.remove(this.btnMoreHideClass)
+				this._renderMenuMore()
 			}
-
-			this._renderMenuMore()
 		}
 
 		this.menuList.classList.add('is-render')
@@ -153,7 +152,7 @@ class DismallMenuItems {
 				this.menuMore.classList.toggle('is-show')
 			}
 			else {
-				if (!e.target.classList.contains(this.menuMoreClass) && !e.target.closest(`.${this.menuMoreClass}`)) {
+				if (!e.target.classList.contains(this.menuMoreClass) && !e.target.closest(`.${this.menuMoreClass}`) && this.menuMore) {
 					this.menuMore.classList.remove('is-show')
 				}
 			}
@@ -161,7 +160,7 @@ class DismallMenuItems {
 
 		this.menuList.addEventListener('change', () => {
 			this._reset()
-			this._render()
+			this._init()
 		})
 	}
 
@@ -191,6 +190,8 @@ class DismallMenuItems {
 }
 
 new DismallMenuItems('.menu__list')
+
+
 
 
 // (function menu() {
