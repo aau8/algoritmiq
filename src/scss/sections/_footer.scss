@@ -41,6 +41,24 @@
     @media (max-width: $tablet) {
         margin: 0;
     }
+
+	&.has-menu-items {
+
+		& .footer-column__list {
+
+			& li {
+
+				&:first-child {
+					margin-bottom: 32px;
+
+					& a {
+						font-size: 16px;
+						color: $text-light;
+					}
+				}
+			}
+		}
+	}
 }
 
 .footer-column__title {
@@ -66,7 +84,7 @@
             line-height: 1.2;
 
             @media (min-width: $min-hover) {
-                
+
                 &:hover {
                     color: $text-light;
                 }
@@ -76,7 +94,7 @@
                 color: $text-light;
 
                 @media (min-width: $min-hover) {
-                    
+
                     &:hover {
                         color: $firm-accent;
                     }
@@ -159,7 +177,7 @@
             }
 
             @media (min-width: $min-hover) {
-                
+
                 &:hover {
                     color: $text-light;
                 }
