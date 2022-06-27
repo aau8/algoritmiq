@@ -1,7 +1,7 @@
 import Swiper, { Navigation, EffectFade, Thumbs, Autoplay, Pagination, FreeMode } from 'swiper'
 // import Dropzone from 'dropzone'
 
-export const quizSlider = new Swiper('.quiz-slider', {
+export const quizSlider = new Swiper('.quiz-slider:not(.pquiz-modal .quiz-slider)', {
     modules: [EffectFade, Thumbs],
 
     effect: 'fade',
@@ -15,14 +15,29 @@ export const quizSlider = new Swiper('.quiz-slider', {
     observer: true,
 })
 
+const pQuizSwiper = new Swiper('.pquiz-modal .quiz-slider', {
+    modules: [ Thumbs ],
+
+    // effect: 'fade',
+    // fadeEffect: {
+    //   crossFade: true
+    // },
+
+    slidesPerView: 1,
+    // autoHeight: true,
+    allowTouchMove: false,
+    observer: true,
+})
+
 // quizSlider.slideTo(quizSlider.slides.length - 1)
 // quizSlider.slideTo(17)
 
 // Устанавливаем текущий номер слайда и общее их кол-во
+quantSlides(pQuizSwiper)
 quantSlides(quizSlider)
 export function quantSlides(slider) {
     const quizSlides = slider.slides
-    
+
     for (let i = 0; i < quizSlides.length; i++) {
         const quizSlide = quizSlides[i];
         const modal = quizSlide.querySelector('.quiz-modal')
@@ -39,11 +54,11 @@ export function quantSlides(slider) {
         modalHeader.append(progressbar)
 
         progressbar.style.width = i * ((modal.clientWidth - parseInt(window.getComputedStyle(modalHeader).paddingRight) * 2 - score.clientWidth - 12) / (quizSlides.length - 1))  + 'px'
-    
+
         // Переключение слайдеров
         const quizButtonPrev = quizSlide.querySelector('[data-quiz-prev]')
         const quizButtonNext = quizSlide.querySelector('[data-quiz-next]')
-    
+
         if (quizButtonNext) {
             quizButtonNext.addEventListener('click', e => {
                 e.preventDefault()
@@ -51,7 +66,7 @@ export function quantSlides(slider) {
                 slider.slideNext()
             })
         }
-    
+
         if (quizButtonPrev) {
             quizButtonPrev.addEventListener('click', e => {
                 e.preventDefault()
@@ -69,18 +84,18 @@ function addRowEnteredData(slide, i) {
     const slideBody = slide.querySelector('.quiz-modal__body')
     const slideTitle = slideBody.querySelector('.quiz-modal__title')
     let rowText = ''
-    
+
     if (slider.classList.contains('quiz-slider_calc-amount')) {
         const table = slider.querySelector('.qmca-18__table')
         const checkedRadio = slideBody.querySelector('[type="radio"]:checked')
         const rangeInput = slideBody.querySelector('.qmca-range input[type="text"]')
-    
+
         if (checkedRadio) {
             rowText = checkedRadio.value
         }
-    
+
         if (rangeInput) {
-    
+
             if (checkedRadio) {
                 rowText = `${checkedRadio.value} (${parseInt(rangeInput.value)})`
             }
@@ -88,7 +103,7 @@ function addRowEnteredData(slide, i) {
                 rowText = parseInt(rangeInput.value)
             }
         }
-    
+
         const content = `
             <div class="qmca-18__row" id="qmca-row-${i}">
                 <span class="qmca-18__row-title">${slideTitle.dataset.quizSubtitle}</span>
@@ -98,7 +113,7 @@ function addRowEnteredData(slide, i) {
 
         table.insertAdjacentHTML('beforeend', content)
     }
-    
+
     if (slider.classList.contains('quiz-slider_professionals')) {
         const blockElems = slideBody.querySelectorAll('.qs-block')
 
@@ -113,13 +128,13 @@ function addRowEnteredData(slide, i) {
             console.log(checkedCheckboxElems)
 
             if (checkedCheckboxElems.length != 0) {
-                
+
                 for (let i = 0; i < checkedCheckboxElems.length; i++) {
                     const checkedCheckbox = checkedCheckboxElems[i];
-                    
+
                     if (checkedCheckbox.value === 'Другое') {
                         const inputAnother = checkedCheckbox.closest('.qs-block').querySelector('.qs-block__another input')
-                        
+
                         rowText += `*${inputAnother.value != '' ? inputAnother.value : 'Другое'}`
                     }
                     else {
@@ -130,10 +145,10 @@ function addRowEnteredData(slide, i) {
             }
 
             if (checkedRadio) {
-                
+
                 if (checkedRadio.value === 'Другое') {
                     const inputAnother = checkedRadio.closest('.qs-block').querySelector('.qs-block__another input')
-                    
+
                     // console.log(inputAnother)
                     rowText = `*${inputAnother.value != '' ? inputAnother.value : 'Другое'}`
                 }
@@ -141,7 +156,7 @@ function addRowEnteredData(slide, i) {
                     rowText = checkedRadio.value
                 }
             }
-    
+
             // console.log(!input.parentElement.classList.contains('qs-block__another'))
             if (input && !input.parentElement.classList.contains('qs-block__another')) {
                 rowText = `${rowText != '' ? rowText + ': ' : ''}(${input.value != '' ? input.value : '-'})`
@@ -183,7 +198,7 @@ function addRowEnteredData(slide, i) {
 function removeRowEnteredData(slide, i) {
     const slider = slide.closest('.quiz-slider')
     const quizDataInputHidden = slider.querySelector('.quiz-modal-form .qmca-data-form')
-    
+
     if (slider.classList.contains('quiz-slider_calc-amount')) {
         const row = document.getElementById(`qmca-row-${i-1}`)
 
@@ -206,7 +221,7 @@ function dropzone() {
 
     for (let i = 0; i < qufDropzoneElems.length; i++) {
         const qufDropzone = qufDropzoneElems[i];
-        const input = qufDropzone.querySelector('.quf-dropzone__input input[type=file]') 
+        const input = qufDropzone.querySelector('.quf-dropzone__input input[type=file]')
         const infoElem = qufDropzone.querySelector('.quf-dropzone__info')
 
         qufDropzone.addEventListener('dragover', dragEventReset)
@@ -221,7 +236,7 @@ function dropzone() {
         qufDropzone.addEventListener('dragleave', e => {
             qufDropzone.classList.remove('is-dragenter')
         })
-        
+
         qufDropzone.addEventListener('drop', e => {
             let files = e.dataTransfer.files
 
@@ -245,7 +260,7 @@ function dropzone() {
                 clearFile()
                 return false
             }
-            
+
             if (input.files[0].size / 1024 / 1024 * 1000 > 5000) {
                 clearFile()
                 callError('Файл весит больше 5 Мб')
@@ -273,9 +288,9 @@ function dropzone() {
             infoElem.innerHTML = infoText
             qufDropzone.classList.add('is-full')
         }
-        
+
         function dragEventReset(e) {
-            e.preventDefault() 
+            e.preventDefault()
             e.stopPropagation()
             return false
         }
