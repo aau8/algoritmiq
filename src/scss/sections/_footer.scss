@@ -70,6 +70,7 @@
 .footer-column__list {
 
     & li {
+		color: $text-light-second;
 
         &:not(:last-child) {
             margin-bottom: 24px;
@@ -80,7 +81,6 @@
         }
 
         & a {
-            color: $text-light-second;
             line-height: 1.2;
 
             @media (min-width: $min-hover) {
@@ -89,18 +89,21 @@
                     color: $text-light;
                 }
             }
-
-            &.footer-link-light {
-                color: $text-light;
-
-                @media (min-width: $min-hover) {
-
-                    &:hover {
-                        color: $firm-accent;
-                    }
-                }
-            }
         }
+
+		&.is-light {
+			color: $text-light;
+
+			@media (min-width: $min-hover) {
+
+				&:hover {
+
+					& a {
+						color: $firm-accent;
+					}
+				}
+			}
+		}
     }
 }
 

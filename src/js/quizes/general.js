@@ -274,16 +274,8 @@ function dropzone() {
             const fileSizeSimple = Math.round(file.size / 1024 / 1024 * 1000) // Конверировал в кб
             const fileSize = fileSizeSimple >= 1000 ? Math.round(fileSizeSimple / 10) / 100 + ' Мб' : fileSizeSimple + ' Кб'
             const infoText = `${file.name} ${fileSize}`
-            // let reader = new FileReader()
-
-            // reader.addEventListener('load', e => {
-            //     input.dataURL = reader.result
-            // })
-
-            // reader.readAsDataURL(file)
 
             input.fileName = file.name
-            // console.log({input})
 
             infoElem.innerHTML = infoText
             qufDropzone.classList.add('is-full')
